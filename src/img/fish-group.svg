@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="230px" height="175px" viewBox="0 0 230 175" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="41.8923509%" y1="65.5778141%" x2="57.1320365%" y2="44.7825712%" id="linearGradient-1">
+            <stop stop-color="#DEDDE6" offset="0%"></stop>
+            <stop stop-color="#E43A1E" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="8.8817842e-14%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#DEDDE6" offset="0%"></stop>
+            <stop stop-color="#E44A32" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="57.1254027%" y1="44.7825712%" x2="41.8998921%" y2="65.5778141%" id="linearGradient-3">
+            <stop stop-color="#549DD8" offset="0%"></stop>
+            <stop stop-color="#231682" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="80.074807%" x2="50%" y2="99.7174058%" id="linearGradient-4">
+            <stop stop-color="#221682" offset="0%"></stop>
+            <stop stop-color="#539CD7" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="55.5648209%" y1="42.6939731%" x2="42.6439971%" y2="57.1048986%" id="linearGradient-5">
+            <stop stop-color="#DEDDE6" offset="0%"></stop>
+            <stop stop-color="#5196D4" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="80.074807%" x2="50%" y2="99.7174058%" id="linearGradient-6">
+            <stop stop-color="#5196D4" offset="0%"></stop>
+            <stop stop-color="#DEDDE6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="alumni-app" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-94.000000, -240.000000)">
+            <g id="Group" transform="translate(94.000000, 240.000000)">
+                <g id="upper-fish">
+                    <path d="M109.747769,-32.5828188 L144.247769,32.6411632 C129.723251,79.5069934 118.223251,102.939908 109.747769,102.939908 C101.272287,102.939908 89.7722871,79.5069934 75.2477689,32.6411632 L109.747769,-32.5828188 Z" id="Triangle-Copy" fill="url(#linearGradient-1)" transform="translate(109.747769, 35.178545) rotate(270.000000) translate(-109.747769, -35.178545) "></path>
+                    <path d="M34.8920455,0.613636364 L69.3920455,69.3863636 C54.5395825,58.3082708 43.0395825,52.7692244 34.8920455,52.7692244 C26.7445084,52.7692244 15.2445084,58.3082708 0.392045455,69.3863636 L34.8920455,0.613636364 Z" id="Triangle" fill="url(#linearGradient-2)" transform="translate(34.892045, 35.000000) rotate(90.000000) translate(-34.892045, -35.000000) "></path>
+                    <path d="M143.122769,25.1785448 C145.077731,25.1785448 146.662542,27.1932635 146.662542,29.6785448 C146.662542,32.1638262 145.077731,34.1785448 143.122769,34.1785448 C141.167806,34.1785448 139.582996,32.1638262 139.582996,29.6785448 C139.582996,27.1932635 141.167806,25.1785448 143.122769,25.1785448 Z M143.122769,26.1785448 C141.789871,26.1785448 140.59436,27.6983595 140.59436,29.6785448 C140.59436,31.6587302 141.789871,33.1785448 143.122769,33.1785448 C144.455667,33.1785448 145.651178,31.6587302 145.651178,29.6785448 C145.651178,27.6983595 144.455667,26.1785448 143.122769,26.1785448 Z" id="Oval" fill="#FFFFFF" fill-rule="nonzero"></path>
+                </g>
+                <g id="middle-fish" transform="translate(59.000000, 53.000000)">
+                    <path d="M102.716005,-32.6143546 L137.216005,32.6399824 C122.691487,79.5276236 111.191487,102.971444 102.716005,102.971444 C94.2405229,102.971444 82.7405229,79.5276236 68.2160047,32.6399824 L102.716005,-32.6143546 Z" id="Triangle-Copy" fill="url(#linearGradient-3)" transform="translate(102.716005, 35.178545) rotate(270.000000) translate(-102.716005, -35.178545) "></path>
+                    <path d="M34.908284,0.597633136 L69.408284,69.4023669 C54.5558211,58.3191184 43.0558211,52.7774941 34.908284,52.7774941 C26.760747,52.7774941 15.260747,58.3191184 0.408284024,69.4023669 L34.908284,0.597633136 Z" id="Triangle" fill="url(#linearGradient-4)" transform="translate(34.908284, 35.000000) rotate(90.000000) translate(-34.908284, -35.000000) "></path>
+                    <ellipse id="Oval" stroke="#FFFFFF" cx="136.106537" cy="29.6785448" rx="3.04142012" ry="4"></ellipse>
+                </g>
+                <g id="lower-fish" transform="translate(6.000000, 104.000000)">
+                    <path d="M102.716005,-31.6143546 L137.216005,33.6399824 C122.691487,80.5276236 111.191487,103.971444 102.716005,103.971444 C94.2405229,103.971444 82.7405229,80.5276236 68.2160047,33.6399824 L102.716005,-31.6143546 Z" id="Triangle-Copy" fill="url(#linearGradient-5)" transform="translate(102.716005, 36.178545) rotate(270.000000) translate(-102.716005, -36.178545) "></path>
+                    <path d="M34.908284,0.597633136 L69.408284,69.4023669 C54.5558211,58.3191184 43.0558211,52.7774941 34.908284,52.7774941 C26.760747,52.7774941 15.260747,58.3191184 0.408284024,69.4023669 L34.908284,0.597633136 Z" id="Triangle" fill="url(#linearGradient-6)" transform="translate(34.908284, 35.000000) rotate(90.000000) translate(-34.908284, -35.000000) "></path>
+                    <ellipse id="Oval" stroke="#FFFFFF" cx="136.106537" cy="30.6785448" rx="3.04142012" ry="4"></ellipse>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
