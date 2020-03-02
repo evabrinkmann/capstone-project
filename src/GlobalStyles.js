@@ -13,6 +13,7 @@ export default createGlobalStyle`
     line-height: 1.4;
     overflow-y: scroll;
     height: 100vh;
-    /* width: 100vw; */
+    width: 100vw;
+    padding: 20px;
   }
 `

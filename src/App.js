@@ -5,7 +5,7 @@ import userData from './userData'
 
 export default function App() {
   return (
-    <article>
+    <>
       {userData.map(user => (
         <ProfileContainer>
           <Status>{user.status}</Status>
@@ -30,14 +30,13 @@ export default function App() {
           ))}
         </ProfileContainer>
       ))}
-    </article>
+    </>
   )
 }
 
 const ProfileContainer = styled.section`
   font-family: 'Open Sans';
-  /* width: 350px; */
-  /* padding: 20px; */
+  padding: 20px;
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
@@ -58,5 +57,5 @@ const ProfileHead = styled.div`
 
 const Status = styled.h3`
   text-align: end;
-  /* padding-right: 20px; */
+  padding-right: 20px;
 `
