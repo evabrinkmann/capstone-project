@@ -2,27 +2,10 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import styled from 'styled-components'
 import userData from './userData'
-import imgNatalie from './img/natalie.jpg'
 
 export default function App() {
-  const userData = [
-    {
-      status: 'alumni',
-      imgUrl: 'http://source.unsplash.com/random/?portrait',
-      name: 'Natalie Fuchs',
-      title: 'Frontend Developer',
-      company: 'Argonauten GmbH',
-      country: 'Hamburg, Germany',
-      email: 'natalie.fuchs@argonauten.de',
-      capstoneProject: 'Stadt, Land, Fuchs',
-      personalWebsite: 'personal-website',
-      github: 'github',
-      codepen: 'codepen',
-      skills: ['react', 'html', 'css', 'sass', 'bootstrap', 'javascript'],
-    },
-  ]
   return (
-    <div>
+    <article>
       {userData.map(user => (
         <ProfileContainer>
           <Status>{user.status}</Status>
@@ -47,15 +30,14 @@ export default function App() {
           ))}
         </ProfileContainer>
       ))}
-    </div>
+    </article>
   )
 }
 
 const ProfileContainer = styled.section`
   font-family: 'Open Sans';
-  width: 350px;
-  margin: 20px;
-  padding: 20px;
+  /* width: 350px; */
+  /* padding: 20px; */
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
@@ -68,7 +50,7 @@ const ProfileHead = styled.div`
   img {
     position: relative;
     width: 200px;
-    height: 200px;
+    height: auto;
     flex-direction: center;
     align-item: center;
   }
@@ -76,5 +58,5 @@ const ProfileHead = styled.div`
 
 const Status = styled.h3`
   text-align: end;
-  padding-right: 20px;
+  /* padding-right: 20px; */
 `
