@@ -55,6 +55,10 @@ const ProfileCard = styled.section`
     text-decoration: none;
     color: black;
   }
+
+  button {
+    margin: 2px;
+  }
 `
 const ProfileHead = styled.div`
   display: flex;
