@@ -15,5 +15,6 @@ export default createGlobalStyle`
     height: 100vh;
     width: 100vw;
     padding: 20px;
+    font-family: 'Open Sans';
   }
 `
