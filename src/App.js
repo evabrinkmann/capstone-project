@@ -37,7 +37,7 @@ export default function App() {
                 </a>
               </li>
             ) : (
-              user.capstoneName
+              <li>{user.capstoneName}</li> || ''
             )}
             {user.personalWebsite ? (
               <li>
@@ -98,6 +98,10 @@ const ProfileCard = styled.section`
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
   overflow-wrap: break-word;
 
+  h2 {
+    text-align: center;
+  }
+
   h3 {
     text-align: end;
     padding-right: 20px;
@@ -105,6 +109,10 @@ const ProfileCard = styled.section`
 
   a {
     color: black;
+  }
+
+  ul {
+    line-height: 2.2;
   }
 
   button {
@@ -119,8 +127,8 @@ const ProfileHead = styled.div`
   overflow-wrap: normal;
   img {
     position: relative;
-    width: 100%;
-    height: 300px;
+    width: 200px;
+    height: 200px;
     flex-direction: center;
     border-radius: 50%;
     object-fit: cover;
