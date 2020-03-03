@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>ICO/general/monitor</title>
+    <desc>Created with Sketch.</desc>
+    <g id="alumni-app" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="profile-card" transform="translate(-52.000000, -452.000000)" stroke="#549CD8" stroke-width="2">
+            <g id="Group" transform="translate(53.000000, 453.000000)">
+                <g id="ICO/general/monitor">
+                    <rect id="Rectangle-path" x="0" y="0" width="20" height="15.4736842" rx="2"></rect>
+                    <line x1="6" y1="19.8947368" x2="14" y2="19.8947368" id="Shape"></line>
+                    <line x1="10" y1="15.4736842" x2="10" y2="19.8947368" id="Shape"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
