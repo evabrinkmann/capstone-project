@@ -7,14 +7,14 @@ export default createGlobalStyle`
 
   body {
     margin: 0;
-    background: #eee;
+    background: #EEF6FF;
     font-family: sans-serif, Open Sans;
     font-size: 18px;
     line-height: 1.4;
     overflow-y: scroll;
     height: 100vh;
     width: 100vw;
-    padding: 20px;
+    
     
   }
  
