@@ -20,7 +20,7 @@ export default function App() {
             <li>{user.company}</li>
             <li>{user.country}</li>
             <li>
-              <a href={`mailto:${user.email}`} rel="noopener">
+              <a href={`mailto:${user.email}`} rel="noopener noreferrer">
                 Contact
               </a>
             </li>
@@ -28,7 +28,11 @@ export default function App() {
           <hr />
           <ul>
             <li>
-              <a target="_blank" href={`${user.capstoneLink}`} rel="noopener">
+              <a
+                target="_blank"
+                href={`${user.capstoneLink}`}
+                rel="noopener noreferrer"
+              >
                 {user.capstoneName}
               </a>
             </li>
@@ -36,13 +40,17 @@ export default function App() {
               <a
                 target="_blank"
                 href={`${user.personalWebsite}`}
-                rel="noopener"
+                rel="noopener noreferrer"
               >
                 personal-website
               </a>
             </li>
             <li>
-              <a target="_blank" href={`${user.github}`} rel="noopener">
+              <a
+                target="_blank"
+                href={`${user.github}`}
+                rel="noopener noreferrer"
+              >
                 github
               </a>
             </li>
