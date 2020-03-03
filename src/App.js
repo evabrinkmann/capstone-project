@@ -18,7 +18,9 @@ export default function App() {
           <ul>
             <li>{user.company}</li>
             <li>{user.country}</li>
-            <li>{user.email}</li>
+            <li>
+              <a href={`mailto:${user.email}`}>Contact</a>
+            </li>
           </ul>
           <hr />
           <ul>
@@ -52,7 +54,6 @@ const ProfileCard = styled.section`
   }
 
   a {
-    text-decoration: none;
     color: black;
   }
 
