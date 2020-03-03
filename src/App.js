@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import userData from './userData'
 
 export default function App() {
-  userData.map(user => console.log(user.personalWebsite))
   return (
     <>
       {userData.map(user => (
@@ -27,34 +26,58 @@ export default function App() {
           </ul>
           <hr />
           <ul>
-            <li>
-              <a
-                target="_blank"
-                href={`${user.capstoneLink}`}
-                rel="noopener noreferrer"
-              >
-                {user.capstoneName}
-              </a>
-            </li>
-            <li>
-              <a
-                target="_blank"
-                href={`${user.personalWebsite}`}
-                rel="noopener noreferrer"
-              >
-                personal-website
-              </a>
-            </li>
-            <li>
-              <a
-                target="_blank"
-                href={`${user.github}`}
-                rel="noopener noreferrer"
-              >
-                github
-              </a>
-            </li>
-            <li>{user.codepen}</li>
+            {user.capstoneLink ? (
+              <li>
+                <a
+                  target="_blank"
+                  href={`${user.capstoneLink}`}
+                  rel="noopener noreferrer"
+                >
+                  {user.capstoneName}
+                </a>
+              </li>
+            ) : (
+              user.capstoneName
+            )}
+            {user.personalWebsite ? (
+              <li>
+                <a
+                  target="_blank"
+                  href={`${user.personalWebsite}`}
+                  rel="noopener noreferrer"
+                >
+                  personal-website
+                </a>
+              </li>
+            ) : (
+              ''
+            )}
+            {user.github ? (
+              <li>
+                <a
+                  target="_blank"
+                  href={`${user.github}`}
+                  rel="noopener noreferrer"
+                >
+                  github
+                </a>
+              </li>
+            ) : (
+              ''
+            )}
+            {user.codepen ? (
+              <li>
+                <a
+                  target="_blank"
+                  href={`${user.codepen}`}
+                  rel="noopener noreferrer"
+                >
+                  codepen
+                </a>
+              </li>
+            ) : (
+              ''
+            )}
           </ul>
           <hr />
           <h4>Skills</h4>
@@ -96,8 +119,10 @@ const ProfileHead = styled.div`
   overflow-wrap: normal;
   img {
     position: relative;
-    width: 200px;
-    height: 200px;
+    width: 100%;
+    height: 300px;
     flex-direction: center;
+    border-radius: 50%;
+    object-fit: cover;
   }
 `
