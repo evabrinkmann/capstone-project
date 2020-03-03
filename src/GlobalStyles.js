@@ -17,4 +17,5 @@ export default createGlobalStyle`
     padding: 20px;
     font-family: 'Open Sans';
   }
+  // font-family ist doppelt eingetragen
 `

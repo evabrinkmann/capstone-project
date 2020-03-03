@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components'
 
 import userData from './userData'
-// Sieht gut aus :)
 
 export default function App() {
   return (
