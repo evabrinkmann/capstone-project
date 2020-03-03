@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import userData from './userData'
 
 export default function App() {
+  userData.map(user => console.log(user.personalWebsite))
   return (
     <>
       {userData.map(user => (
@@ -19,14 +20,32 @@ export default function App() {
             <li>{user.company}</li>
             <li>{user.country}</li>
             <li>
-              <a href={`mailto:${user.email}`}>Contact</a>
+              <a href={`mailto:${user.email}`} rel="noopener">
+                Contact
+              </a>
             </li>
           </ul>
           <hr />
           <ul>
-            <li>{user.capstoneProject}</li>
-            <li>{user.personalWebsite}</li>
-            <li>{user.github}</li>
+            <li>
+              <a target="_blank" href={`${user.capstoneLink}`} rel="noopener">
+                {user.capstoneName}
+              </a>
+            </li>
+            <li>
+              <a
+                target="_blank"
+                href={`${user.personalWebsite}`}
+                rel="noopener"
+              >
+                personal-website
+              </a>
+            </li>
+            <li>
+              <a target="_blank" href={`${user.github}`} rel="noopener">
+                github
+              </a>
+            </li>
             <li>{user.codepen}</li>
           </ul>
           <hr />
