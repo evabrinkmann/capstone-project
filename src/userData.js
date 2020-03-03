@@ -1,5 +1,6 @@
 const userData = [
   {
+    id: 1,
     status: 'alumni',
     imgUrl: 'http://source.unsplash.com/random/?portrait',
     name: 'Jan Grade',
@@ -14,6 +15,7 @@ const userData = [
     skills: ['react', 'html', 'css', 'sass', 'bootstrap', 'javascript'],
   },
   {
+    id: 2,
     status: 'alumni',
     imgUrl: 'http://source.unsplash.com/random/?portrait',
     name: 'Kevin Kuhfeldt',
@@ -28,6 +30,7 @@ const userData = [
     skills: ['react', 'html', 'css', 'sass', 'bootstrap', 'javascript'],
   },
   {
+    id: 3,
     status: 'alumni',
     imgUrl: './img/natalie.jpg',
     name: 'Natalie Fuchs',
@@ -42,6 +45,7 @@ const userData = [
     skills: ['react', 'html', 'css', 'sass', 'bootstrap', 'javascript'],
   },
   {
+    id: 4,
     status: 'new',
     imgUrl: 'http://source.unsplash.com/random/?portrait',
     name: 'Nicole Frydrych',

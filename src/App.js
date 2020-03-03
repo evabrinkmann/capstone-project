@@ -43,6 +43,7 @@ const ProfileCard = styled.section`
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
+  overflow-wrap: break-word;
 
   h3 {
     text-align: end;
@@ -59,6 +60,7 @@ const ProfileHead = styled.div`
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  overflow-wrap: normal;
   img {
     position: relative;
     width: 200px;
