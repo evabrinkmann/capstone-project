@@ -1,10 +1,10 @@
 import React from 'react'
 import styled from 'styled-components'
-import monitorIcon from './icon/monitor.svg'
-import locationIcon from './icon/location.svg'
-import letterIcon from './icon/letter.svg'
-import cubeIcon from './icon/cube.svg'
-import worldIcon from './icon/world.svg'
+import companyIcon from './icon/monitor.svg'
+import countryIcon from './icon/location.svg'
+import emailIcon from './icon/letter.svg'
+import capstoneIcon from './icon/cube.svg'
+import personalWebsiteIcon from './icon/world.svg'
 import githubIcon from './icon/github.svg'
 import codepenIcon from './icon/codepen.svg'
 
@@ -24,18 +24,18 @@ export default function App() {
           <hr />
           <ul>
             <li>
-              <img src={monitorIcon} alt="icon"></img>
+              <img src={companyIcon} alt="icon"></img>
 
               {user.company}
             </li>
 
             <li>
-              <img src={locationIcon} alt="icon"></img>
+              <img src={countryIcon} alt="icon"></img>
 
               {user.country}
             </li>
             <li>
-              <img src={letterIcon} alt="icon"></img>
+              <img src={emailIcon} alt="icon"></img>
               <a href={`mailto:${user.email}`} rel="noopener noreferrer">
                 Contact
               </a>
@@ -45,7 +45,7 @@ export default function App() {
           <ul>
             {user.capstoneLink && user.capstoneName ? (
               <li>
-                <img src={cubeIcon} alt="icon"></img>
+                <img src={capstoneIcon} alt="icon"></img>
                 <a
                   target="_blank"
                   href={`${user.capstoneLink}`}
@@ -62,7 +62,7 @@ export default function App() {
             )}
             {user.personalWebsite ? (
               <li>
-                <img src={worldIcon} alt="icon"></img>
+                <img src={personalWebsiteIcon} alt="icon"></img>
                 <a
                   target="_blank"
                   href={`${user.personalWebsite}`}
