@@ -21,93 +21,95 @@ export default function App() {
             <h1>{user.name}</h1>
             <h2>{user.title}</h2>
           </ProfileHead>
-          <hr />
-          <ul>
-            <li>
-              <img src={companyIcon} alt="icon"></img>
-
-              {user.company}
-            </li>
-
-            <li>
-              <img src={countryIcon} alt="icon"></img>
-
-              {user.country}
-            </li>
-            <li>
-              <img src={emailIcon} alt="icon"></img>
-              <a href={`mailto:${user.email}`} rel="noopener noreferrer">
-                Contact
-              </a>
-            </li>
-          </ul>
-          <hr />
-          <ul>
-            {user.capstoneLink && user.capstoneName ? (
+          <div>
+            <hr />
+            <ul>
               <li>
-                <img src={capstoneIcon} alt="icon"></img>
-                <a
-                  target="_blank"
-                  href={`${user.capstoneLink}`}
-                  rel="noopener noreferrer"
-                >
+                <img src={companyIcon} alt="icon"></img>
+
+                {user.company}
+              </li>
+
+              <li>
+                <img src={countryIcon} alt="icon"></img>
+
+                {user.country}
+              </li>
+              <li>
+                <img src={emailIcon} alt="icon"></img>
+                <a href={`mailto:${user.email}`} rel="noopener noreferrer">
+                  Contact
+                </a>
+              </li>
+            </ul>
+            <hr />
+            <ul>
+              {user.capstoneLink && user.capstoneName ? (
+                <li>
+                  <img src={capstoneIcon} alt="icon"></img>
+                  <a
+                    target="_blank"
+                    href={`${user.capstoneLink}`}
+                    rel="noopener noreferrer"
+                  >
+                    {user.capstoneName}
+                  </a>
+                </li>
+              ) : (
+                <li>
+                  <img src={capstoneIcon} alt="icon"></img>
                   {user.capstoneName}
-                </a>
-              </li>
-            ) : (
-              <li>
-                <img src={cubeIcon} alt="icon"></img>
-                {user.capstoneName}
-              </li>
-            )}
-            {user.personalWebsite ? (
-              <li>
-                <img src={personalWebsiteIcon} alt="icon"></img>
-                <a
-                  target="_blank"
-                  href={`${user.personalWebsite}`}
-                  rel="noopener noreferrer"
-                >
-                  personal-website
-                </a>
-              </li>
-            ) : (
-              ''
-            )}
-            {user.github ? (
-              <li>
-                <img src={githubIcon} alt="icon"></img>
-                <a
-                  target="_blank"
-                  href={`${user.github}`}
-                  rel="noopener noreferrer"
-                >
-                  github
-                </a>
-              </li>
-            ) : (
-              ''
-            )}
-            {user.codepen ? (
-              <li>
-                <img src={codepenIcon} alt="icon"></img>
-                <a
-                  target="_blank"
-                  href={`${user.codepen}`}
-                  rel="noopener noreferrer"
-                >
-                  codepen
-                </a>
-              </li>
-            ) : (
-              ''
-            )}
-          </ul>
-          <hr />
-          <h4>Skills</h4>
-          {user.skills.map(skill => (
-            <span>{skill}</span>
-          ))}
+                </li>
+              )}
+              {user.personalWebsite ? (
+                <li>
+                  <img src={personalWebsiteIcon} alt="icon"></img>
+                  <a
+                    target="_blank"
+                    href={`${user.personalWebsite}`}
+                    rel="noopener noreferrer"
+                  >
+                    personal-website
+                  </a>
+                </li>
+              ) : (
+                ''
+              )}
+              {user.github ? (
+                <li>
+                  <img src={githubIcon} alt="icon"></img>
+                  <a
+                    target="_blank"
+                    href={`${user.github}`}
+                    rel="noopener noreferrer"
+                  >
+                    github
+                  </a>
+                </li>
+              ) : (
+                ''
+              )}
+              {user.codepen ? (
+                <li>
+                  <img src={codepenIcon} alt="icon"></img>
+                  <a
+                    target="_blank"
+                    href={`${user.codepen}`}
+                    rel="noopener noreferrer"
+                  >
+                    codepen
+                  </a>
+                </li>
+              ) : (
+                ''
+              )}
+            </ul>
+            <hr />
+            <h4>Skills</h4>
+            {user.skills.map(skill => (
+              <span>{skill}</span>
+            ))}
+          </div>
         </ProfileCard>
       ))}
     </>
