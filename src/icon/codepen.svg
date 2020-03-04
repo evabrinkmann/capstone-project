@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="33px" viewBox="0 0 25 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>ICO/gerenal/unknown</title>
+    <desc>Created with Sketch.</desc>
+    <g id="alumni-app" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="profile-card" transform="translate(-51.000000, -811.000000)" stroke="#549DD8" stroke-width="2">
+            <g id="Group-2" transform="translate(52.000000, 679.000000)">
+                <g id="ICO/gerenal/unknown" transform="translate(0.000000, 133.928188)">
+                    <polygon id="Shape" points="11.5 0 23 9.75 23 20.25 11.5 30 0 20.25 0 9.75"></polygon>
+                    <line x1="11.5" y1="21" x2="11.5" y2="10.5" id="Shape"></line>
+                    <polyline id="Shape" points="23 10.5 11.5 21 0 10.5"></polyline>
+                    <polyline id="Shape" points="0 19.5 11.5 9 23 19.5"></polyline>
+                    <line x1="11.5" y1="21" x2="11.5" y2="30" id="Shape"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

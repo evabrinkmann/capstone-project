@@ -1,5 +1,12 @@
 import React from 'react'
 import styled from 'styled-components'
+import monitorIcon from './icon/monitor.svg'
+import locationIcon from './icon/location.svg'
+import letterIcon from './icon/letter.svg'
+import cubeIcon from './icon/cube.svg'
+import worldIcon from './icon/world.svg'
+import githubIcon from './icon/github.svg'
+import codepenIcon from './icon/codepen.svg'
 
 import userData from './userData'
 
@@ -17,150 +24,18 @@ export default function App() {
           <hr />
           <ul>
             <li>
-              <svg
-                width="22px"
-                height="22px"
-                viewBox="0 0 22 22"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsxlink="http://www.w3.org/1999/xlink"
-              >
-                <g
-                  id="alumni-app"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <g
-                    id="profile-card"
-                    transform="translate(-52.000000, -452.000000)"
-                    stroke="#549CD8"
-                    stroke-width="2"
-                  >
-                    <g id="Group" transform="translate(53.000000, 453.000000)">
-                      <g id="ICO/general/monitor">
-                        <rect
-                          id="Rectangle-path"
-                          x="0"
-                          y="0"
-                          width="20"
-                          height="15.4736842"
-                          rx="2"
-                        />
-                        <line
-                          x1="6"
-                          y1="19.8947368"
-                          x2="14"
-                          y2="19.8947368"
-                          id="Shape"
-                        />
-                        <line
-                          x1="10"
-                          y1="15.4736842"
-                          x2="10"
-                          y2="19.8947368"
-                          id="Shape"
-                        />
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </svg>
+              <img src={monitorIcon} alt="icon"></img>
 
               {user.company}
             </li>
 
             <li>
-              <svg
-                width="23px"
-                height="29px"
-                viewBox="0 0 23 29"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsxlink="http://www.w3.org/1999/xlink"
-              >
-                <g
-                  id="alumni-app"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <g
-                    id="profile-card"
-                    transform="translate(-52.000000, -498.000000)"
-                    stroke="#549DD8"
-                    stroke-width="2"
-                  >
-                    <g id="Group" transform="translate(53.000000, 453.000000)">
-                      <g
-                        id="Group-7"
-                        transform="translate(0.000000, 46.386364)"
-                      >
-                        <path
-                          d="M21,10.5433883 C21,18.7438016 10.5,25.7727273 10.5,25.7727273 C10.5,25.7727273 0,18.7438016 0,10.5433883 C0,4.72043572 4.70101019,8.10945514e-15 10.5,8.10945514e-15 C16.2989898,8.10945514e-15 21,4.72043572 21,10.5433883 L21,10.5433883 Z"
-                          id="Shape"
-                        />
-                        <circle
-                          id="Oval"
-                          cx="10.5"
-                          cy="11.0602767"
-                          r="3.19565217"
-                        />
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </svg>
+              <img src={locationIcon} alt="icon"></img>
+
               {user.country}
             </li>
             <li>
-              <svg
-                width="24px"
-                height="23px"
-                viewBox="0 0 24 23"
-                version="1.1"
-                xmlns="http://www.w3.org/2000/svg"
-                xmlnsxlink="http://www.w3.org/1999/xlink"
-              >
-                <g
-                  id="alumni-app"
-                  stroke="none"
-                  stroke-width="1"
-                  fill="none"
-                  fill-rule="evenodd"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <g
-                    id="profile-card"
-                    transform="translate(-52.000000, -554.000000)"
-                    stroke="#549DD8"
-                    stroke-width="2"
-                  >
-                    <g id="Group" transform="translate(53.000000, 453.000000)">
-                      <g
-                        id="ICO/gerenal/letter"
-                        transform="translate(0.000000, 102.000000)"
-                      >
-                        <path
-                          d="M2.2,0 L19.8,0 C21.01,0 22,1.18125 22,2.625 L22,18.375 C22,19.81875 21.01,21 19.8,21 L2.2,21 C0.99,21 0,19.81875 0,18.375 L0,2.625 C0,1.18125 0.99,0 2.2,0 Z"
-                          id="Shape"
-                        />
-                        <polyline
-                          id="Shape"
-                          points="22 2.625 11 11.8125 0 2.625"
-                        />
-                      </g>
-                    </g>
-                  </g>
-                </g>
-              </svg>
+              <img src={letterIcon} alt="icon"></img>
               <a href={`mailto:${user.email}`} rel="noopener noreferrer">
                 Contact
               </a>
@@ -168,8 +43,9 @@ export default function App() {
           </ul>
           <hr />
           <ul>
-            {user.capstoneLink ? (
+            {user.capstoneLink && user.capstoneName ? (
               <li>
+                <img src={cubeIcon} alt="icon"></img>
                 <a
                   target="_blank"
                   href={`${user.capstoneLink}`}
@@ -179,10 +55,14 @@ export default function App() {
                 </a>
               </li>
             ) : (
-              <li>{user.capstoneName}</li> || ''
+              <li>
+                <img src={cubeIcon} alt="icon"></img>
+                {user.capstoneName}
+              </li>
             )}
             {user.personalWebsite ? (
               <li>
+                <img src={worldIcon} alt="icon"></img>
                 <a
                   target="_blank"
                   href={`${user.personalWebsite}`}
@@ -196,6 +76,7 @@ export default function App() {
             )}
             {user.github ? (
               <li>
+                <img src={githubIcon} alt="icon"></img>
                 <a
                   target="_blank"
                   href={`${user.github}`}
@@ -209,6 +90,7 @@ export default function App() {
             )}
             {user.codepen ? (
               <li>
+                <img src={codepenIcon} alt="icon"></img>
                 <a
                   target="_blank"
                   href={`${user.codepen}`}
@@ -257,11 +139,11 @@ const ProfileCard = styled.section`
     color: black;
   }
 
-  svg {
+  img {
     display: inline-flex;
     align-self: center;
-    height: 1em;
-    width: 1em;
+    /* height: 1em;
+    width: 1em; */
     top: 0.125em;
     position: relative;
     margin-right: 20px;
