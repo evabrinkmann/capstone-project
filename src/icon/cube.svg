@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="27px" viewBox="0 0 25 27" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>ICO/general/cube</title>
+    <desc>Created with Sketch.</desc>
+    <g id="alumni-app" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="profile-card" transform="translate(-51.000000, -678.000000)" stroke="#549DD8" stroke-width="2">
+            <g id="Group-2" transform="translate(52.000000, 679.000000)">
+                <g id="ICO/general/cube">
+                    <path d="M12.5235255,0.242609454 L21.7235031,4.88721126 C22.5051075,5.27936661 22.9995369,6.08442243 23,6.96567057 L23,18.0314344 C22.9995369,18.9126825 22.5051075,19.7177383 21.7235031,20.1098937 L12.5235255,24.7544955 C11.875654,25.0818348 11.1129021,25.0818348 10.4650305,24.7544955 L1.26505292,20.1098937 C0.484196089,19.712628 -0.00602902013,18.9026615 0,18.0198229 L0,6.96567057 C0.000519134594,6.08442243 0.494948466,5.27936661 1.27655289,4.88721126 L10.4765305,0.242609454 C11.1212564,-0.080869818 11.8787996,-0.080869818 12.5235255,0.242609454 Z" id="Shape"></path>
+                    <polyline id="Shape" points="0 5.68181818 10.925 11.3636364 21.85 5.68181818"></polyline>
+                    <line x1="11.5" y1="25" x2="11.5" y2="11.3636364" id="Shape"></line>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

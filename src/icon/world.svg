@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="25px" height="28px" viewBox="0 0 25 28" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>ICO/gerenal/world</title>
+    <desc>Created with Sketch.</desc>
+    <g id="alumni-app" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g id="profile-card" transform="translate(-51.000000, -724.000000)" stroke="#549DD8" stroke-width="2">
+            <g id="Group-2" transform="translate(52.000000, 679.000000)">
+                <g id="ICO/gerenal/world" transform="translate(0.000000, 46.928188)">
+                    <ellipse id="Oval" cx="11.5" cy="12.5" rx="11.5" ry="12.5"></ellipse>
+                    <line x1="0" y1="12.5" x2="23" y2="12.5" id="Shape"></line>
+                    <path d="M11.5,0 C14.3764724,3.42294112 16.0111657,7.86504231 16.1,12.5 C16.0111657,17.1349577 14.3764724,21.5770589 11.5,25 C8.62352757,21.5770589 6.98883433,17.1349577 6.9,12.5 C6.98883433,7.86504231 8.62352757,3.42294112 11.5,0 L11.5,0 Z" id="Shape"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
