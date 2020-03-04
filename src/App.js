@@ -224,7 +224,7 @@ export default function App() {
           <hr />
           <h4>Skills</h4>
           {user.skills.map(skill => (
-            <button>{skill}</button>
+            <span>{skill}</span>
           ))}
         </ProfileCard>
       ))}
@@ -247,6 +247,10 @@ const ProfileCard = styled.section`
   h3 {
     text-align: end;
     padding-right: 20px;
+  }
+
+  hr {
+    border: 0.5px solid #549dd8;
   }
 
   a {
@@ -272,8 +276,15 @@ const ProfileCard = styled.section`
     list-style-type: none;
   }
 
-  button {
+  span {
+    display: inline-block;
+    padding: 3px 7px;
     margin: 2px;
+    border-radius: 15px;
+    border: 1px solid #e53a1e;
+    background: #e53a1e;
+    opacity: 0.9;
+    color: #fff;
   }
 `
 const ProfileHead = styled.div`
