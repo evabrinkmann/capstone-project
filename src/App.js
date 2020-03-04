@@ -158,8 +158,8 @@ const ProfileCard = styled.section`
 
   span {
     display: inline-block;
-    padding: 3px 7px;
-    margin: 2px;
+    padding: 3px 6px;
+    margin: 4px;
     border-radius: 15px;
     border: 1px solid #e53a1e;
     background: #e53a1e;
