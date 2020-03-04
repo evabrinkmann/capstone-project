@@ -142,9 +142,7 @@ const ProfileCard = styled.section`
   img {
     display: inline-flex;
     align-self: center;
-    /* height: 1em;
-    width: 1em; */
-    top: 0.125em;
+    vertical-align: middle;
     position: relative;
     margin-right: 20px;
   }
