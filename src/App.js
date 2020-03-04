@@ -7,20 +7,37 @@ import capstoneIcon from './icon/cube.svg'
 import personalWebsiteIcon from './icon/world.svg'
 import githubIcon from './icon/github.svg'
 import codepenIcon from './icon/codepen.svg'
+import { useToggle } from 'react-hooks-lib'
 
 import userData from './userData'
 
 export default function App() {
+  return <div>{CardList()}</div>
+}
+
+function CardList() {
   return (
     <>
       {userData.map(user => (
-        <ProfileCard>
-          <h3>{user.status}</h3>
-          <ProfileHead>
-            <img src={user.imgUrl} alt="portrait" />
-            <h1>{user.name}</h1>
-            <h2>{user.title}</h2>
-          </ProfileHead>
+        <SingleCard user={user}></SingleCard>
+      ))}
+    </>
+  )
+}
+
+function SingleCard({ user }) {
+  const { on, toggle } = useToggle(false)
+
+  return (
+    <>
+      <ProfileCard onClick={toggle}>
+        <h3>{user.status}</h3>
+        <ProfileHead>
+          <img src={user.imgUrl} alt="portrait" />
+          <h1>{user.name}</h1>
+          <h2>{user.title}</h2>
+        </ProfileHead>
+        {on && (
           <div>
             <hr />
             <ul>
@@ -110,8 +127,8 @@ export default function App() {
               <span>{skill}</span>
             ))}
           </div>
-        </ProfileCard>
-      ))}
+        )}
+      </ProfileCard>
     </>
   )
 }
