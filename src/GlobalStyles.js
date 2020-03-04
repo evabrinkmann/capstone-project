@@ -7,7 +7,7 @@ export default createGlobalStyle`
 
   body {
     margin: 0;
-    background: #EEF6FF;
+    background: #EEE;
     font-family: sans-serif, Open Sans;
     font-size: 18px;
     line-height: 1.4;
