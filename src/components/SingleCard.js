@@ -9,7 +9,7 @@ import githubIcon from '../icon/github.svg'
 import codepenIcon from '../icon/codepen.svg'
 import { useToggle } from 'react-hooks-lib'
 
-export default function SingleCard({ user }) {
+export default function SingleCard({ user, id }) {
   const { on, toggle } = useToggle(false)
 
   return (
@@ -27,13 +27,10 @@ export default function SingleCard({ user }) {
             <ul>
               <li>
                 <img src={companyIcon} alt="icon"></img>
-
                 {user.company}
               </li>
-
               <li>
                 <img src={countryIcon} alt="icon"></img>
-
                 {user.country}
               </li>
               <li>
@@ -107,8 +104,8 @@ export default function SingleCard({ user }) {
             </ul>
             <hr />
             <h4>Skills</h4>
-            {user.skills.map(skill => (
-              <span>{skill}</span>
+            {user.skills.map((skill, index) => (
+              <span key={index}>{skill}</span>
             ))}
           </CardBody>
         )}
