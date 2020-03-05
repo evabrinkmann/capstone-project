@@ -9,7 +9,7 @@ import githubIcon from '../icon/github.svg'
 import codepenIcon from '../icon/codepen.svg'
 import { useToggle } from 'react-hooks-lib'
 
-export default function SingleCard({ user, id }) {
+export default function SingleCard({ user }) {
   const { on, toggle } = useToggle(false)
 
   return (
@@ -35,7 +35,11 @@ export default function SingleCard({ user, id }) {
               </li>
               <li>
                 <img src={emailIcon} alt="icon"></img>
-                <a href={`mailto:${user.email}`} rel="noopener noreferrer">
+                <a
+                  onClick={stopEventPropagation}
+                  href={`mailto:${user.email}`}
+                  rel="noopener noreferrer"
+                >
                   Contact
                 </a>
               </li>
@@ -46,6 +50,7 @@ export default function SingleCard({ user, id }) {
                 <li>
                   <img src={capstoneIcon} alt="icon"></img>
                   <a
+                    onClick={stopEventPropagation}
                     target="_blank"
                     href={`${user.capstoneLink}`}
                     rel="noopener noreferrer"
@@ -63,6 +68,7 @@ export default function SingleCard({ user, id }) {
                 <li>
                   <img src={personalWebsiteIcon} alt="icon"></img>
                   <a
+                    onClick={stopEventPropagation}
                     target="_blank"
                     href={`${user.personalWebsite}`}
                     rel="noopener noreferrer"
@@ -77,6 +83,7 @@ export default function SingleCard({ user, id }) {
                 <li>
                   <img src={githubIcon} alt="icon"></img>
                   <a
+                    onClick={stopEventPropagation}
                     target="_blank"
                     href={`${user.github}`}
                     rel="noopener noreferrer"
@@ -91,6 +98,7 @@ export default function SingleCard({ user, id }) {
                 <li>
                   <img src={codepenIcon} alt="icon"></img>
                   <a
+                    onClick={stopEventPropagation}
                     target="_blank"
                     href={`${user.codepen}`}
                     rel="noopener noreferrer"
@@ -112,6 +120,10 @@ export default function SingleCard({ user, id }) {
       </ProfileCard>
     </>
   )
+
+  function stopEventPropagation(event) {
+    event.stopPropagation()
+  }
 }
 
 const ProfileCard = styled.article`
