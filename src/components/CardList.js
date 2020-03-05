@@ -5,7 +5,7 @@ export default function CardList({ userData }) {
   return (
     <>
       {userData.map(user => (
-        <SingleCard key={user.id} user={user}></SingleCard>
+        <SingleCard key={user.id} user={user} />
       ))}
     </>
   )
