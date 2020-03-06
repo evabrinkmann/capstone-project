@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import SingleCard from './SingleCard'
+import CardSingle from './CardSingle'
 
 export default function CardList({ userData }) {
   const [activeCard, setActiveCard] = useState('')
@@ -7,7 +7,7 @@ export default function CardList({ userData }) {
   return (
     <>
       {userData.map(user => (
-        <SingleCard
+        <CardSingle
           key={user.id}
           user={user}
           {...user}
