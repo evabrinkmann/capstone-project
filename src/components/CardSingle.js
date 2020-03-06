@@ -15,8 +15,13 @@ export default function CardSingle({ user, setActiveCard, isActive }) {
   return (
     <>
       <ProfileCard onClick={() => activeCard()}>
-        <h3>{user.status}</h3>
-        <CardHead img={user.imgUrl} name={user.name} title={user.title} />
+        {/* <h3>{user.status}</h3> */}
+        <CardHead
+          status={user.status}
+          img={user.imgUrl}
+          name={user.name}
+          title={user.title}
+        />
 
         {isActive && (
           <CardBody
@@ -43,16 +48,6 @@ const ProfileCard = styled.article`
   border-radius: 15px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
   overflow-wrap: break-word;
-
-  h2 {
-    text-align: center;
-    font-weight: normal;
-  }
-
-  h3 {
-    text-align: end;
-    padding-right: 20px;
-  }
 
   hr {
     border: 0.5px solid #549dd8;
