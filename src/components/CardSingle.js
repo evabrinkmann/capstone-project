@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled from 'styled-components/macro'
 import CardHead from './CardHead'
 import CardBody from './CardBody'
 
@@ -14,8 +14,7 @@ export default function CardSingle({ user, setActiveCard, isActive }) {
 
   return (
     <>
-      <ProfileCard onClick={() => activeCard()}>
-        {/* <h3>{user.status}</h3> */}
+      <ProfileCardStyled onClick={() => activeCard()}>
         <CardHead
           status={user.status}
           img={user.imgUrl}
@@ -36,12 +35,12 @@ export default function CardSingle({ user, setActiveCard, isActive }) {
             skills={user.skills}
           />
         )}
-      </ProfileCard>
+      </ProfileCardStyled>
     </>
   )
 }
 
-const ProfileCard = styled.article`
+const ProfileCardStyled = styled.article`
   padding: 20px;
   margin: 20px;
   background: #fff;

@@ -7,6 +7,19 @@ import capstoneIcon from '../icon/cube.svg'
 import personalWebsiteIcon from '../icon/world.svg'
 import githubIcon from '../icon/github.svg'
 import codepenIcon from '../icon/codepen.svg'
+import PropTypes from 'prop-types'
+
+CardBody.propTypes = {
+  company: PropTypes.string.isRequired,
+  country: PropTypes.string.isRequired,
+  email: PropTypes.string.isRequired,
+  capstoneName: PropTypes.string.isRequired,
+  capstoneLink: PropTypes.string,
+  personalWebsite: PropTypes.string,
+  github: PropTypes.string,
+  codepen: PropTypes.string,
+  skills: PropTypes.array,
+}
 
 export default function CardBody({
   company,
