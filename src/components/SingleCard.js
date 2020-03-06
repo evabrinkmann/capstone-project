@@ -7,21 +7,27 @@ import capstoneIcon from '../icon/cube.svg'
 import personalWebsiteIcon from '../icon/world.svg'
 import githubIcon from '../icon/github.svg'
 import codepenIcon from '../icon/codepen.svg'
-import { useToggle } from 'react-hooks-lib'
 
-export default function SingleCard({ user }) {
-  const { on, toggle } = useToggle(false)
+export default function SingleCard({ user, setActiveCard, isActive }) {
+  console.log(isActive)
+  function activeCard() {
+    if (!isActive) {
+      setActiveCard(user.id)
+    } else {
+      setActiveCard('')
+    }
+  }
 
   return (
     <>
-      <ProfileCard onClick={toggle}>
+      <ProfileCard onClick={() => activeCard()}>
         <h3>{user.status}</h3>
         <CardHead>
           <img src={user.imgUrl} alt="portrait" />
           <h1>{user.name}</h1>
           <h2>{user.title}</h2>
         </CardHead>
-        {on && (
+        {isActive && (
           <CardBody>
             <hr />
             <ul>

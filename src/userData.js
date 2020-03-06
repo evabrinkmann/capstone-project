@@ -14,7 +14,6 @@ const userData = [
     github: 'https://github.com/ntlfox',
     codepen: 'https://codepen.io/ntlfox/',
     skills: ['react', 'html', 'css', 'sass', 'bootstrap', 'javascript'],
-    isToggled: false,
   },
   {
     id: 2,
@@ -31,7 +30,6 @@ const userData = [
     github: 'https://github.com/evinku',
     codepen: '',
     skills: ['react', 'html', 'css', 'sass', 'javascript'],
-    isToggled: false,
   },
   {
     id: 3,
@@ -48,7 +46,6 @@ const userData = [
     github: 'https://github.com/jangrade',
     codepen: '',
     skills: ['react', 'javascript'],
-    isToggled: false,
   },
   {
     id: 4,
@@ -65,7 +62,6 @@ const userData = [
     github: 'https://github.com/nicolefrydrych',
     codepen: '',
     skills: ['html', 'bootstrap', 'css', 'sass', 'javascript', 'react'],
-    isToggled: false,
   },
 ]
 
