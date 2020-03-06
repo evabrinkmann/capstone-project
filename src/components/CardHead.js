@@ -1,5 +1,13 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
+
+CardHead.propTypes = {
+  status: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
+}
 
 export default function CardHead({ status, img, name, title }) {
   return (
