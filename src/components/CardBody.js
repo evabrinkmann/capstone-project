@@ -24,15 +24,15 @@ export default function CardBody({
       <hr />
       <ul>
         <li>
-          <img src={companyIcon} alt="icon"></img>
+          <Icons src={companyIcon} alt="icon"></Icons>
           {company}
         </li>
         <li>
-          <img src={countryIcon} alt="icon"></img>
+          <Icons src={countryIcon} alt="icon"></Icons>
           {country}
         </li>
         <li>
-          <img src={emailIcon} alt="icon"></img>
+          <Icons src={emailIcon} alt="icon"></Icons>
           <a
             onClick={stopEventPropagation}
             href={`mailto:${email}`}
@@ -46,7 +46,7 @@ export default function CardBody({
       <ul>
         {capstoneLink && capstoneName ? (
           <li>
-            <img src={capstoneIcon} alt="icon"></img>
+            <Icons src={capstoneIcon} alt="icon"></Icons>
             <a
               onClick={stopEventPropagation}
               target="_blank"
@@ -58,13 +58,13 @@ export default function CardBody({
           </li>
         ) : (
           <li>
-            <img src={capstoneIcon} alt="icon"></img>
+            <Icons src={capstoneIcon} alt="icon"></Icons>
             {capstoneName}
           </li>
         )}
         {personalWebsite ? (
           <li>
-            <img src={personalWebsiteIcon} alt="icon"></img>
+            <Icons src={personalWebsiteIcon} alt="icon"></Icons>
             <a
               onClick={stopEventPropagation}
               target="_blank"
@@ -79,7 +79,7 @@ export default function CardBody({
         )}
         {github ? (
           <li>
-            <img src={githubIcon} alt="icon"></img>
+            <Icons src={githubIcon} alt="icon"></Icons>
             <a
               onClick={stopEventPropagation}
               target="_blank"
@@ -94,7 +94,7 @@ export default function CardBody({
         )}
         {codepen ? (
           <li>
-            <img src={codepenIcon} alt="icon"></img>
+            <Icons src={codepenIcon} alt="icon"></Icons>
             <a
               onClick={stopEventPropagation}
               target="_blank"
@@ -123,4 +123,11 @@ export default function CardBody({
 
 const StyledBody = styled.section`
   background: #fff;
+`
+const Icons = styled.img`
+  display: inline-flex;
+  align-self: center;
+  vertical-align: middle;
+  position: relative;
+  margin-right: 20px;
 `
