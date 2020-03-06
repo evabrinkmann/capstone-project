@@ -24,15 +24,15 @@ export default function CardBody({
       <hr />
       <ul>
         <li>
-          <Icons src={companyIcon} alt="icon"></Icons>
+          <StyledIcons src={companyIcon}></StyledIcons>
           {company}
         </li>
         <li>
-          <Icons src={countryIcon} alt="icon"></Icons>
+          <StyledIcons src={countryIcon}></StyledIcons>
           {country}
         </li>
         <li>
-          <Icons src={emailIcon} alt="icon"></Icons>
+          <StyledIcons src={emailIcon}></StyledIcons>
           <a
             onClick={stopEventPropagation}
             href={`mailto:${email}`}
@@ -46,7 +46,7 @@ export default function CardBody({
       <ul>
         {capstoneLink && capstoneName ? (
           <li>
-            <Icons src={capstoneIcon} alt="icon"></Icons>
+            <StyledIcons src={capstoneIcon}></StyledIcons>
             <a
               onClick={stopEventPropagation}
               target="_blank"
@@ -58,13 +58,13 @@ export default function CardBody({
           </li>
         ) : (
           <li>
-            <Icons src={capstoneIcon} alt="icon"></Icons>
+            <StyledIcons src={capstoneIcon}></StyledIcons>
             {capstoneName}
           </li>
         )}
         {personalWebsite ? (
           <li>
-            <Icons src={personalWebsiteIcon} alt="icon"></Icons>
+            <StyledIcons src={personalWebsiteIcon}></StyledIcons>
             <a
               onClick={stopEventPropagation}
               target="_blank"
@@ -79,7 +79,7 @@ export default function CardBody({
         )}
         {github ? (
           <li>
-            <Icons src={githubIcon} alt="icon"></Icons>
+            <StyledIcons src={githubIcon}></StyledIcons>
             <a
               onClick={stopEventPropagation}
               target="_blank"
@@ -94,7 +94,7 @@ export default function CardBody({
         )}
         {codepen ? (
           <li>
-            <Icons src={codepenIcon} alt="icon"></Icons>
+            <StyledIcons src={codepenIcon}></StyledIcons>
             <a
               onClick={stopEventPropagation}
               target="_blank"
@@ -124,7 +124,7 @@ export default function CardBody({
 const StyledBody = styled.section`
   background: #fff;
 `
-const Icons = styled.img`
+const StyledIcons = styled.img`
   display: inline-flex;
   align-self: center;
   vertical-align: middle;

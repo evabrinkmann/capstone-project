@@ -62,14 +62,6 @@ const ProfileCard = styled.article`
     color: black;
   }
 
-  /* Icons {
-    display: inline-flex;
-    align-self: center;
-    vertical-align: middle;
-    position: relative;
-    margin-right: 20px;
-  } */
-
   ul {
     line-height: 2.2;
     list-style-type: none;
