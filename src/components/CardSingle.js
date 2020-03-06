@@ -2,6 +2,13 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import CardHead from './CardHead'
 import CardBody from './CardBody'
+import PropTypes from 'prop-types'
+
+CardSingle.propTypes = {
+  user: PropTypes.object,
+  setActiveCard: PropTypes.func,
+  isActive: PropTypes.bool,
+}
 
 export default function CardSingle({ user, setActiveCard, isActive }) {
   function activeCard() {
