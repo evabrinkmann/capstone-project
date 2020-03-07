@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import CardSingle from './CardSingle'
+import Card from './Card'
 import PropTypes from 'prop-types'
 
 CardList.propTypes = {
@@ -12,7 +12,7 @@ export default function CardList({ userData }) {
   return (
     <>
       {userData.map(user => (
-        <CardSingle
+        <Card
           key={user.id}
           user={user}
           {...user}
