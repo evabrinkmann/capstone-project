@@ -9,10 +9,12 @@ const Button = styled(NavLink)`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: gray;
+  background: grey;
+  opacity: 0.9;
 
   &.active {
-    background: hotpink;
+    background: #549dd8;
+    opacity: 0.9;
   }
 `
 
@@ -20,6 +22,12 @@ const NavigationStyled = styled.nav`
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-column-end: 2;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  top: 0;
+  line-height: 2.4;
+  box-shadow: 0 5px 7px 1px lightgrey;
 `
 
 export default function Navigation() {
