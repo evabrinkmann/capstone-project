@@ -4,13 +4,13 @@ import CardHead from './CardHead'
 import CardBody from './CardBody'
 import PropTypes from 'prop-types'
 
-CardSingle.propTypes = {
+Card.propTypes = {
   user: PropTypes.object,
   setActiveCard: PropTypes.func,
   isActive: PropTypes.bool,
 }
 
-export default function CardSingle({ user, setActiveCard, isActive }) {
+export default function Card({ user, setActiveCard, isActive }) {
   function activeCard() {
     if (!isActive) {
       setActiveCard(user.id)
