@@ -55,7 +55,7 @@ const ProfileCardStyled = styled.article`
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
   overflow-wrap: break-word;
 
-  hr {
+  /* hr {
     border: 0.5px solid #549dd8;
   }
 
@@ -70,16 +70,5 @@ const ProfileCardStyled = styled.article`
 
   li {
     list-style-type: none;
-  }
-
-  span {
-    display: inline-block;
-    padding: 3px 6px;
-    margin: 4px;
-    border-radius: 15px;
-    border: 1px solid #e53a1e;
-    background: #e53a1e;
-    opacity: 0.9;
-    color: #fff;
-  }
+  } */
 `

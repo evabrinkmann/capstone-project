@@ -124,7 +124,7 @@ export default function CardBody({
       <hr />
       <h4>Skills</h4>
       {skills.map((skill, index) => (
-        <span key={index}>{skill}</span>
+        <StyledSkills key={index}>{skill}</StyledSkills>
       ))}
     </StyledBody>
   )
@@ -136,6 +136,23 @@ export default function CardBody({
 
 const StyledBody = styled.section`
   background: #fff;
+
+  hr {
+    border: 0.5px solid #549dd8;
+  }
+
+  a {
+    color: black;
+  }
+
+  ul {
+    line-height: 2.2;
+    list-style-type: none;
+  }
+
+  li {
+    list-style-type: none;
+  }
 `
 const StyledIcons = styled.img`
   display: inline-flex;
@@ -143,4 +160,14 @@ const StyledIcons = styled.img`
   vertical-align: middle;
   position: relative;
   margin-right: 20px;
+`
+const StyledSkills = styled.span`
+  display: inline-block;
+  padding: 3px 6px;
+  margin: 4px;
+  border-radius: 15px;
+  border: 1px solid #e53a1e;
+  background: #e53a1e;
+  opacity: 0.9;
+  color: #fff;
 `
