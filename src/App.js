@@ -1,7 +1,23 @@
 import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import Navigation from './Navigation'
+import HomePage from './HomePage'
 import userData from './userData'
-import CardList from './components/CardList'
 
 export default function App() {
-  return <CardList userData={userData} />
+  return (
+    <Router>
+      <div>
+        <Navigation />
+        <Switch>
+          <Route exact path="/">
+            <HomePage userData={userData} />
+          </Route>
+          <Route path="/create">
+            <section>Create</section>
+          </Route>
+        </Switch>
+      </div>
+    </Router>
+  )
 }
