@@ -2,7 +2,8 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import Navigation from './Navigation'
-import ProfilePoolPage from './ProfilePoolPage'
+import PoolPage from './pages/PoolPage'
+import CreatePage from './pages/CreatePage'
 import userData from './userData'
 
 export default function App() {
@@ -12,10 +13,10 @@ export default function App() {
         <Navigation />
         <Switch>
           <Route exact path="/profile-pool">
-            <ProfilePoolPage userData={userData} />
+            <PoolPage userData={userData} />
           </Route>
-          <Route path="/create">
-            <section>Create</section>
+          <Route exact path="/create-profile">
+            <CreatePage />
           </Route>
         </Switch>
       </AppGrid>
