@@ -14,7 +14,7 @@ export default function Navigation() {
       <Button exact to="/profile-pool">
         Profile Pool
       </Button>
-      <Button to="/create">Create Profile</Button>
+      <Button to="/create-profile">Create Profile</Button>
     </NavigationStyled>
   )
 }
@@ -41,7 +41,7 @@ const NavigationStyled = styled.nav`
   position: fixed;
   bottom: 0;
   width: 100%;
-  height: 48px;
+  height: 55px;
   z-index: 1;
   line-height: 2.4;
   box-shadow: 0 5px 7px 1px lightgrey;

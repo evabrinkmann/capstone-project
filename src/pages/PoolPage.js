@@ -1,8 +1,8 @@
 import React from 'react'
-import CardList from './components/CardList'
-import Header from './components/Header'
+import CardList from '../components/CardList'
+import Header from '../components/Header'
 
-export default function ProfilePoolPage({ userData }) {
+export default function PoolPage({ userData }) {
   return (
     <>
       <Header headerTitle="Profile Pool" />
