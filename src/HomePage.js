@@ -1,6 +1,6 @@
-import React from 'react'
-import CardList from './components/CardList'
+// import React from 'react'
+// import CardList from './components/CardList'
 
-export default function HomePage({ userData }) {
-  return <CardList userData={userData} />
-}
+// export default function HomePage({ userData }) {
+//   return <CardList userData={userData} />
+// }

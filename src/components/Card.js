@@ -54,21 +54,4 @@ const ProfileCardStyled = styled.article`
   border-radius: 15px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
   overflow-wrap: break-word;
-
-  /* hr {
-    border: 0.5px solid #549dd8;
-  }
-
-  a {
-    color: black;
-  }
-
-  ul {
-    line-height: 2.2;
-    list-style-type: none;
-  }
-
-  li {
-    list-style-type: none;
-  } */
 `

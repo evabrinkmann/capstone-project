@@ -143,6 +143,11 @@ const StyledBody = styled.section`
 
   a {
     color: black;
+    text-decoration: none;
+
+    &:hover {
+      color: #549dd8;
+    }
   }
 
   ul {
