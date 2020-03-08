@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import styled from 'styled-components/macro'
-
 import Card from './Card'
 import PropTypes from 'prop-types'
 
@@ -31,5 +30,5 @@ export default function CardList({ userData }) {
 const StyledMain = styled.main`
   display: flex;
   flex-direction: column;
-  margin: 60px 10px 30px;
+  margin: 70px 10px 30px;
 `
