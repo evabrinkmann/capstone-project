@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function Header({ title }) {
-  return <StyledHeader>{title}</StyledHeader>
+export default function Header({ headerTitle }) {
+  return <StyledHeader>{headerTitle}</StyledHeader>
 }
 
 const StyledHeader = styled.header`
