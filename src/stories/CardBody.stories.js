@@ -1,19 +1,11 @@
 import React from 'react'
 import CardBody from '../components/CardBody'
 import userData from '../userData'
-import GlobalStyles from '../GlobalStyles'
 
 export default {
   title: 'components/CardBody',
   component: CardBody,
-  decorators: [
-    storyFn => (
-      <>
-        <GlobalStyles />
-        {storyFn()}
-      </>
-    ),
-  ],
+  decorators: [renderCardBody => <div>{renderCardBody()}</div>],
 }
 
 const {
