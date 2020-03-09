@@ -11,9 +11,7 @@ export default function Navigation() {
 
   return (
     <NavigationStyled onClick={() => setToggle(!toggle)}>
-      <Button exact to="/profile-pool">
-        Profile Pool
-      </Button>
+      <Button to="/profile-pool">Profile Pool</Button>
       <Button to="/create-profile">Create Profile</Button>
     </NavigationStyled>
   )

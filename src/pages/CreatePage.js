@@ -1,12 +1,12 @@
 import React from 'react'
 import Header from '../components/Header'
-import CreateCard from '../components/CreateCard'
+import CreateProfile from '../components/CreateProfile'
 
 export default function CreatePage() {
   return (
     <>
       <Header headerTitle="Create Profile" />
-      <CreateCard />
+      <CreateProfile />
     </>
   )
 }

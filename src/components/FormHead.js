@@ -1,16 +1,16 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function CheckboxAlumni() {
+export default function FormHead({ onNameChange, onTitleChange, name, title }) {
   return (
-    <FormHead>
+    <StyledFormHead>
       <StyledCheckboxes>
         <label>
-          <input name="active" type="checkbox" />
+          <input name="active" value="alumni" type="radio" />
           alumni
         </label>
         <label>
-          <input name="active" type="checkbox" />
+          <input name="active" value="new" type="radio" />
           new
         </label>
       </StyledCheckboxes>
@@ -21,6 +21,8 @@ export default function CheckboxAlumni() {
           name="name"
           type="text"
           placeholder="e.g. Max Mustermann"
+          value={name}
+          onChange={event => onNameChange(event.target.value)}
         />
       </label>
       <label>
@@ -29,13 +31,15 @@ export default function CheckboxAlumni() {
           name="title"
           type="text"
           placeholder="e.g. Web Developer"
+          value={title}
+          onChange={event => onTitleChange(event.target.value)}
         />
       </label>
-    </FormHead>
+    </StyledFormHead>
   )
 }
 
-const FormHead = styled.div`
+const StyledFormHead = styled.div`
   margin-bottom: 50px;
 `
 
