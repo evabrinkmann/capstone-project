@@ -1,7 +1,14 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function FormContactSection() {
+export default function FormContactSection({
+  company,
+  onCompanyChange,
+  location,
+  onLocationChange,
+  email,
+  onEmailChange,
+}) {
   return (
     <div>
       <StyledContactSection>
@@ -12,6 +19,8 @@ export default function FormContactSection() {
             name="company"
             type="text"
             placeholder="e.g. neuefische GmbH"
+            value={company}
+            onChange={event => onCompanyChange(event.target.value)}
           />
         </label>
         <label>
@@ -20,6 +29,8 @@ export default function FormContactSection() {
             name="location"
             type="text"
             placeholder="e.g. Hamburg, Germany"
+            value={location}
+            onChange={event => onLocationChange(event.target.value)}
           />
         </label>
         <label>
@@ -28,6 +39,8 @@ export default function FormContactSection() {
             name="e-mail"
             type="text"
             placeholder="e.g. Web Developer"
+            value={email}
+            onChange={event => onEmailChange(event.target.value)}
           />
         </label>
       </StyledContactSection>
