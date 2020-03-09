@@ -1,13 +1,18 @@
 import React from 'react'
 import CardBody from '../components/CardBody'
 import userData from '../userData'
-import GlobalStyleStorybook from '../StorybookStyles'
+import GlobalStyles from '../GlobalStyles'
 
 export default {
   title: 'components/CardBody',
   component: CardBody,
   decorators: [
-    storyFn => <GlobalStyleStorybook>{storyFn()}</GlobalStyleStorybook>,
+    storyFn => (
+      <>
+        <GlobalStyles />
+        {storyFn()}
+      </>
+    ),
   ],
 }
 
@@ -24,7 +29,7 @@ const {
 } = userData[1]
 
 export const UserCardBody = () => (
-  <div style={{ width: '300px' }}>
+  <div style={{ width: '300px', height: '500px', margin: '20px' }}>
     <CardBody
       company={company}
       country={country}
