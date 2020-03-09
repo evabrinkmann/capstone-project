@@ -1,31 +1,28 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import FormHead from './FormHead'
+import FormContactSection from './FormContactSection'
+import FormProjectSection from './FormProjectSection'
+import FormSkillTags from './FormSkillTags'
 
 export default function CreateCard() {
   return (
-    <FormStyled>
-      <label>
-        alumni
-        <input name="active" type="checkbox" />
-      </label>
-      <label>
-        new
-        <input name="active" type="checkbox" />
-      </label>
-      <br />
-      <label>
-        *
-        <input name="firstName" type="text" placeholder="User name" />
-      </label>
-      <br />
-      <label>
-        Last Name *:
-        <input name="lastName" type="text" />
-      </label>
-    </FormStyled>
+    <ScrollContainer>
+      <FormStyled>
+        <FormHead />
+        <FormContactSection />
+        <FormProjectSection />
+        <FormSkillTags />
+      </FormStyled>
+    </ScrollContainer>
   )
 }
 
 const FormStyled = styled.form`
   margin: 100px 20px;
+  padding: 20px;
+`
+
+const ScrollContainer = styled.div`
+  overflow-y: scroll;
 `
