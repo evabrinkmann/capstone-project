@@ -6,14 +6,7 @@ import GlobalStyles from '../GlobalStyles'
 export default {
   title: 'components/CardHead',
   component: CardHead,
-  decorators: [
-    storyFn => (
-      <>
-        <GlobalStyles />
-        {storyFn()}
-      </>
-    ),
-  ],
+  decorators: [renderCardHead => <div>{renderCardHead()}</div>],
 }
 
 const { status, name, imgUrl, title } = userData[1]
