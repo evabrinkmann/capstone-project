@@ -14,5 +14,8 @@ export default createGlobalStyle`
     height: 100vh;
     width: 100vw;
   }
- 
+
+  input {
+    font-size: 1em;
+  }
 `

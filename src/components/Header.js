@@ -6,7 +6,6 @@ export default function Header({ headerTitle }) {
 }
 
 const StyledHeader = styled.header`
-  display: grid;
   position: fixed;
   width: 100%;
   z-index: 1;

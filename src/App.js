@@ -12,10 +12,10 @@ export default function App() {
       <AppGrid>
         <Navigation />
         <Switch>
-          <Route exact path="/profile-pool">
+          <Route path="/profile-pool">
             <PoolPage userData={userData} />
           </Route>
-          <Route exact path="/create-profile">
+          <Route path="/create-profile">
             <CreatePage />
           </Route>
         </Switch>
