@@ -6,7 +6,13 @@ import FormProjectSection from './FormProjectSection'
 import FormSkillTags from './FormSkillTags'
 
 export default function CreateProfile() {
-  const [user, setUser] = useState({ name: '', title: '' })
+  const [user, setUser] = useState({
+    name: '',
+    title: '',
+    company: '',
+    location: '',
+    email: '',
+  })
 
   return (
     <ScrollContainer>
@@ -17,7 +23,14 @@ export default function CreateProfile() {
           name={user.name}
           title={user.title}
         />
-        <FormContactSection />
+        <FormContactSection
+          onCompanyChange={handleCompanyChange}
+          company={user.company}
+          onLocationChange={handleLocationChange}
+          location={user.location}
+          onEmailChange={handleEmailChange}
+          email={user.email}
+        />
         <FormProjectSection />
         <FormSkillTags />
         <ButtonStyled>Submit</ButtonStyled>
@@ -36,6 +49,18 @@ export default function CreateProfile() {
 
   function handleTitleChange(title) {
     setUser({ ...user, title })
+  }
+
+  function handleCompanyChange(company) {
+    setUser({ ...user, company })
+  }
+
+  function handleLocationChange(location) {
+    setUser({ ...user, location })
+  }
+
+  function handleEmailChange(email) {
+    setUser({ ...user, email })
   }
 }
 
