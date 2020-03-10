@@ -12,6 +12,11 @@ export default function CreateProfile() {
     company: '',
     location: '',
     email: '',
+    capstoneName: '',
+    capstoneLink: '',
+    personalWebsite: '',
+    github: '',
+    codepen: '',
   })
 
   return (
@@ -31,7 +36,18 @@ export default function CreateProfile() {
           onEmailChange={handleEmailChange}
           email={user.email}
         />
-        <FormProjectSection />
+        <FormProjectSection
+          onCapstoneNameChange={handleCapstoneNameChange}
+          capstoneName={user.capstoneName}
+          onCapstoneLinkChange={handleCapstoneLinkChange}
+          capstoneLink={user.capstoneLink}
+          personalWebsite={user.personalWebsite}
+          onPersonalWebsiteChange={handlePersonalWebsiteChange}
+          github={user.github}
+          onGithubChange={handleGithubChange}
+          codepen={user.codepen}
+          onCodepenChange={handleCodepenChange}
+        />
         <FormSkillTags />
         <ButtonStyled>Submit</ButtonStyled>
       </FormStyled>
@@ -61,6 +77,22 @@ export default function CreateProfile() {
 
   function handleEmailChange(email) {
     setUser({ ...user, email })
+  }
+
+  function handleCapstoneNameChange(capstoneName) {
+    setUser({ ...user, capstoneName })
+  }
+  function handleCapstoneLinkChange(capstoneLink) {
+    setUser({ ...user, capstoneLink })
+  }
+  function handlePersonalWebsiteChange(personalWebsite) {
+    setUser({ ...user, personalWebsite })
+  }
+  function handleGithubChange(github) {
+    setUser({ ...user, github })
+  }
+  function handleCodepenChange(codepen) {
+    setUser({ ...user, codepen })
   }
 }
 
