@@ -5,8 +5,26 @@ import Navigation from './Navigation'
 import PoolPage from './pages/PoolPage'
 import CreatePage from './pages/CreatePage'
 import userData from './userData'
+import { cardsRef } from './components/firebase'
 
 export default function App() {
+  cardsRef.add({
+    id: 1,
+    status: 'alumni',
+    imgUrl: './img/natalie-square.jpg',
+    name: 'Natalie Fuchs',
+    title: 'Frontend Developer',
+    company: 'Argonauten GmbH',
+    country: 'Hamburg, Germany',
+    email: 'natalie.fuchs@argonauten.de',
+    capstoneName: 'Stadt, Land, Fuchs App',
+    capstoneLink: 'https://github.com/ntlfox/stadt-land-name',
+    personalWebsite: 'https://github.com/ntlfox/personal-website',
+    github: 'https://github.com/ntlfox',
+    codepen: 'https://codepen.io/ntlfox/',
+    skills: ['react', 'html', 'css', 'sass', 'bootstrap', 'javascript'],
+  })
+
   return (
     <Router>
       <AppGrid>
