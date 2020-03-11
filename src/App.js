@@ -1,27 +1,37 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useHistory,
+} from 'react-router-dom'
 import Navigation from './Navigation'
 import PoolPage from './pages/PoolPage'
 import CreatePage from './pages/CreatePage'
 import userData from './userData'
 
 export default function App() {
+  const [profiles, setProfiles] = useState(userData)
   return (
     <Router>
       <AppGrid>
         <Navigation />
         <Switch>
           <Route path="/profile-pool">
-            <PoolPage userData={userData} />
+            <PoolPage profiles={profiles} />
           </Route>
           <Route path="/create-profile">
-            <CreatePage />
+            <CreatePage onAddProfile={handleAddProfile} />
           </Route>
         </Switch>
       </AppGrid>
     </Router>
   )
+
+  function handleAddProfile(profile) {
+    setProfiles([profile, ...profiles])
+  }
 }
 
 const AppGrid = styled.div`

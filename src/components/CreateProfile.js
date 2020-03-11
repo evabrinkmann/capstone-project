@@ -5,7 +5,7 @@ import FormContactSection from './FormContactSection'
 import FormProjectSection from './FormProjectSection'
 import FormSkillTags from './FormSkillTags'
 
-export default function CreateProfile() {
+export default function CreateProfile({ onAddProfile }) {
   const [user, setUser] = useState({
     name: '',
     title: '',
@@ -60,7 +60,7 @@ export default function CreateProfile() {
 
   function handleSubmit(event) {
     event.preventDefault()
-    console.log(user)
+    onAddProfile(user)
   }
 
   function handleNameChange(name) {
