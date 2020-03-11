@@ -4,16 +4,16 @@ import Card from './Card'
 import PropTypes from 'prop-types'
 
 CardList.propTypes = {
-  userData: PropTypes.array,
+  profiles: PropTypes.array,
 }
 
-export default function CardList({ userData }) {
+export default function CardList({ profiles }) {
   const [activeCard, setActiveCard] = useState('')
 
   return (
     <div style={{ overflowY: 'scroll', scrollBehavior: 'smooth' }}>
       <StyledMain>
-        {userData.map(user => (
+        {profiles.map(user => (
           <Card
             key={user.id}
             user={user}
