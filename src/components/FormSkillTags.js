@@ -1,50 +1,31 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function FormSkillTags() {
+const skillTags = [
+  'html5',
+  'css3',
+  'bootstrap',
+  'sass',
+  'javascript',
+  'firebase',
+]
+
+export default function FormSkillTags({ skills, onSkillChange }) {
   return (
     <StyledSkillTags>
       <h3>skills</h3>
-      <label>
-        <input name="active" type="checkbox" />
-        html5
-      </label>
-      <label>
-        <input name="active" type="checkbox" />
-        css3
-      </label>
-      <label>
-        <input name="active" type="checkbox" />
-        bootstrap
-      </label>
-      <label>
-        <input name="active" type="checkbox" />
-        sass
-      </label>
-      <label>
-        <input name="active" type="checkbox" />
-        javascript
-      </label>
-      <label>
-        <input name="active" type="checkbox" />
-        react
-      </label>
-      <label>
-        <input name="active" type="checkbox" />
-        firebase
-      </label>
-      <label>
-        <input name="active" type="checkbox" />
-        node.js
-      </label>
-      <label>
-        <input name="active" type="checkbox" />
-        jest
-      </label>
-      <label>
-        <input name="active" type="checkbox" />
-        cypress
-      </label>
+      {skillTags.map(skill => (
+        <label key={skill}>
+          <input
+            name="active"
+            type="checkbox"
+            value={skill}
+            checked={skills.includes(skill)}
+            onChange={event => onSkillChange(event.target.value)}
+          />
+          {skill}
+        </label>
+      ))}
     </StyledSkillTags>
   )
 }

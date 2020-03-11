@@ -18,11 +18,8 @@ export default function CreateProfile() {
     github: '',
     codepen: '',
     status: 'alumni',
+    skills: [],
   })
-
-  function handleAlumniOptionChange(status) {
-    setUser({ ...user, status })
-  }
 
   return (
     <ScrollContainer>
@@ -32,10 +29,8 @@ export default function CreateProfile() {
           onTitleChange={handleTitleChange}
           name={user.name}
           title={user.title}
-          onAlumniOptionChange={handleAlumniOptionChange}
-          alumni={user.alumni}
-          newcomer={user.newcomer}
-          selectedOption={user.status}
+          onStatusChange={handleStatusChange}
+          selectedStatus={user.status}
         />
         <FormContactSection
           onCompanyChange={handleCompanyChange}
@@ -57,7 +52,7 @@ export default function CreateProfile() {
           codepen={user.codepen}
           onCodepenChange={handleCodepenChange}
         />
-        <FormSkillTags />
+        <FormSkillTags skills={user.skills} onSkillChange={handleSkillChange} />
         <ButtonStyled>Submit</ButtonStyled>
       </FormStyled>
     </ScrollContainer>
@@ -102,6 +97,19 @@ export default function CreateProfile() {
   }
   function handleCodepenChange(codepen) {
     setUser({ ...user, codepen })
+  }
+
+  function handleStatusChange(status) {
+    setUser({ ...user, status })
+  }
+
+  function handleSkillChange(skill) {
+    console.log(skill)
+    if (user.skills.includes(skill)) {
+      setUser({ ...user, skills: user.skills.filter(s => s !== skill) })
+    } else {
+      setUser({ ...user, skills: [...user.skills, skill] })
+    }
   }
 }
 
