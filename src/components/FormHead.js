@@ -1,18 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 
-export default function FormHead({ onNameChange, onTitleChange, name, title }) {
+export default function FormHead({
+  onNameChange,
+  onTitleChange,
+  name,
+  title,
+  onAlumniOptionChange,
+  selectedOption,
+}) {
   return (
     <StyledFormHead>
       <StyledCheckboxes>
-        <label>
-          <input name="active" value="alumni" type="radio" />
-          alumni
-        </label>
-        <label>
-          <input name="active" value="new" type="radio" />
-          new
-        </label>
+        <div>
+          <label>
+            <input
+              name="active"
+              value="alumni"
+              type="radio"
+              checked={selectedOption === 'alumni'}
+              onChange={event => onAlumniOptionChange(event.target.value)}
+            />
+            alumni
+          </label>
+        </div>
+        <div>
+          <label>
+            <input
+              name="active"
+              value="newcomer"
+              type="radio"
+              checked={selectedOption === 'newcomer'}
+              onChange={event => onAlumniOptionChange(event.target.value)}
+            />
+            new
+          </label>
+        </div>
       </StyledCheckboxes>
       <h3>Name</h3>
       <label>

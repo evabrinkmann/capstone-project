@@ -17,7 +17,12 @@ export default function CreateProfile() {
     personalWebsite: '',
     github: '',
     codepen: '',
+    status: 'alumni',
   })
+
+  function handleAlumniOptionChange(status) {
+    setUser({ ...user, status })
+  }
 
   return (
     <ScrollContainer>
@@ -27,6 +32,10 @@ export default function CreateProfile() {
           onTitleChange={handleTitleChange}
           name={user.name}
           title={user.title}
+          onAlumniOptionChange={handleAlumniOptionChange}
+          alumni={user.alumni}
+          newcomer={user.newcomer}
+          selectedOption={user.status}
         />
         <FormContactSection
           onCompanyChange={handleCompanyChange}
