@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
 
 export default function FormHead({
@@ -6,8 +6,8 @@ export default function FormHead({
   onTitleChange,
   name,
   title,
-  onAlumniOptionChange,
-  selectedOption,
+  onStatusChange,
+  selectedStatus,
 }) {
   return (
     <StyledFormHead>
@@ -18,8 +18,8 @@ export default function FormHead({
               name="active"
               value="alumni"
               type="radio"
-              checked={selectedOption === 'alumni'}
-              onChange={event => onAlumniOptionChange(event.target.value)}
+              checked={selectedStatus === 'alumni'}
+              onChange={event => onStatusChange(event.target.value)}
             />
             alumni
           </label>
@@ -30,8 +30,8 @@ export default function FormHead({
               name="active"
               value="newcomer"
               type="radio"
-              checked={selectedOption === 'newcomer'}
-              onChange={event => onAlumniOptionChange(event.target.value)}
+              checked={selectedStatus === 'newcomer'}
+              onChange={event => onStatusChange(event.target.value)}
             />
             new
           </label>
