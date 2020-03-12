@@ -10,6 +10,7 @@ import Navigation from './Navigation'
 import PoolPage from './pages/PoolPage'
 import CreatePage from './pages/CreatePage'
 import userData from './userData'
+import { cardsRef } from './components/firebase'
 
 export default function App() {
   const [profiles, setProfiles] = useState(userData)
