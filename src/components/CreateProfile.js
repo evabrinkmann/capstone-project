@@ -28,16 +28,28 @@ export default function CreateProfile({ onAddProfile }) {
 }
 
 const FormStyled = styled.form`
-  margin: 100px 20px;
+  margin: 70px 20px;
   padding: 20px;
+  max-width: 400px;
+  background: #f4f7f8;
+  border-radius: 8px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 `
 
 const ScrollContainer = styled.div`
   overflow-y: scroll;
+  background: white;
 `
 const ButtonStyled = styled.button`
-  margin: 20px;
-  width: 100px;
-  height: 40px;
-  border: 1px solid black;
+  display: block;
+  padding: 19px 39px 18px 39px;
+  color: #fff;
+  margin: 0 auto;
+  background: #1abc9c;
+  font-size: 18px;
+  text-align: center;
+  width: 100%;
+  border: 1px solid #16a085;
+  border-width: 1px 1px 3px;
+  margin-bottom: 10px;
 `

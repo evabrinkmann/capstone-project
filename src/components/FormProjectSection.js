@@ -3,59 +3,70 @@ import styled from 'styled-components/macro'
 
 export default function FormProjectSection({ register }) {
   return (
-    <div>
-      <h3>Projects</h3>
+    <StyledSection>
+      <h3>
+        <span>2</span>Additional Information
+      </h3>
       <label>
-        *capstone project:
-        <StyledInput
-          ref={register()}
-          name="capstoneName"
-          type="text"
-          placeholder="e.g. Recipe App, Language App etc."
-        />
-      </label>
-      <label>
-        capstone project Link:
         <StyledInput
           ref={register()}
           name="capstoneLink"
           type="text"
-          placeholder="https://..."
+          placeholder="Link here your app"
         />
       </label>
       <label>
-        personal-Website:
         <StyledInput
           ref={register()}
           name="personalWebsite"
           type="text"
-          placeholder="https://..."
+          placeholder="Link here your personal-website"
         />
       </label>
       <label>
-        github:
         <StyledInput
           ref={register()}
           name="github"
           type="text"
-          placeholder="https://..."
+          placeholder="Link here your github"
         />
       </label>
       <label>
-        codepen:
         <StyledInput
           ref={register()}
           name="codepen"
           type="text"
-          placeholder="https://..."
+          placeholder="Link here your codepen"
         />
       </label>
-    </div>
+    </StyledSection>
   )
 }
 
+const StyledSection = styled.div`
+  span {
+    background: #1abc9c;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 15px 15px 15px 0;
+  }
+`
+
 const StyledInput = styled.input`
-  width: 100%;
   height: 34px;
-  margin-bottom: 10px;
+  border: 0;
+  border-radius: 4px;
+  padding: 20px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #353b40;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 30px;
 `

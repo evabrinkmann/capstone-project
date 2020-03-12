@@ -28,23 +28,24 @@ export default function FormHead({ register }) {
           </label>
         </div>
       </StyledCheckboxes>
-      <h3>Name</h3>
+
+      <h3>
+        <span>1</span>User Info
+      </h3>
       <label>
-        *Your name:
         <StyledInput
           ref={register({ required: true })}
           name="name"
           type="text"
-          placeholder="e.g. Max Mustermann"
+          placeholder="Your name *"
         />
       </label>
       <label>
-        *Your title:
         <StyledInput
           ref={register({ required: true })}
           name="title"
           type="text"
-          placeholder="e.g. Web Developer"
+          placeholder="Your profession *"
         />
       </label>
     </StyledFormHead>
@@ -52,7 +53,19 @@ export default function FormHead({ register }) {
 }
 
 const StyledFormHead = styled.div`
-  margin-bottom: 50px;
+  span {
+    background: #1abc9c;
+    color: #fff;
+    height: 30px;
+    width: 30px;
+    display: inline-block;
+    font-size: 0.8em;
+    margin-right: 4px;
+    line-height: 30px;
+    text-align: center;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-radius: 15px 15px 15px 0;
+  }
 `
 
 const StyledCheckboxes = styled.div`
@@ -61,7 +74,13 @@ const StyledCheckboxes = styled.div`
   margin-bottom: 30px;
 `
 const StyledInput = styled.input`
-  width: 100%;
   height: 34px;
-  margin-bottom: 10px;
+  border: 0;
+  border-radius: 4px;
+  padding: 20px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #353b40;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 30px;
 `
