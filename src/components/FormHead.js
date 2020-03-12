@@ -8,6 +8,7 @@ export default function FormHead({
   title,
   onStatusChange,
   selectedStatus,
+  exampleImage,
 }) {
   return (
     <StyledFormHead>

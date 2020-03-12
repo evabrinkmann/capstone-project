@@ -4,6 +4,7 @@ import FormHead from './FormHead'
 import FormContactSection from './FormContactSection'
 import FormProjectSection from './FormProjectSection'
 import FormSkillTags from './FormSkillTags'
+import { v4 } from 'uuid'
 
 export default function CreateProfile({ onAddProfile }) {
   const [user, setUser] = useState({
@@ -19,18 +20,20 @@ export default function CreateProfile({ onAddProfile }) {
     codepen: '',
     status: 'alumni',
     skills: [],
+    id: v4(),
   })
 
   return (
     <ScrollContainer>
       <FormStyled onSubmit={handleSubmit}>
         <FormHead
-          onNameChange={handleNameChange}
-          onTitleChange={handleTitleChange}
+          onNameChange={handleChange('name')}
+          onTitleChange={handleChange('title')}
           name={user.name}
           title={user.title}
-          onStatusChange={handleStatusChange}
+          onStatusChange={handleChange('status')}
           selectedStatus={user.status}
+          // img={user.exampleImage}
         />
         <FormContactSection
           onCompanyChange={handleCompanyChange}
@@ -64,13 +67,23 @@ export default function CreateProfile({ onAddProfile }) {
     console.log(user)
   }
 
-  function handleNameChange(name) {
-    setUser({ ...user, name })
+  function handleChange(propertyName) {
+    return value => {
+      setUser({ ...user, [propertyName]: value })
+    }
   }
 
-  function handleTitleChange(title) {
-    setUser({ ...user, title })
-  }
+  // function handleNameChange(name) {
+  //   setUser({ ...user, name })
+  // }
+
+  // function handleTitleChange(title) {
+  //   setUser({ ...user, title })
+  // }
+
+  // function handleStatusChange(status) {
+  //   setUser({ ...user, status })
+  // }
 
   function handleCompanyChange(company) {
     setUser({ ...user, company })
@@ -98,10 +111,6 @@ export default function CreateProfile({ onAddProfile }) {
   }
   function handleCodepenChange(codepen) {
     setUser({ ...user, codepen })
-  }
-
-  function handleStatusChange(status) {
-    setUser({ ...user, status })
   }
 
   function handleSkillChange(skill) {
