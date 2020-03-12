@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import companyIcon from '../icon/monitor.svg'
-import countryIcon from '../icon/location.svg'
+import locationIcon from '../icon/location.svg'
 import emailIcon from '../icon/letter.svg'
 import capstoneIcon from '../icon/cube.svg'
 import personalWebsiteIcon from '../icon/world.svg'
@@ -11,7 +11,7 @@ import PropTypes from 'prop-types'
 
 CardBody.propTypes = {
   company: PropTypes.string.isRequired,
-  country: PropTypes.string.isRequired,
+  location: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
   capstoneName: PropTypes.string.isRequired,
   capstoneLink: PropTypes.string,
@@ -23,7 +23,7 @@ CardBody.propTypes = {
 
 export default function CardBody({
   company,
-  country,
+  location,
   email,
   capstoneName,
   capstoneLink,
@@ -41,8 +41,8 @@ export default function CardBody({
           {company}
         </li>
         <li>
-          <StyledIcons src={countryIcon}></StyledIcons>
-          {country}
+          <StyledIcons src={locationIcon}></StyledIcons>
+          {location}
         </li>
         <li>
           <StyledIcons src={emailIcon}></StyledIcons>

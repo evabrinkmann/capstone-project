@@ -61,6 +61,7 @@ export default function CreateProfile({ onAddProfile }) {
   function handleSubmit(event) {
     event.preventDefault()
     onAddProfile(user)
+    console.log(user)
   }
 
   function handleNameChange(name) {
