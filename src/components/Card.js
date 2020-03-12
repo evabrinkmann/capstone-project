@@ -32,7 +32,7 @@ export default function Card({ user, setActiveCard, isActive }) {
         {isActive && (
           <CardBody
             company={user.company}
-            country={user.country}
+            location={user.location}
             email={user.email}
             capstoneName={user.capstoneName}
             capstoneLink={user.capstoneLink}
