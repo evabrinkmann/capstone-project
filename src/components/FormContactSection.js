@@ -1,14 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function FormContactSection({
-  company,
-  onCompanyChange,
-  location,
-  onLocationChange,
-  email,
-  onEmailChange,
-}) {
+export default function FormContactSection({ register }) {
   return (
     <div>
       <StyledContactSection>
@@ -16,31 +9,28 @@ export default function FormContactSection({
         <label>
           *company:
           <StyledInput
+            ref={register({ required: true })}
             name="company"
             type="text"
             placeholder="e.g. neuefische GmbH"
-            value={company}
-            onChange={event => onCompanyChange(event.target.value)}
           />
         </label>
         <label>
           *location:
           <StyledInput
+            ref={register({ required: true })}
             name="location"
             type="text"
             placeholder="e.g. Hamburg, Germany"
-            value={location}
-            onChange={event => onLocationChange(event.target.value)}
           />
         </label>
         <label>
           *Your e-mail:
           <StyledInput
-            name="e-mail"
+            ref={register({ required: true })}
+            name="email"
             type="text"
             placeholder="e.g. Web Developer"
-            value={email}
-            onChange={event => onEmailChange(event.target.value)}
           />
         </label>
       </StyledContactSection>

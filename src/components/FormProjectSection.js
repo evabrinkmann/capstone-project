@@ -1,69 +1,53 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function FormProjectSection({
-  capstoneName,
-  onCapstoneNameChange,
-  capstoneLink,
-  onCapstoneLinkChange,
-  personalWebsite,
-  onPersonalWebsiteChange,
-  github,
-  onGithubChange,
-  codepen,
-  onCodepenChange,
-}) {
+export default function FormProjectSection({ register }) {
   return (
     <div>
       <h3>Projects</h3>
       <label>
         *capstone project:
         <StyledInput
+          ref={register()}
           name="capstoneName"
           type="text"
           placeholder="e.g. Recipe App, Language App etc."
-          value={capstoneName}
-          onChange={event => onCapstoneNameChange(event.target.value)}
         />
       </label>
       <label>
         capstone project Link:
         <StyledInput
+          ref={register()}
           name="capstoneLink"
           type="text"
           placeholder="https://..."
-          value={capstoneLink}
-          onChange={event => onCapstoneLinkChange(event.target.value)}
         />
       </label>
       <label>
         personal-Website:
         <StyledInput
-          name="website"
+          ref={register()}
+          name="personalWebsite"
           type="text"
           placeholder="https://..."
-          value={personalWebsite}
-          onChange={event => onPersonalWebsiteChange(event.target.value)}
         />
       </label>
       <label>
         github:
         <StyledInput
+          ref={register()}
           name="github"
           type="text"
           placeholder="https://..."
-          value={github}
-          onChange={event => onGithubChange(event.target.value)}
         />
       </label>
       <label>
         codepen:
         <StyledInput
+          ref={register()}
           name="codepen"
           type="text"
           placeholder="https://..."
-          value={codepen}
-          onChange={event => onCodepenChange(event.target.value)}
         />
       </label>
     </div>

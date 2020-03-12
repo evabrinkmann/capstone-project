@@ -1,125 +1,29 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
 import FormHead from './FormHead'
 import FormContactSection from './FormContactSection'
 import FormProjectSection from './FormProjectSection'
 import FormSkillTags from './FormSkillTags'
 import { v4 } from 'uuid'
+import { useForm } from 'react-hook-form'
 
 export default function CreateProfile({ onAddProfile }) {
-  const [user, setUser] = useState({
-    name: '',
-    title: '',
-    company: '',
-    location: '',
-    email: '',
-    capstoneName: '',
-    capstoneLink: '',
-    personalWebsite: '',
-    github: '',
-    codepen: '',
-    status: 'alumni',
-    skills: [],
-    id: v4(),
-  })
+  const { register, handleSubmit } = useForm()
 
   return (
     <ScrollContainer>
-      <FormStyled onSubmit={handleSubmit}>
-        <FormHead
-          onNameChange={handleChange('name')}
-          onTitleChange={handleChange('title')}
-          name={user.name}
-          title={user.title}
-          onStatusChange={handleChange('status')}
-          selectedStatus={user.status}
-          // img={user.exampleImage}
-        />
-        <FormContactSection
-          onCompanyChange={handleCompanyChange}
-          company={user.company}
-          onLocationChange={handleLocationChange}
-          location={user.location}
-          onEmailChange={handleEmailChange}
-          email={user.email}
-        />
-        <FormProjectSection
-          onCapstoneNameChange={handleCapstoneNameChange}
-          capstoneName={user.capstoneName}
-          onCapstoneLinkChange={handleCapstoneLinkChange}
-          capstoneLink={user.capstoneLink}
-          personalWebsite={user.personalWebsite}
-          onPersonalWebsiteChange={handlePersonalWebsiteChange}
-          github={user.github}
-          onGithubChange={handleGithubChange}
-          codepen={user.codepen}
-          onCodepenChange={handleCodepenChange}
-        />
-        <FormSkillTags skills={user.skills} onSkillChange={handleSkillChange} />
+      <FormStyled onSubmit={handleSubmit(onSubmit)}>
+        <FormHead register={register} />
+        <FormContactSection register={register} />
+        <FormProjectSection register={register} />
+        <FormSkillTags register={register} />
         <ButtonStyled>Submit</ButtonStyled>
       </FormStyled>
     </ScrollContainer>
   )
 
-  function handleSubmit(event) {
-    event.preventDefault()
-    onAddProfile(user)
-    console.log(user)
-  }
-
-  function handleChange(propertyName) {
-    return value => {
-      setUser({ ...user, [propertyName]: value })
-    }
-  }
-
-  // function handleNameChange(name) {
-  //   setUser({ ...user, name })
-  // }
-
-  // function handleTitleChange(title) {
-  //   setUser({ ...user, title })
-  // }
-
-  // function handleStatusChange(status) {
-  //   setUser({ ...user, status })
-  // }
-
-  function handleCompanyChange(company) {
-    setUser({ ...user, company })
-  }
-
-  function handleLocationChange(location) {
-    setUser({ ...user, location })
-  }
-
-  function handleEmailChange(email) {
-    setUser({ ...user, email })
-  }
-
-  function handleCapstoneNameChange(capstoneName) {
-    setUser({ ...user, capstoneName })
-  }
-  function handleCapstoneLinkChange(capstoneLink) {
-    setUser({ ...user, capstoneLink })
-  }
-  function handlePersonalWebsiteChange(personalWebsite) {
-    setUser({ ...user, personalWebsite })
-  }
-  function handleGithubChange(github) {
-    setUser({ ...user, github })
-  }
-  function handleCodepenChange(codepen) {
-    setUser({ ...user, codepen })
-  }
-
-  function handleSkillChange(skill) {
-    console.log(skill)
-    if (user.skills.includes(skill)) {
-      setUser({ ...user, skills: user.skills.filter(s => s !== skill) })
-    } else {
-      setUser({ ...user, skills: [...user.skills, skill] })
-    }
+  function onSubmit(data) {
+    onAddProfile({ id: v4(), ...data })
   }
 }
 

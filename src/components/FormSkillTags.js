@@ -10,19 +10,13 @@ const skillTags = [
   'firebase',
 ]
 
-export default function FormSkillTags({ skills, onSkillChange }) {
+export default function FormSkillTags({ register }) {
   return (
     <StyledSkillTags>
       <h3>skills</h3>
       {skillTags.map(skill => (
         <label key={skill}>
-          <input
-            name="active"
-            type="checkbox"
-            value={skill}
-            checked={skills.includes(skill)}
-            onChange={event => onSkillChange(event.target.value)}
-          />
+          <input ref={register()} name="skills" type="checkbox" value={skill} />
           {skill}
         </label>
       ))}

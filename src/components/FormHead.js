@@ -1,26 +1,17 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-export default function FormHead({
-  onNameChange,
-  onTitleChange,
-  name,
-  title,
-  onStatusChange,
-  selectedStatus,
-  exampleImage,
-}) {
+export default function FormHead({ register }) {
   return (
     <StyledFormHead>
       <StyledCheckboxes>
         <div>
           <label>
             <input
-              name="active"
+              ref={register({ required: true })}
+              name="status"
               value="alumni"
               type="radio"
-              checked={selectedStatus === 'alumni'}
-              onChange={event => onStatusChange(event.target.value)}
             />
             alumni
           </label>
@@ -28,11 +19,10 @@ export default function FormHead({
         <div>
           <label>
             <input
-              name="active"
+              ref={register({ required: true })}
+              name="status"
               value="newcomer"
               type="radio"
-              checked={selectedStatus === 'newcomer'}
-              onChange={event => onStatusChange(event.target.value)}
             />
             new
           </label>
@@ -42,21 +32,19 @@ export default function FormHead({
       <label>
         *Your name:
         <StyledInput
+          ref={register({ required: true })}
           name="name"
           type="text"
           placeholder="e.g. Max Mustermann"
-          value={name}
-          onChange={event => onNameChange(event.target.value)}
         />
       </label>
       <label>
         *Your title:
         <StyledInput
+          ref={register({ required: true })}
           name="title"
           type="text"
           placeholder="e.g. Web Developer"
-          value={title}
-          onChange={event => onTitleChange(event.target.value)}
         />
       </label>
     </StyledFormHead>
