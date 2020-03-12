@@ -10,10 +10,10 @@ import codepenIcon from '../icon/codepen.svg'
 import PropTypes from 'prop-types'
 
 CardBody.propTypes = {
-  company: PropTypes.string.isRequired,
-  location: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  capstoneName: PropTypes.string.isRequired,
+  company: PropTypes.string,
+  location: PropTypes.string,
+  email: PropTypes.string,
+  capstoneName: PropTypes.string,
   capstoneLink: PropTypes.string,
   personalWebsite: PropTypes.string,
   github: PropTypes.string,

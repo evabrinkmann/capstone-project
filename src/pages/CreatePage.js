@@ -12,8 +12,8 @@ export default function CreatePage({ onAddProfile }) {
     </>
   )
 
-  function handleAdd(user) {
-    onAddProfile(user)
+  function handleAdd(profile) {
+    onAddProfile(profile)
     history.push('/profile-pool')
   }
 }

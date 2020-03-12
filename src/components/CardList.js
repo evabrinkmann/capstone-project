@@ -11,7 +11,7 @@ export default function CardList({ profiles }) {
   const [activeCard, setActiveCard] = useState('')
 
   return (
-    <div style={{ overflowY: 'scroll', scrollBehavior: 'smooth' }}>
+    <Scroller>
       <StyledMain>
         {profiles.map(user => (
           <Card
@@ -23,9 +23,14 @@ export default function CardList({ profiles }) {
           />
         ))}
       </StyledMain>
-    </div>
+    </Scroller>
   )
 }
+
+const Scroller = styled.div`
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+`
 
 const StyledMain = styled.main`
   display: flex;

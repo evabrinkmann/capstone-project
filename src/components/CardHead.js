@@ -3,10 +3,10 @@ import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 
 CardHead.propTypes = {
-  status: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  status: PropTypes.string,
+  img: PropTypes.string,
+  name: PropTypes.string,
+  title: PropTypes.string,
 }
 
 export default function CardHead({ status, img, name, title }) {

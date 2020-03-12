@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 import CardHead from './CardHead'
 import CardBody from './CardBody'
 import PropTypes from 'prop-types'
+import defaultImageSrc from '../imgsrc/unknownProfileImg.png'
 
 Card.propTypes = {
   user: PropTypes.object,
@@ -24,7 +25,7 @@ export default function Card({ user, setActiveCard, isActive }) {
       <ProfileCardStyled onClick={() => activeCard()}>
         <CardHead
           status={user.status}
-          img={user.imgUrl}
+          img={user.imgUrl || defaultImageSrc}
           name={user.name}
           title={user.title}
         />
