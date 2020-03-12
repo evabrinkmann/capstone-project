@@ -5,9 +5,12 @@ import Navigation from './Navigation'
 import CreatePage from './pages/CreatePage'
 import PoolPage from './pages/PoolPage'
 import userData from './userData'
+import { loadFromLocal, saveToLocal } from './utils'
 
 export default function App() {
-  const [profiles, setProfiles] = useState(userData)
+  const [profiles, setProfiles] = useState(
+    loadFromLocal('profiles') || userData
+  )
 
   return (
     <Router>
@@ -26,8 +29,9 @@ export default function App() {
   )
 
   function handleAddProfile(profile) {
-    console.log(profile)
-    setProfiles([profile, ...profiles])
+    const newProfiles = [profile, ...profiles]
+    setProfiles(newProfiles)
+    saveToLocal('profiles', newProfiles)
   }
 }
 
