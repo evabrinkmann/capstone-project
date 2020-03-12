@@ -49,7 +49,7 @@ const userData = [
   },
   {
     id: 4,
-    status: 'new',
+    status: 'newcomer',
     imgUrl: './img/nicole.jpg',
     name: 'Nicole Frydrych',
     title: 'Web Developer',

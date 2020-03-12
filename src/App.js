@@ -26,6 +26,7 @@ export default function App() {
   )
 
   function handleAddProfile(profile) {
+    console.log(profile)
     setProfiles([profile, ...profiles])
   }
 }
@@ -39,6 +40,4 @@ const AppGrid = styled.div`
   top: 0;
   bottom: 0;
   height: 100%;
-  /* overflow-y: scroll;
-  scroll-behavior: smooth; */
 `
