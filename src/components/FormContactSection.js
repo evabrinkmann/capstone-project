@@ -4,45 +4,50 @@ import styled from 'styled-components/macro'
 export default function FormContactSection({ register }) {
   return (
     <div>
-      <StyledContactSection>
-        <h3>Contact</h3>
-        <label>
-          *company:
-          <StyledInput
-            ref={register({ required: true })}
-            name="company"
-            type="text"
-            placeholder="e.g. neuefische GmbH"
-          />
-        </label>
-        <label>
-          *location:
-          <StyledInput
-            ref={register({ required: true })}
-            name="location"
-            type="text"
-            placeholder="e.g. Hamburg, Germany"
-          />
-        </label>
-        <label>
-          *Your e-mail:
-          <StyledInput
-            ref={register({ required: true })}
-            name="email"
-            type="text"
-            placeholder="e.g. Web Developer"
-          />
-        </label>
-      </StyledContactSection>
+      <label>
+        <StyledInput
+          ref={register({ required: true })}
+          name="company"
+          type="text"
+          placeholder="Your workplace *"
+        />
+      </label>
+      <label>
+        <StyledInput
+          ref={register({ required: true })}
+          name="location"
+          type="text"
+          placeholder="Your location *"
+        />
+      </label>
+      <label>
+        <StyledInput
+          ref={register({ required: true })}
+          name="email"
+          type="text"
+          placeholder="Your email *"
+        />
+      </label>
+      <label>
+        <StyledInput
+          ref={register()}
+          name="capstoneName"
+          type="text"
+          placeholder="Your app *"
+        />
+      </label>
     </div>
   )
 }
 
-const StyledContactSection = styled.section`
-  margin-bottom: 50px;
-`
 const StyledInput = styled.input`
-  width: 100%;
   height: 34px;
-  margin-bottom: 10px;
+  border: 0;
+  border-radius: 4px;
+  padding: 20px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: #353b40;
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.03) inset;
+  margin-bottom: 30px;
 `
