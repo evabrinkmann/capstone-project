@@ -1,19 +1,14 @@
 import React, { useState } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  useHistory,
-} from 'react-router-dom'
 import Navigation from './Navigation'
-import PoolPage from './pages/PoolPage'
 import CreatePage from './pages/CreatePage'
+import PoolPage from './pages/PoolPage'
 import userData from './userData'
-import { cardsRef } from './components/firebase'
 
 export default function App() {
   const [profiles, setProfiles] = useState(userData)
+
   return (
     <Router>
       <AppGrid>
