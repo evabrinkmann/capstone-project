@@ -33,7 +33,7 @@ export default function FormContactSection({ register }) {
           ref={register()}
           name="capstoneName"
           type="text"
-          placeholder="Your app *"
+          placeholder="Your app"
         />
       </label>
     </div>
