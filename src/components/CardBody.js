@@ -72,7 +72,7 @@ export default function CardBody({
         ) : (
           <li>
             <StyledIcons src={capstoneIcon}></StyledIcons>
-            {capstoneName}
+            {capstoneName || 'capstone project'}
           </li>
         )}
         {personalWebsite ? (

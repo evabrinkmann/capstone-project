@@ -4,6 +4,9 @@ import styled from 'styled-components/macro'
 export default function FormHead({ register }) {
   return (
     <StyledFormHead>
+      <h3>
+        <span>1</span>User Info
+      </h3>
       <StyledCheckboxes>
         <div>
           <label>
@@ -28,10 +31,6 @@ export default function FormHead({ register }) {
           </label>
         </div>
       </StyledCheckboxes>
-
-      <h3>
-        <span>1</span>User Info
-      </h3>
       <label>
         <StyledInput
           ref={register({ required: true })}
