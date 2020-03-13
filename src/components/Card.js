@@ -3,6 +3,7 @@ import styled from 'styled-components/macro'
 import CardHead from './CardHead'
 import CardBody from './CardBody'
 import PropTypes from 'prop-types'
+import defaultImageSrc from '../imgsrc/unknownProfileImg.png'
 
 Card.propTypes = {
   user: PropTypes.object,
@@ -24,7 +25,7 @@ export default function Card({ user, setActiveCard, isActive }) {
       <ProfileCardStyled onClick={() => activeCard()}>
         <CardHead
           status={user.status}
-          img={user.imgUrl}
+          img={user.imgUrl || defaultImageSrc}
           name={user.name}
           title={user.title}
         />
@@ -32,7 +33,7 @@ export default function Card({ user, setActiveCard, isActive }) {
         {isActive && (
           <CardBody
             company={user.company}
-            country={user.country}
+            location={user.location}
             email={user.email}
             capstoneName={user.capstoneName}
             capstoneLink={user.capstoneLink}
@@ -49,37 +50,9 @@ export default function Card({ user, setActiveCard, isActive }) {
 
 const ProfileCardStyled = styled.article`
   padding: 20px;
-  margin: 20px;
+  margin: 10px 20px;
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
   overflow-wrap: break-word;
-
-  hr {
-    border: 0.5px solid #549dd8;
-  }
-
-  a {
-    color: black;
-  }
-
-  ul {
-    line-height: 2.2;
-    list-style-type: none;
-  }
-
-  li {
-    list-style-type: none;
-  }
-
-  span {
-    display: inline-block;
-    padding: 3px 6px;
-    margin: 4px;
-    border-radius: 15px;
-    border: 1px solid #e53a1e;
-    background: #e53a1e;
-    opacity: 0.9;
-    color: #fff;
-  }
 `

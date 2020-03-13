@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import companyIcon from '../icon/monitor.svg'
-import countryIcon from '../icon/location.svg'
+import locationIcon from '../icon/location.svg'
 import emailIcon from '../icon/letter.svg'
 import capstoneIcon from '../icon/cube.svg'
 import personalWebsiteIcon from '../icon/world.svg'
@@ -10,10 +10,10 @@ import codepenIcon from '../icon/codepen.svg'
 import PropTypes from 'prop-types'
 
 CardBody.propTypes = {
-  company: PropTypes.string.isRequired,
-  country: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
-  capstoneName: PropTypes.string.isRequired,
+  company: PropTypes.string,
+  location: PropTypes.string,
+  email: PropTypes.string,
+  capstoneName: PropTypes.string,
   capstoneLink: PropTypes.string,
   personalWebsite: PropTypes.string,
   github: PropTypes.string,
@@ -23,7 +23,7 @@ CardBody.propTypes = {
 
 export default function CardBody({
   company,
-  country,
+  location,
   email,
   capstoneName,
   capstoneLink,
@@ -41,8 +41,8 @@ export default function CardBody({
           {company}
         </li>
         <li>
-          <StyledIcons src={countryIcon}></StyledIcons>
-          {country}
+          <StyledIcons src={locationIcon}></StyledIcons>
+          {location}
         </li>
         <li>
           <StyledIcons src={emailIcon}></StyledIcons>
@@ -72,7 +72,7 @@ export default function CardBody({
         ) : (
           <li>
             <StyledIcons src={capstoneIcon}></StyledIcons>
-            {capstoneName}
+            {capstoneName || 'capstone project'}
           </li>
         )}
         {personalWebsite ? (
@@ -124,7 +124,7 @@ export default function CardBody({
       <hr />
       <h4>Skills</h4>
       {skills.map((skill, index) => (
-        <span key={index}>{skill}</span>
+        <StyledSkills key={index}>{skill}</StyledSkills>
       ))}
     </StyledBody>
   )
@@ -136,6 +136,28 @@ export default function CardBody({
 
 const StyledBody = styled.section`
   background: #fff;
+
+  hr {
+    border: 0.5px solid #549dd8;
+  }
+
+  a {
+    color: black;
+    text-decoration: none;
+
+    &:hover {
+      color: #549dd8;
+    }
+  }
+
+  ul {
+    line-height: 2.2;
+    list-style-type: none;
+  }
+
+  li {
+    list-style-type: none;
+  }
 `
 const StyledIcons = styled.img`
   display: inline-flex;
@@ -143,4 +165,14 @@ const StyledIcons = styled.img`
   vertical-align: middle;
   position: relative;
   margin-right: 20px;
+`
+const StyledSkills = styled.span`
+  display: inline-block;
+  padding: 3px 6px;
+  margin: 4px;
+  border-radius: 15px;
+  border: 1px solid #e53a1e;
+  background: #e53a1e;
+  opacity: 0.9;
+  color: #fff;
 `

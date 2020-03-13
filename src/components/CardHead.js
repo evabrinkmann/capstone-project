@@ -3,16 +3,16 @@ import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 
 CardHead.propTypes = {
-  status: PropTypes.string.isRequired,
-  img: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  status: PropTypes.string,
+  img: PropTypes.string,
+  name: PropTypes.string,
+  title: PropTypes.string,
 }
 
 export default function CardHead({ status, img, name, title }) {
   return (
     <StyledHead>
-      <h3>{status}</h3>
+      <span>{status}</span>
       <img src={img} alt="portrait" />
       <h1>{name}</h1>
       <h2>{title}</h2>
@@ -40,8 +40,16 @@ const StyledHead = styled.section`
     font-weight: normal;
   }
 
-  h3 {
+  span {
     align-self: flex-end;
-    padding-right: 20px;
+    margin: 20px 20px 35px;
+    font-weight: bold;
+    display: inline-block;
+    padding: 0 7px;
+    border-radius: 15px;
+    border: 1px solid #e53a1e;
+    background: #e53a1e;
+    opacity: 0.9;
+    color: #fff;
   }
 `
