@@ -154,10 +154,6 @@ const StyledBody = styled.section`
     line-height: 2.2;
     list-style-type: none;
   }
-
-  li {
-    list-style-type: none;
-  }
 `
 const StyledIcons = styled.img`
   display: inline-flex;

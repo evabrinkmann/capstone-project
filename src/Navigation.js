@@ -1,16 +1,10 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
 export default function Navigation() {
-  const [toggle, setToggle] = useState(true)
-
-  useEffect(() => {
-    console.log('Effect Navigation')
-  }, [toggle])
-
   return (
-    <NavigationStyled onClick={() => setToggle(!toggle)}>
+    <NavigationStyled>
       <Button to="/profile-pool">Profile Pool</Button>
       <Button to="/create-profile">Create Profile</Button>
     </NavigationStyled>

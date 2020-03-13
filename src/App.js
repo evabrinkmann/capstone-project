@@ -5,11 +5,11 @@ import Navigation from './Navigation'
 import CreatePage from './pages/CreatePage'
 import PoolPage from './pages/PoolPage'
 import userData from './userData'
-import { loadFromLocal, saveToLocal } from './utils'
+import { loadProfilesFromLocal, saveProfilesToLocal } from './utils'
 
 export default function App() {
   const [profiles, setProfiles] = useState(
-    loadFromLocal('profiles') || userData
+    loadProfilesFromLocal('profiles') || userData
   )
 
   return (
@@ -17,7 +17,7 @@ export default function App() {
       <AppGrid>
         <Navigation />
         <Switch>
-          <Route path="/profile-pool">
+          <Route exact path={['/', '/profile-pool']}>
             <PoolPage profiles={profiles} />
           </Route>
           <Route path="/create-profile">
@@ -31,7 +31,7 @@ export default function App() {
   function handleAddProfile(profile) {
     const newProfiles = [profile, ...profiles]
     setProfiles(newProfiles)
-    saveToLocal('profiles', newProfiles)
+    saveProfilesToLocal('profiles', newProfiles)
   }
 }
 

@@ -5,7 +5,7 @@ import Header from '../components/Header'
 export default function PoolPage({ profiles }) {
   return (
     <>
-      <Header headerTitle="Profile Pool" />
+      <Header title="Profile Pool" />
       <CardList profiles={profiles} />
     </>
   )

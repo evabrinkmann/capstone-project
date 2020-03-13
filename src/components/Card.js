@@ -12,17 +12,9 @@ Card.propTypes = {
 }
 
 export default function Card({ user, setActiveCard, isActive }) {
-  function activeCard() {
-    if (!isActive) {
-      setActiveCard(user.id)
-    } else {
-      setActiveCard('')
-    }
-  }
-
   return (
     <>
-      <ProfileCardStyled onClick={() => activeCard()}>
+      <ProfileCardStyled onClick={() => setActiveCard(isActive ? '' : user.id)}>
         <CardHead
           status={user.status}
           img={user.imgUrl || defaultImageSrc}

@@ -1,7 +1,6 @@
 import React from 'react'
 import CardHead from '../components/CardHead'
 import userData from '../userData'
-import GlobalStyles from '../GlobalStyles'
 
 export default {
   title: 'components/CardHead',

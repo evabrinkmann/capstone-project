@@ -17,7 +17,6 @@ export default function CardList({ profiles }) {
           <Card
             key={user.id}
             user={user}
-            {...user}
             setActiveCard={setActiveCard}
             isActive={activeCard === user.id}
           />
