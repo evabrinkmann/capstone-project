@@ -7,30 +7,44 @@ export default function FormHead({ register }) {
       <h3>
         <span>1</span>User Info
       </h3>
-      <StyledCheckboxes>
-        <div>
-          <label>
-            <input
-              ref={register({ required: true })}
-              name="status"
-              value="alumni"
-              type="radio"
-            />
-            alumni
-          </label>
-        </div>
-        <div>
-          <label>
-            <input
-              ref={register({ required: true })}
-              name="status"
-              value="newcomer"
-              type="radio"
-            />
-            new
-          </label>
-        </div>
-      </StyledCheckboxes>
+      <StyledRadioButton>
+        <input
+          ref={register({ required: true })}
+          required
+          value="alumni"
+          type="radio"
+          name="status"
+          id="alumni"
+        />
+        <StyledLabel htmlFor="alumni">alumni</StyledLabel>
+        <input
+          ref={register({ required: true })}
+          required
+          value="newcomer"
+          type="radio"
+          name="status"
+          id="newcomer"
+        />
+        <label htmlFor="newcomer">newcomer</label>
+        {/* <label>
+          <input
+            ref={register({ required: true })}
+            name="status"
+            value="alumni"
+            type="radio"
+          />
+          alumni
+        </label> */}
+        {/* <label>
+          <input
+            ref={register({ required: true })}
+            name="status"
+            value="newcomer"
+            type="radio"
+          />
+          new
+        </label> */}
+      </StyledRadioButton>
       <label>
         <StyledInput
           ref={register({ required: true })}
@@ -67,11 +81,20 @@ const StyledFormHead = styled.div`
   }
 `
 
-const StyledCheckboxes = styled.div`
+const StyledRadioButton = styled.div`
+  margin: 15px;
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
+  justify-content: center;
+  gap: 20px;
+
+  input:checked + label {
+    color: #1abc9c;
+  }
 `
+const StyledLabel = styled.label`
+  margin-right: 100px;
+`
+
 const StyledInput = styled.input`
   height: 34px;
   border: 0;
