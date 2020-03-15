@@ -11,18 +11,19 @@ export default function FormSkillTags({ register }) {
       </h3>
       <Wrapper>
         {skills.map(skill => (
-          <>
+          <React.Fragment key={`fragment_${skill}`}>
             <InputTag
               ref={register()}
               type="checkbox"
               name="skills"
               value={skill}
               id={skill}
+              key={`input_${skill}`}
             />
             <LabelTag key={skill} htmlFor={skill}>
               {skill}
             </LabelTag>
-          </>
+          </React.Fragment>
         ))}
       </Wrapper>
     </StyledSkillTags>

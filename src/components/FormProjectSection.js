@@ -5,7 +5,7 @@ export default function FormProjectSection({ register }) {
   return (
     <StyledSection>
       <h3>
-        <span>2</span>Additional Infos
+        <span>2</span>Linked Projects
       </h3>
       <label>
         <StyledInput
