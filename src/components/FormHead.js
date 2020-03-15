@@ -7,8 +7,8 @@ export default function FormHead({ register }) {
       <h3>
         <span>1</span>User Info
       </h3>
-      <StyledRadioButton>
-        <input
+      <RadioWrapper>
+        <StyledRadioInput
           ref={register({ required: true })}
           required
           value="alumni"
@@ -16,8 +16,8 @@ export default function FormHead({ register }) {
           name="status"
           id="alumni"
         />
-        <StyledLabel htmlFor="alumni">alumni</StyledLabel>
-        <input
+        <StyledRadioLabel htmlFor="alumni">alumni</StyledRadioLabel>
+        <StyledRadioInput
           ref={register({ required: true })}
           required
           value="newcomer"
@@ -25,28 +25,10 @@ export default function FormHead({ register }) {
           name="status"
           id="newcomer"
         />
-        <label htmlFor="newcomer">newcomer</label>
-        {/* <label>
-          <input
-            ref={register({ required: true })}
-            name="status"
-            value="alumni"
-            type="radio"
-          />
-          alumni
-        </label> */}
-        {/* <label>
-          <input
-            ref={register({ required: true })}
-            name="status"
-            value="newcomer"
-            type="radio"
-          />
-          new
-        </label> */}
-      </StyledRadioButton>
+        <StyledRadioLabel htmlFor="newcomer">newcomer</StyledRadioLabel>
+      </RadioWrapper>
       <label>
-        <StyledInput
+        <StyledInputText
           ref={register({ required: true })}
           name="name"
           type="text"
@@ -54,7 +36,7 @@ export default function FormHead({ register }) {
         />
       </label>
       <label>
-        <StyledInput
+        <StyledInputText
           ref={register({ required: true })}
           name="title"
           type="text"
@@ -73,7 +55,7 @@ const StyledFormHead = styled.div`
     width: 30px;
     display: inline-block;
     font-size: 0.8em;
-    margin-right: 4px;
+    margin-right: 10px;
     line-height: 30px;
     text-align: center;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -81,21 +63,31 @@ const StyledFormHead = styled.div`
   }
 `
 
-const StyledRadioButton = styled.div`
-  margin: 15px;
+const RadioWrapper = styled.div`
   display: flex;
-  justify-content: center;
-  gap: 20px;
-
-  input:checked + label {
-    color: #1abc9c;
+  justify-content: space-between;
+`
+const StyledRadioInput = styled.input`
+  width: 0;
+  opacity: 0;
+  position: fixed;
+  &:checked + label {
+    background: #1abc9c;
   }
 `
-const StyledLabel = styled.label`
-  margin-right: 100px;
+
+const StyledRadioLabel = styled.label`
+  background-color: #e8eeef;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-family: sans-serif, Arial;
+  margin: 0 20px 20px;
+  &:hover {
+    background-color: #f4f7f8;
+  }
 `
 
-const StyledInput = styled.input`
+const StyledInputText = styled.input`
   height: 34px;
   border: 0;
   border-radius: 4px;

@@ -5,14 +5,14 @@ export default function FormProjectSection({ register }) {
   return (
     <StyledSection>
       <h3>
-        <span>2</span>Additional Information
+        <span>2</span>Additional Infos
       </h3>
       <label>
         <StyledInput
           ref={register()}
           name="capstoneLink"
           type="text"
-          placeholder="Link here your app"
+          placeholder="Link your app here"
         />
       </label>
       <label>
@@ -20,7 +20,7 @@ export default function FormProjectSection({ register }) {
           ref={register()}
           name="personalWebsite"
           type="text"
-          placeholder="Link here your personal-website"
+          placeholder="Link your personal-website here"
         />
       </label>
       <label>
@@ -28,7 +28,7 @@ export default function FormProjectSection({ register }) {
           ref={register()}
           name="github"
           type="text"
-          placeholder="Link here your github"
+          placeholder="Link your github here"
         />
       </label>
       <label>
@@ -36,7 +36,7 @@ export default function FormProjectSection({ register }) {
           ref={register()}
           name="codepen"
           type="text"
-          placeholder="Link here your codepen"
+          placeholder="Link your codepen here"
         />
       </label>
     </StyledSection>
@@ -44,6 +44,10 @@ export default function FormProjectSection({ register }) {
 }
 
 const StyledSection = styled.div`
+  h3 {
+    margin-bottom: 30px;
+  }
+
   span {
     background: #1abc9c;
     color: #fff;
@@ -51,7 +55,7 @@ const StyledSection = styled.div`
     width: 30px;
     display: inline-block;
     font-size: 0.8em;
-    margin-right: 4px;
+    margin-right: 10px;
     line-height: 30px;
     text-align: center;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);

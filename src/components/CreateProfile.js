@@ -33,7 +33,7 @@ const FormStyled = styled.form`
   max-width: 400px;
   background: #f4f7f8;
   border-radius: 8px;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: Georgia;
 `
 
 const ScrollContainer = styled.div`

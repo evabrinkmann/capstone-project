@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 
-const skills = ['html5', 'css3', 'bootstrap', 'sass', 'javascript', 'firebase']
+const skills = ['html5', 'css3', 'bootstrap', 'sass', 'javascript', 'react']
 
 export default function FormSkillTags({ register }) {
   return (
     <StyledSkillTags>
       <h3>
-        <span>3</span>skills
+        <span>3</span>Skills
       </h3>
       <Wrapper>
         {skills.map(skill => (
@@ -41,7 +41,7 @@ const StyledSkillTags = styled.div`
     width: 30px;
     display: inline-block;
     font-size: 0.8em;
-    margin-right: 4px;
+    margin-right: 10px;
     line-height: 30px;
     text-align: center;
     text-shadow: 0 1px 0 rgba(255, 255, 255, 0.2);
@@ -53,7 +53,8 @@ const Wrapper = styled.div`
   display: grid;
   grid-template-columns: 100px 100px;
   gap: 20px;
-  font-size: 1.0625rem;
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
   input:checked + label {
     background: linear-gradient(0.2turn, #1abc9c, #e8eeef, #fff);
   }
