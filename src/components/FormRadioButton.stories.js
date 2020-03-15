@@ -1,11 +1,20 @@
-// import React from 'react'
-// import FormRadioButton from './FormRadioButton'
+import React from 'react'
+import FormRadioButton from './FormRadioButton'
 
-// export default {
-//   title: 'components/Radio Button',
-//   component: RadioButton,
-// }
+export default {
+  title: 'components/Input/Radio Button',
+  component: FormRadioButton,
+}
 
-// export const StatusButton = ({ register }) => (
-//   <RadioButton register={register} />
-// )
+const register = () => {}
+export const RadioButton = () => (
+  <div
+    style={{
+      width: '400px',
+      height: '200px',
+      background: 'white',
+    }}
+  >
+    <FormRadioButton register={register} />
+  </div>
+)
