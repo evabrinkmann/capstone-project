@@ -4,6 +4,7 @@ import styled from 'styled-components/macro'
 import Navigation from './Navigation'
 import CreatePage from './pages/CreatePage'
 import PoolPage from './pages/PoolPage'
+import FavoritePage from './pages/FavoritePage'
 import userData from './userData'
 import { loadProfilesFromLocal, saveProfilesToLocal } from './utils'
 
@@ -30,6 +31,9 @@ export default function App() {
           </Route>
           <Route path="/create-profile">
             <CreatePage onAddProfile={handleAddProfile} />
+          </Route>
+          <Route path="/favorite-profile">
+            <FavoritePage />
           </Route>
         </Switch>
       </AppGrid>
