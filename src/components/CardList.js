@@ -7,7 +7,7 @@ CardList.propTypes = {
   profiles: PropTypes.array,
 }
 
-export default function CardList({ profiles }) {
+export default function CardList({ profiles, onDelete }) {
   const [activeCard, setActiveCard] = useState('')
 
   return (
@@ -17,8 +17,10 @@ export default function CardList({ profiles }) {
           <Card
             key={user.id}
             user={user}
+            {...user}
             setActiveCard={setActiveCard}
             isActive={activeCard === user.id}
+            onDelete={onDelete}
           />
         ))}
       </StyledMain>

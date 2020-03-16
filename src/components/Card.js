@@ -11,15 +11,18 @@ Card.propTypes = {
   isActive: PropTypes.bool,
 }
 
-export default function Card({ user, setActiveCard, isActive }) {
+export default function Card({ user, setActiveCard, isActive, onDelete, id }) {
   return (
     <>
       <ProfileCardStyled onClick={() => setActiveCard(isActive ? '' : user.id)}>
         <CardHead
+          handleDelete={onDelete}
+          key={user.id}
           status={user.status}
           img={user.imgUrl || defaultImageSrc}
           name={user.name}
           title={user.title}
+          id={id}
         />
 
         {isActive && (

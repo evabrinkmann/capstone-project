@@ -9,10 +9,18 @@ CardHead.propTypes = {
   title: PropTypes.string,
 }
 
-export default function CardHead({ status, img, name, title }) {
+export default function CardHead({
+  status,
+  img,
+  name,
+  title,
+  handleDelete,
+  id,
+}) {
   return (
     <StyledHead>
-      <span>{status}</span>
+      <StatusStyled>{status}</StatusStyled>
+      <DeleteSign onClick={() => handleDelete(id)}>x</DeleteSign>
       <img src={img} alt="portrait" />
       <h1>{name}</h1>
       <h2>{title}</h2>
@@ -26,6 +34,7 @@ const StyledHead = styled.section`
   justify-content: flex-start;
   align-items: center;
   overflow-wrap: normal;
+  position: relative;
 
   img {
     position: relative;
@@ -39,17 +48,21 @@ const StyledHead = styled.section`
     text-align: center;
     font-weight: normal;
   }
-
-  span {
-    align-self: flex-end;
-    margin: 20px 20px 35px;
-    font-weight: bold;
-    display: inline-block;
-    padding: 0 7px;
-    border-radius: 15px;
-    border: 1px solid #e53a1e;
-    background: #e53a1e;
-    opacity: 0.9;
-    color: #fff;
-  }
+`
+const StatusStyled = styled.span`
+  align-self: flex-start;
+  margin: 20px 20px 35px;
+  font-weight: bold;
+  display: inline-block;
+  padding: 0 7px;
+  border-radius: 15px;
+  border: 1px solid #e53a1e;
+  background: #e53a1e;
+  opacity: 0.9;
+  color: #fff;
+`
+const DeleteSign = styled.span`
+  position: absolute;
+  bottom: -15px;
+  right: -10px;
 `

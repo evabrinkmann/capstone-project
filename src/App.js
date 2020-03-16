@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import Navigation from './Navigation'
@@ -12,13 +12,17 @@ export default function App() {
     loadProfilesFromLocal('profiles') || userData
   )
 
+  useEffect(() => {
+    saveProfilesToLocal('profiles', profiles)
+  })
+
   return (
     <Router>
       <AppGrid>
         <Navigation />
         <Switch>
           <Route exact path={['/', '/profile-pool']}>
-            <PoolPage profiles={profiles} />
+            <PoolPage profiles={profiles} onDelete={onDelete} />
           </Route>
           <Route path="/create-profile">
             <CreatePage onAddProfile={handleAddProfile} />
@@ -32,6 +36,14 @@ export default function App() {
     const newProfiles = [profile, ...profiles]
     setProfiles(newProfiles)
     saveProfilesToLocal('profiles', newProfiles)
+  }
+
+  function onDelete(id) {
+    const indexCard = profiles.findIndex(profile => profile.id === id)
+    setProfiles([
+      ...profiles.slice(0, indexCard),
+      ...profiles.slice(indexCard + 1),
+    ])
   }
 }
 
