@@ -7,7 +7,7 @@ CardList.propTypes = {
   profiles: PropTypes.array,
 }
 
-export default function CardList({ profiles, onDelete }) {
+export default function CardList({ profiles, onDelete, handleBookmarkClick }) {
   const [activeCard, setActiveCard] = useState('')
 
   return (
@@ -21,6 +21,7 @@ export default function CardList({ profiles, onDelete }) {
             setActiveCard={setActiveCard}
             isActive={activeCard === user.id}
             onDelete={onDelete}
+            handleBookmarkClick={handleBookmarkClick}
           />
         ))}
       </StyledMain>
