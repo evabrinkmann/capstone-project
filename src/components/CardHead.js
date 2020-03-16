@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
+import { useToggle } from 'react-hooks-lib'
 
 CardHead.propTypes = {
   status: PropTypes.string,
@@ -17,10 +18,16 @@ export default function CardHead({
   handleDelete,
   id,
 }) {
+  const { on, toggle } = useToggle(false)
+
   return (
-    <StyledHead>
+    <StyledHead onClick={toggle}>
       <StatusStyled>{status}</StatusStyled>
-      <DeleteSign onClick={() => handleDelete(id)}>x</DeleteSign>
+      {on === false ? (
+        <DeleteSign onClick={() => handleDelete(id)}>x</DeleteSign>
+      ) : (
+        ''
+      )}
       <img src={img} alt="portrait" />
       <h1>{name}</h1>
       <h2>{title}</h2>
