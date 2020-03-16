@@ -1,5 +1,5 @@
 import React from 'react'
-import CardBody from '../components/CardBody'
+import CardBody from './CardBody'
 import userData from '../userData'
 
 export default {

@@ -1,5 +1,5 @@
 import React from 'react'
-import CardHead from '../components/CardHead'
+import CardHead from './CardHead'
 import userData from '../userData'
 
 export default {
