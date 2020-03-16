@@ -8,8 +8,6 @@ CardList.propTypes = {
 }
 
 export default function CardList({ profiles, onDelete, handleBookmarkClick }) {
-  const [activeCard, setActiveCard] = useState('')
-
   return (
     <Scroller>
       <StyledMain>
@@ -18,8 +16,6 @@ export default function CardList({ profiles, onDelete, handleBookmarkClick }) {
             key={user.id}
             user={user}
             {...user}
-            setActiveCard={setActiveCard}
-            isActive={activeCard === user.id}
             onDelete={onDelete}
             handleBookmarkClick={handleBookmarkClick}
           />

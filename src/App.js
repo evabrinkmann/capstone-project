@@ -33,7 +33,10 @@ export default function App() {
             <CreatePage onAddProfile={handleAddProfile} />
           </Route>
           <Route path="/favorite-profile">
-            <FavoritePage />
+            <FavoritePage
+              profiles={profiles}
+              onBookmarkClick={handleBookmarkClick}
+            />
           </Route>
         </Switch>
       </AppGrid>

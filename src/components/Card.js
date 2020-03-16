@@ -5,6 +5,7 @@ import CardBody from './CardBody'
 import PropTypes from 'prop-types'
 import defaultImageSrc from '../imgsrc/unknownProfileImg.png'
 import Bookmark from './Bookmark'
+import { useToggle } from 'react-hooks-lib'
 
 Card.propTypes = {
   user: PropTypes.object,
@@ -14,13 +15,12 @@ Card.propTypes = {
 
 export default function Card({
   user,
-  setActiveCard,
-  isActive,
   onDelete,
   id,
   handleBookmarkClick,
   isBookmarked,
 }) {
+  const { on, toggle } = useToggle(false)
   return (
     <>
       <Wrapper>
@@ -29,9 +29,7 @@ export default function Card({
           id={id}
           bookmarkStatus={isBookmarked}
         />
-        <ProfileCardStyled
-          onClick={() => setActiveCard(isActive ? '' : user.id)}
-        >
+        <ProfileCardStyled onClick={toggle}>
           <CardHead
             handleDelete={onDelete}
             key={user.id}
@@ -42,7 +40,7 @@ export default function Card({
             id={id}
           />
 
-          {isActive && (
+          {on && (
             <CardBody
               company={user.company}
               location={user.location}
