@@ -70,7 +70,7 @@ const Wrapper = styled.div`
 
 const ProfileCardStyled = styled.article`
   padding: 20px;
-  margin: 20px 20px;
+  margin: 20px;
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
@@ -101,11 +101,12 @@ const StyledHead = styled.section`
   h2 {
     text-align: center;
     font-weight: normal;
+    margin: 10px;
   }
 `
 const StatusStyled = styled.span`
   align-self: flex-start;
-  margin: 20px 20px 35px;
+  margin: -1px -1px 30px;
   font-weight: bold;
   display: inline-block;
   padding: 0 7px;
