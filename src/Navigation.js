@@ -7,6 +7,7 @@ export default function Navigation() {
     <NavigationStyled>
       <Button to="/profile-pool">Profile Pool</Button>
       <Button to="/create-profile">Create Profile</Button>
+      <Button to="/favorite-profile">Favorite Profiles</Button>
     </NavigationStyled>
   )
 }
@@ -28,8 +29,8 @@ const Button = styled(NavLink)`
 
 const NavigationStyled = styled.nav`
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  grid-column-end: 2;
+  grid-template-columns: repeat(3, auto);
+  grid-column-end: 3;
   position: fixed;
   bottom: 0;
   width: 100%;

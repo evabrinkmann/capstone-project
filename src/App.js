@@ -4,6 +4,7 @@ import styled from 'styled-components/macro'
 import Navigation from './Navigation'
 import CreatePage from './pages/CreatePage'
 import PoolPage from './pages/PoolPage'
+import FavoritePage from './pages/FavoritePage'
 import userData from './userData'
 import { loadProfilesFromLocal, saveProfilesToLocal } from './utils'
 
@@ -22,10 +23,20 @@ export default function App() {
         <Navigation />
         <Switch>
           <Route exact path={['/', '/profile-pool']}>
-            <PoolPage profiles={profiles} onDelete={onDelete} />
+            <PoolPage
+              profiles={profiles}
+              onDelete={onDelete}
+              onBookmarkClick={handleBookmarkClick}
+            />
           </Route>
           <Route path="/create-profile">
             <CreatePage onAddProfile={handleAddProfile} />
+          </Route>
+          <Route path="/favorite-profile">
+            <FavoritePage
+              profiles={profiles}
+              onBookmarkClick={handleBookmarkClick}
+            />
           </Route>
         </Switch>
       </AppGrid>
@@ -43,6 +54,19 @@ export default function App() {
     setProfiles([
       ...profiles.slice(0, indexCard),
       ...profiles.slice(indexCard + 1),
+    ])
+  }
+
+  function handleBookmarkClick(id) {
+    const index = profiles.findIndex(profile => profile.id === id)
+    const updatedProfile = {
+      ...profiles[index],
+      isBookmarked: !profiles[index].isBookmarked,
+    }
+    setProfiles([
+      ...profiles.slice(0, index),
+      updatedProfile,
+      ...profiles.slice(index + 1),
     ])
   }
 }
