@@ -4,6 +4,7 @@ import Bookmark from '../components/Bookmark'
 import CardBody from '../components/CardBody'
 import styled from 'styled-components/macro'
 import { useToggle } from 'react-hooks-lib'
+import defaultImageSrc from '../imgsrc/unknownProfileImg.png'
 
 export default function FavoritePage({ profiles, onBookmarkClick }) {
   const filterProfiles = profiles.filter(
@@ -27,7 +28,10 @@ export default function FavoritePage({ profiles, onBookmarkClick }) {
                 <StyledHead>
                   <StatusStyled>{profile.status}</StatusStyled>
 
-                  <img src={profile.imgUrl} alt="portrait" />
+                  <img
+                    src={profile.imgUrl || defaultImageSrc}
+                    alt="profile-img"
+                  />
                   <h1>{profile.name}</h1>
                   <h2>{profile.title}</h2>
                 </StyledHead>
