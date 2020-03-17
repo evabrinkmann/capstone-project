@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import Navigation from './Navigation'
+import StartPage from './pages/StartPage'
 import CreatePage from './pages/CreatePage'
 import PoolPage from './pages/PoolPage'
 import FavoritePage from './pages/FavoritePage'
@@ -22,7 +23,10 @@ export default function App() {
       <AppGrid>
         <Navigation />
         <Switch>
-          <Route exact path={['/', '/profile-pool']}>
+          <Route exact path="/">
+            <StartPage />
+          </Route>
+          <Route exact path={'/profile-pool'}>
             <PoolPage
               profiles={profiles}
               onDelete={onDelete}

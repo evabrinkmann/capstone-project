@@ -19,36 +19,38 @@ export default function FavoritePage({ profiles, onBookmarkClick }) {
         <StyledMain>
           {filterProfiles.length !== 0 ? (
             filterProfiles.map(profile => (
-              <ProfileCardStyled onClick={toggle} key={profile.id}>
+              <Wrapper key={profile.id}>
                 <Bookmark
                   onBookmarkClick={onBookmarkClick}
                   id={profile.id}
                   bookmarkStatus={profile.isBookmarked}
                 />
-                <StyledHead>
-                  <StatusStyled>{profile.status}</StatusStyled>
+                <ProfileCardStyled onClick={toggle} key={profile.id}>
+                  <StyledHead>
+                    <StatusStyled>{profile.status}</StatusStyled>
 
-                  <img
-                    src={profile.imgUrl || defaultImageSrc}
-                    alt="profile-img"
-                  />
-                  <h1>{profile.name}</h1>
-                  <h2>{profile.title}</h2>
-                </StyledHead>
-                {on && (
-                  <CardBody
-                    company={profile.company}
-                    location={profile.location}
-                    email={profile.email}
-                    capstoneName={profile.capstoneName}
-                    capstoneLink={profile.capstoneLink}
-                    personalWebsite={profile.personalWebsite}
-                    github={profile.github}
-                    codepen={profile.codepen}
-                    skills={profile.skills}
-                  />
-                )}
-              </ProfileCardStyled>
+                    <img
+                      src={profile.imgUrl || defaultImageSrc}
+                      alt="profile-img"
+                    />
+                    <h1>{profile.name}</h1>
+                    <h2>{profile.title}</h2>
+                  </StyledHead>
+                  {on && (
+                    <CardBody
+                      company={profile.company}
+                      location={profile.location}
+                      email={profile.email}
+                      capstoneName={profile.capstoneName}
+                      capstoneLink={profile.capstoneLink}
+                      personalWebsite={profile.personalWebsite}
+                      github={profile.github}
+                      codepen={profile.codepen}
+                      skills={profile.skills}
+                    />
+                  )}
+                </ProfileCardStyled>
+              </Wrapper>
             ))
           ) : (
             <p>Select your favorite profiles</p>
@@ -62,14 +64,17 @@ const Scroller = styled.div`
   overflow-y: scroll;
   scroll-behavior: smooth;
 `
+const Wrapper = styled.div`
+  position: relative;
+`
+
 const ProfileCardStyled = styled.article`
   padding: 20px;
-  margin: 10px 20px;
+  margin: 20px 20px;
   background: #fff;
   border-radius: 15px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.5);
   overflow-wrap: break-word;
-  position: relative;
 `
 const StyledMain = styled.main`
   display: flex;

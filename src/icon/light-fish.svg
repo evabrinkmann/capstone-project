@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="30px" viewBox="0 0 169 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>lower fish</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="55.697312%" y1="42.6939731%" x2="42.4688603%" y2="57.1048986%" id="linearGradient-1">
+            <stop stop-color="#DEDDE6" offset="0%"></stop>
+            <stop stop-color="#5196D4" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="100%" y1="79.3754168%" x2="50%" y2="98.5612266%" id="linearGradient-2">
+            <stop stop-color="#5196D4" offset="0%"></stop>
+            <stop stop-color="#DEDDE6" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="alumni-app" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-99.000000, -344.000000)">
+            <g id="lower-fish" transform="translate(99.000000, 344.000000)">
+                <path d="M101.514648,-30.8214552 L136.014648,33.6696731 C121.49013,80.0089209 109.99013,103.178545 101.514648,103.178545 C93.0391661,103.178545 81.5391661,80.0089209 67.0146479,33.6696731 L101.514648,-30.8214552 Z" id="Triangle-Copy" fill="url(#linearGradient-1)" transform="translate(101.514648, 36.178545) rotate(270.000000) translate(-101.514648, -36.178545) "></path>
+                <path d="M34.5,1 L69,69 C54.1475371,58.0463801 42.6475371,52.5695702 34.5,52.5695702 C26.3524629,52.5695702 14.8524629,58.0463801 0,69 L34.5,1 Z" id="Triangle" fill="url(#linearGradient-2)" transform="translate(34.500000, 35.000000) rotate(90.000000) translate(-34.500000, -35.000000) "></path>
+                <ellipse id="Oval" stroke="#FFFFFF" cx="134.514648" cy="30.6785448" rx="3" ry="4"></ellipse>
+            </g>
+        </g>
+    </g>
+</svg>
