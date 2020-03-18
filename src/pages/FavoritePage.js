@@ -89,6 +89,7 @@ const StyledHead = styled.section`
   align-items: center;
   overflow-wrap: normal;
   position: relative;
+  cursor: pointer;
 
   img {
     position: relative;
@@ -97,6 +98,7 @@ const StyledHead = styled.section`
     flex-direction: center;
     border-radius: 50%;
     object-fit: cover;
+    cursor: default;
   }
   h2 {
     text-align: center;
@@ -115,4 +117,5 @@ const StatusStyled = styled.span`
   background: #e53a1e;
   opacity: 0.9;
   color: #fff;
+  cursor: default;
 `
