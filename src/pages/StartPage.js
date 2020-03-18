@@ -1,12 +1,10 @@
 import React from 'react'
-import Header from '../components/Header'
 import fishgroup from '../icon/fish-group.svg'
 import styled from 'styled-components/macro'
 
 export default function StartPage() {
   return (
     <StyledContainer>
-      <Header />
       <h1>
         Welcome <br /> to <br /> newAlumni!
       </h1>
@@ -20,4 +18,11 @@ const StyledContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   text-align: center;
+  background: #549dd8;
+  color: white;
+
+  h1 {
+    margin: 50px;
+    font-weight: lighter;
+  }
 `

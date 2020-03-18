@@ -22,6 +22,7 @@ const Button = styled(NavLink)`
   background: grey;
   font-weight: bold;
   border: 1px solid white;
+  font-weight: lighter;
 
   &.active {
     background: #549dd8;
@@ -30,7 +31,7 @@ const Button = styled(NavLink)`
 
 const NavigationStyled = styled.nav`
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: 1fr 1fr 1fr;
   grid-column-end: 3;
   position: fixed;
   bottom: 0;
