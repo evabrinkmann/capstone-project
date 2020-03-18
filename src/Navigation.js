@@ -37,7 +37,6 @@ const Button = styled(NavLink)`
   flex-grow: 1;
   color: white;
   text-decoration: none;
-
   background: grey;
   font-weight: bold;
   border: 1px solid white;

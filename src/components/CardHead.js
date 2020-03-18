@@ -57,10 +57,14 @@ const StyledHead = styled.section`
     object-fit: cover;
     cursor: default;
   }
+  h1 {
+    color: #549dd8;
+  }
   h2 {
     text-align: center;
     font-weight: normal;
     margin: 10px;
+    font-size: 24px;
   }
 `
 const StatusStyled = styled.span`
