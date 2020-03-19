@@ -5,9 +5,9 @@ import styled from 'styled-components/macro'
 export default function Navigation() {
   return (
     <NavigationStyled>
-      <Button to="/profile-pool">Profile Pool</Button>
-      <Button to="/create-profile">Create Profile</Button>
-      <Button to="/favorite-profile">Favorite Profiles</Button>
+      <Button to="/profile-pool">Profiles</Button>
+      <Button to="/create-profile">Create</Button>
+      <Button to="/favorite-profile">Favorites</Button>
     </NavigationStyled>
   )
 }
@@ -21,6 +21,8 @@ const Button = styled(NavLink)`
   align-items: center;
   background: grey;
   font-weight: bold;
+  border: 1px solid white;
+  font-weight: lighter;
 
   &.active {
     background: #549dd8;
@@ -29,7 +31,7 @@ const Button = styled(NavLink)`
 
 const NavigationStyled = styled.nav`
   display: grid;
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: 1fr 1fr 1fr;
   grid-column-end: 3;
   position: fixed;
   bottom: 0;

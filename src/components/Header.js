@@ -1,8 +1,15 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import fishgroup from '../icon/fish-group.svg'
 
 export default function Header({ title }) {
-  return <StyledHeader>{title}</StyledHeader>
+  return (
+    <StyledHeader>
+      <StyledFish src={fishgroup} />
+
+      {title}
+    </StyledHeader>
+  )
 }
 
 const StyledHeader = styled.header`
@@ -17,4 +24,11 @@ const StyledHeader = styled.header`
   text-align: center;
   font-size: 27px;
   color: white;
+  font-weight: lighter;
+`
+const StyledFish = styled.img`
+  position: absolute;
+  left: 14px;
+  top: 5px;
+  opacity: 0.5;
 `

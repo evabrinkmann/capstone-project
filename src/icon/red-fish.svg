@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="50px" height="30px" viewBox="0 0 176 70" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 63.1 (92452) - https://sketch.com -->
+    <title>upper fish</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="41.7070392%" y1="65.5778141%" x2="57.2950492%" y2="44.7825712%" id="linearGradient-1">
+            <stop stop-color="#DEDDE6" offset="0%"></stop>
+            <stop stop-color="#E43A1E" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50%" y1="8.8817842e-14%" x2="50%" y2="100%" id="linearGradient-2">
+            <stop stop-color="#DEDDE6" offset="0%"></stop>
+            <stop stop-color="#E44A32" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="alumni-app" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Artboard" transform="translate(-93.000000, -240.000000)">
+            <g id="upper-fish" transform="translate(93.000000, 240.000000)">
+                <path d="M108.514648,-31.8214552 L143.014648,32.6696731 C128.49013,79.0089209 116.99013,102.178545 108.514648,102.178545 C100.039166,102.178545 88.5391661,79.0089209 74.0146479,32.6696731 L108.514648,-31.8214552 Z" id="Triangle-Copy" fill="url(#linearGradient-1)" transform="translate(108.514648, 35.178545) rotate(270.000000) translate(-108.514648, -35.178545) "></path>
+                <path d="M34.5,1 L69,69 C54.1475371,58.0463801 42.6475371,52.5695702 34.5,52.5695702 C26.3524629,52.5695702 14.8524629,58.0463801 0,69 L34.5,1 Z" id="Triangle" fill="url(#linearGradient-2)" transform="translate(34.500000, 35.000000) rotate(90.000000) translate(-34.500000, -35.000000) "></path>
+                <path d="M141.514648,25.1785448 C143.447645,25.1785448 145.014648,27.1932635 145.014648,29.6785448 C145.014648,32.1638262 143.447645,34.1785448 141.514648,34.1785448 C139.581651,34.1785448 138.014648,32.1638262 138.014648,29.6785448 C138.014648,27.1932635 139.581651,25.1785448 141.514648,25.1785448 Z M141.514648,26.1785448 C140.196726,26.1785448 139.014648,27.6983595 139.014648,29.6785448 C139.014648,31.6587302 140.196726,33.1785448 141.514648,33.1785448 C142.83257,33.1785448 144.014648,31.6587302 144.014648,29.6785448 C144.014648,27.6983595 142.83257,26.1785448 141.514648,26.1785448 Z" id="Oval" fill="#FFFFFF" fill-rule="nonzero"></path>
+            </g>
+        </g>
+    </g>
+</svg>

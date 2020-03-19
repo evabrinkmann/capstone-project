@@ -18,7 +18,7 @@ const userData = [
   },
   {
     id: 2,
-    status: 'alumni',
+    status: 'newcomer',
     imgUrl: './img/kevin.png',
     name: 'Kevin Kuhfeldt',
     title: 'Frontend Developer',

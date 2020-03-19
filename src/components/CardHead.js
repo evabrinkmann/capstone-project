@@ -2,6 +2,8 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 import { useToggle } from 'react-hooks-lib'
+// import deleteIcon from '../icon/delete-icon.png'
+import deleteIcon from '../icon/trashIcon.png'
 
 CardHead.propTypes = {
   status: PropTypes.string,
@@ -24,7 +26,9 @@ export default function CardHead({
     <StyledHead onClick={toggle}>
       <StatusStyled>{status}</StatusStyled>
       {on === false ? (
-        <DeleteSign onClick={() => handleDelete(id)}>x</DeleteSign>
+        <DeleteSign onClick={() => handleDelete(id)}>
+          <img src={deleteIcon} alt="trashbox" />
+        </DeleteSign>
       ) : (
         ''
       )}
@@ -42,6 +46,7 @@ const StyledHead = styled.section`
   align-items: center;
   overflow-wrap: normal;
   position: relative;
+  cursor: pointer;
 
   img {
     position: relative;
@@ -50,15 +55,17 @@ const StyledHead = styled.section`
     flex-direction: center;
     border-radius: 50%;
     object-fit: cover;
+    cursor: default;
   }
   h2 {
     text-align: center;
     font-weight: normal;
+    margin: 10px;
   }
 `
 const StatusStyled = styled.span`
   align-self: flex-start;
-  margin: 20px 20px 35px;
+  margin: -1px -1px 30px;
   font-weight: bold;
   display: inline-block;
   padding: 0 7px;
@@ -67,9 +74,17 @@ const StatusStyled = styled.span`
   background: #e53a1e;
   opacity: 0.9;
   color: #fff;
+  cursor: default;
 `
 const DeleteSign = styled.span`
   position: absolute;
   bottom: -15px;
   right: -10px;
+
+  img {
+    width: 25px;
+    height: 25px;
+    opacity: 0.7;
+    cursor: pointer;
+  }
 `
