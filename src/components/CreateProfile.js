@@ -28,7 +28,7 @@ export default function CreateProfile({ onAddProfile }) {
 }
 
 const FormStyled = styled.form`
-  margin: 70px 20px;
+  margin: 20px;
   padding: 20px;
   max-width: 400px;
   background: #f4f7f8;

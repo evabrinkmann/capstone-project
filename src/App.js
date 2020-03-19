@@ -6,6 +6,7 @@ import StartPage from './pages/StartPage'
 import CreatePage from './pages/CreatePage'
 import PoolPage from './pages/PoolPage'
 import FavoritePage from './pages/FavoritePage'
+import Header from './components/Header'
 import userData from './userData'
 import { loadProfilesFromLocal, saveProfilesToLocal } from './utils'
 
@@ -21,7 +22,6 @@ export default function App() {
   return (
     <Router>
       <AppGrid>
-        <Navigation />
         <Switch>
           <Route exact path="/">
             <StartPage />
@@ -43,6 +43,7 @@ export default function App() {
             />
           </Route>
         </Switch>
+        <Navigation />
       </AppGrid>
     </Router>
   )
@@ -77,7 +78,7 @@ export default function App() {
 
 const AppGrid = styled.div`
   display: grid;
-  grid-template-rows: auto 48px;
+  grid-template-rows: 55px auto 55px;
   position: fixed;
   left: 0;
   right: 0;

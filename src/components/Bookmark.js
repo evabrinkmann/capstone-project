@@ -2,9 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 export default function Bookmark({ onBookmarkClick, id, bookmarkStatus }) {
+  function bookmark(event) {
+    event.stopPropagation()
+    onBookmarkClick(id)
+  }
+
   return (
     <BookmarkStyled
-      onClick={() => onBookmarkClick(id)}
+      onClick={event => bookmark(event)}
       active={bookmarkStatus}
     ></BookmarkStyled>
   )
@@ -17,7 +22,7 @@ const BookmarkStyled = styled.button`
   border: 14px solid ${props => (props.active ? '#549dd8' : '#e0c3c6')};
   border-bottom-color: white;
   position: absolute;
-  right: 44px;
-  top: 11px;
+  right: 24px;
+  top: -8px;
   cursor: pointer;
 `
