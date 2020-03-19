@@ -6,7 +6,6 @@ import StartPage from './pages/StartPage'
 import CreatePage from './pages/CreatePage'
 import PoolPage from './pages/PoolPage'
 import FavoritePage from './pages/FavoritePage'
-import Header from './components/Header'
 import userData from './userData'
 import { loadProfilesFromLocal, saveProfilesToLocal } from './utils'
 
@@ -40,6 +39,7 @@ export default function App() {
             <FavoritePage
               profiles={profiles}
               onBookmarkClick={handleBookmarkClick}
+              onDelete={onDelete}
             />
           </Route>
         </Switch>

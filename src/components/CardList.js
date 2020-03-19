@@ -7,7 +7,12 @@ CardList.propTypes = {
   profiles: PropTypes.array,
 }
 
-export default function CardList({ profiles, onDelete, handleBookmarkClick }) {
+export default function CardList({
+  profiles,
+  onDelete,
+  handleBookmarkClick,
+  pathname,
+}) {
   return (
     <Scroller>
       {profiles.map(user => (
@@ -17,6 +22,7 @@ export default function CardList({ profiles, onDelete, handleBookmarkClick }) {
           {...user}
           onDelete={onDelete}
           handleBookmarkClick={handleBookmarkClick}
+          pathname={pathname}
         />
       ))}
     </Scroller>

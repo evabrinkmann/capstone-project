@@ -19,6 +19,7 @@ export default function Card({
   id,
   handleBookmarkClick,
   isBookmarked,
+  pathname,
 }) {
   const { on, toggle } = useToggle(false)
   return (
@@ -36,6 +37,7 @@ export default function Card({
         name={user.name}
         title={user.title}
         id={id}
+        pathname={pathname}
       />
       {on && (
         <CardBody

@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 import { useToggle } from 'react-hooks-lib'
-// import deleteIcon from '../icon/delete-icon.png'
 import deleteIcon from '../icon/trashIcon.png'
 
 CardHead.propTypes = {
@@ -19,19 +18,20 @@ export default function CardHead({
   title,
   handleDelete,
   id,
+  pathname,
 }) {
   const { on, toggle } = useToggle(false)
 
   return (
     <StyledHead onClick={toggle}>
       <StatusStyled>{status}</StatusStyled>
-      {on === false ? (
-        <DeleteSign onClick={() => handleDelete(id)}>
-          <img src={deleteIcon} alt="trashbox" />
-        </DeleteSign>
-      ) : (
-        ''
-      )}
+      {on === false
+        ? pathname === '/profile-pool' && (
+            <DeleteSign onClick={() => handleDelete(id)}>
+              <img src={deleteIcon} alt="trashbox" />
+            </DeleteSign>
+          )
+        : ''}
       <img src={img} alt="portrait" />
       <h1>{name}</h1>
       <h2>{title}</h2>
