@@ -14,7 +14,7 @@ export default function FavoritePage({ profiles, onBookmarkClick }) {
 
   return (
     <>
-      <Header title="Favorite Profiles" />
+      <Header title="Favorites" />
       <Scroller>
         <StyledMain>
           {filterProfiles.length !== 0 ? (
@@ -53,7 +53,7 @@ export default function FavoritePage({ profiles, onBookmarkClick }) {
               </Wrapper>
             ))
           ) : (
-            <p>Select your favorite profiles</p>
+            <p>Bookmark your favorite profiles</p>
           )}
         </StyledMain>
       </Scroller>
