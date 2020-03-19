@@ -7,7 +7,7 @@ export default function CreatePage({ onAddProfile }) {
   const history = useHistory()
   return (
     <>
-      <Header title="Create Profile" />
+      <Header title="Create" />
       <CreateProfile onAddProfile={handleAdd} />
     </>
   )

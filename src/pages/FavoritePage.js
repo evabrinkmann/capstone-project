@@ -14,7 +14,7 @@ export default function FavoritePage({ profiles, onBookmarkClick }) {
 
   return (
     <>
-      <Header title="Favorite Profiles" />
+      <Header title="Favorites" />
       <Scroller>
         <StyledMain>
           {filterProfiles.length !== 0 ? (
@@ -53,7 +53,7 @@ export default function FavoritePage({ profiles, onBookmarkClick }) {
               </Wrapper>
             ))
           ) : (
-            <p>Select your favorite profiles</p>
+            <p>Bookmark your favorite profiles</p>
           )}
         </StyledMain>
       </Scroller>
@@ -100,10 +100,14 @@ const StyledHead = styled.section`
     object-fit: cover;
     cursor: default;
   }
+  h1 {
+    color: #549dd8;
+  }
   h2 {
     text-align: center;
     font-weight: normal;
     margin: 10px;
+    font-size: 24px;
   }
 `
 const StatusStyled = styled.span`

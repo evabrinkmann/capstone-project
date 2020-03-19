@@ -1,24 +1,42 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components/macro'
+import profilegroup from './icon/image_profiles_white.png'
+import addProfile from './icon/add-profile_white.png'
+import bookmarkProfile from './icon/bookmark_white.png'
 
 export default function Navigation() {
   return (
     <NavigationStyled>
-      <Button to="/profile-pool">Profiles</Button>
-      <Button to="/create-profile">Create</Button>
-      <Button to="/favorite-profile">Favorites</Button>
+      <Button to="/profile-pool">
+        <StyledProfileGroup
+          src={profilegroup}
+          alt="profiles"
+        ></StyledProfileGroup>
+      </Button>
+      <Button to="/create-profile">
+        <StyledAddProfile src={addProfile} alt="add-profile"></StyledAddProfile>
+      </Button>
+      <Button to="/favorite-profile">
+        <StyledBookmarkProfile
+          src={bookmarkProfile}
+          alt="add-profile"
+        ></StyledBookmarkProfile>
+      </Button>
     </NavigationStyled>
   )
 }
 
 const Button = styled(NavLink)`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   flex-grow: 1;
   color: white;
   text-decoration: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   background: grey;
   font-weight: bold;
   border: 1px solid white;
@@ -27,6 +45,20 @@ const Button = styled(NavLink)`
   &.active {
     background: #549dd8;
   }
+`
+const StyledProfileGroup = styled.img`
+  width: 50px;
+  height: 50px;
+`
+
+const StyledAddProfile = styled.img`
+  width: 30px;
+  height: 30px;
+`
+
+const StyledBookmarkProfile = styled.img`
+  width: 30px;
+  height: 30px;
 `
 
 const NavigationStyled = styled.nav`
