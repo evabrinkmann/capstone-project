@@ -23,7 +23,7 @@ export default function Card({
 }) {
   const { on, toggle } = useToggle(false)
   return (
-    <ProfileCardStyled onClick={toggle}>
+    <ProfileCardStyled data-cy="cardhead" onClick={toggle}>
       <Bookmark
         onBookmarkClick={handleBookmarkClick}
         id={id}
@@ -41,6 +41,7 @@ export default function Card({
       />
       {on && (
         <CardBody
+          data-cy="cardbody"
           company={user.company}
           location={user.location}
           email={user.email}

@@ -8,6 +8,6 @@ describe('Check radio box alumni', () => {
     //   .check({ force: true })
     //   .should('be.checked')
 
-    cy.get('label[for="newcomer"]').click()
+    cy.get('label[for="alumni"]').click()
   })
 })

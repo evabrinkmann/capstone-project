@@ -1,12 +1,8 @@
-// create Card
+// create new profile
 
-describe('Create a card', () => {
-  it('Testing Form', () => {
+describe('Create new profile', () => {
+  beforeEach(() => {
     cy.visit('http://localhost:3000/create-profile')
-
-    // cy.get('[value="newcomer"]')
-    //   .check({ force: true })
-    //   .should('be.checked')
 
     cy.get('label[for="newcomer"]').click()
 
@@ -30,14 +26,16 @@ describe('Create a card', () => {
 
     cy.get('input[name="codepen"]').type('codepen')
 
-    // cy.get('[type="checkbox"]')
-    //   .check({ force: true })
-    //   .should('be.checked')
-
     cy.get('label[for="html5"]').click()
 
     cy.get('label[for="css3"]').click()
 
     cy.get('form > button').click()
+  })
+
+  it('shows the new profile', () => {
+    cy.url().should('eq', 'http://localhost:3000/profile-pool')
+
+    cy.contains('Hans Peter').should('exist')
   })
 })
