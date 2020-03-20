@@ -4,9 +4,11 @@ describe('Create a card', () => {
   it('Testing Form', () => {
     cy.visit('http://localhost:3000/create-profile')
 
-    cy.get('[value="newcomer"]')
-      .check({ force: true })
-      .should('be.checked')
+    // cy.get('[value="newcomer"]')
+    //   .check({ force: true })
+    //   .should('be.checked')
+
+    cy.get('label[for="newcomer"]').click()
 
     cy.get('input[name="name"]').type('Hans Peter')
 
@@ -28,9 +30,13 @@ describe('Create a card', () => {
 
     cy.get('input[name="codepen"]').type('codepen')
 
-    cy.get('[type="checkbox"]')
-      .check({ force: true })
-      .should('be.checked')
+    // cy.get('[type="checkbox"]')
+    //   .check({ force: true })
+    //   .should('be.checked')
+
+    cy.get('label[for="html5"]').click()
+
+    cy.get('label[for="css3"]').click()
 
     cy.get('form > button').click()
   })
