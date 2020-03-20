@@ -47,6 +47,7 @@ const StyledHead = styled.section`
   overflow-wrap: normal;
   position: relative;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
   img {
     position: relative;

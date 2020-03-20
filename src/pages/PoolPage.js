@@ -5,7 +5,6 @@ import { useLocation } from 'react-router-dom'
 
 export default function PoolPage({ profiles, onDelete, onBookmarkClick }) {
   let { pathname } = useLocation()
-  console.log(pathname)
 
   return (
     <>
