@@ -36,7 +36,7 @@ const FormStyled = styled.form`
   font-family: Georgia;
 `
 
-const ScrollContainer = styled.div`
+const ScrollContainer = styled.main`
   overflow-y: scroll;
   background: white;
 `

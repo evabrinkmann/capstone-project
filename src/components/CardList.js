@@ -29,7 +29,7 @@ export default function CardList({
   )
 }
 
-const Scroller = styled.div`
+const Scroller = styled.main`
   overflow-y: scroll;
   scroll-behavior: smooth;
 `
