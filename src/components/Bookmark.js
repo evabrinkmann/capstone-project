@@ -2,14 +2,14 @@ import React from 'react'
 import styled from 'styled-components'
 
 export default function Bookmark({ onBookmarkClick, id, bookmarkStatus }) {
-  function bookmark(event) {
+  function handleBookmarkClick(event) {
     event.stopPropagation()
     onBookmarkClick(id)
   }
 
   return (
     <BookmarkStyled
-      onClick={event => bookmark(event)}
+      onClick={event => handleBookmarkClick(event)}
       active={bookmarkStatus}
     ></BookmarkStyled>
   )

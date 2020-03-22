@@ -1,5 +1,3 @@
-// create new profile
-
 describe('Create new profile', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/create-profile')
@@ -26,9 +24,7 @@ describe('Create new profile', () => {
 
     cy.get('input[name="codepen"]').type('codepen')
 
-    cy.get('label[for="html5"]').click()
-
-    cy.get('label[for="css3"]').click()
+    cy.get('label[data-cy="skills"]').click({ multiple: true })
 
     cy.get('form > button').click()
   })

@@ -5,18 +5,16 @@ import { useLocation } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
 export default function FavoritePage({ profiles, onBookmarkClick, onDelete }) {
-  const filterProfiles = profiles.filter(
-    profile => profile.isBookmarked === true
-  )
+  const filteredProfiles = profiles.filter(profile => profile.isBookmarked)
   let { pathname } = useLocation()
 
   return (
     <>
       <Header title="Favorites" />
-      {filterProfiles.length > 0 ? (
+      {filteredProfiles.length > 0 ? (
         <CardList
           pathname={pathname}
-          profiles={filterProfiles}
+          profiles={filteredProfiles}
           onDelete={onDelete}
           handleBookmarkClick={onBookmarkClick}
         />

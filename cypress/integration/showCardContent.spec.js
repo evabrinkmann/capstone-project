@@ -1,6 +1,4 @@
-//unfold card
-
-describe('unfold card', () => {
+describe('show card content', () => {
   it('shows card content when card is clicked', () => {
     cy.visit('http://localhost:3000/profile-pool')
 

@@ -20,7 +20,7 @@ export default function FormSkillTags({ register }) {
               id={skill}
               key={`input_${skill}`}
             />
-            <LabelTag key={skill} htmlFor={skill}>
+            <LabelTag key={skill} htmlFor={skill} data-cy="skills">
               {skill}
             </LabelTag>
           </React.Fragment>
