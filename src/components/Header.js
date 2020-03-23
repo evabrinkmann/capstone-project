@@ -15,7 +15,7 @@ export default function Header({ title }) {
 
 const StyledHeader = styled.header`
   line-height: 2.2;
-  background: #549dd8;
+  background: var(--color-blue);
   box-shadow: 0 5px 20px 1px lightgrey;
   text-align: center;
   font-size: 27px;

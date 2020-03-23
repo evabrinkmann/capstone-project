@@ -15,7 +15,7 @@ export default function StartPage() {
 
 const StyledContainer = styled.div`
   height: 100vh;
-  background: #549dd8;
+  background: var(--color-blue);
   h1 {
     text-align: center;
     margin: 220px 100px;

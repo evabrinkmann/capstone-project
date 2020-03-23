@@ -32,8 +32,8 @@ export default function FormHead({ register }) {
 
 const StyledFormHead = styled.div`
   span {
-    background: #1abc9c;
-    color: #fff;
+    background: var(--color-green);
+    color: var(--background-white);
     height: 30px;
     width: 30px;
     display: inline-block;

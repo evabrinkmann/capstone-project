@@ -19,8 +19,9 @@ const BookmarkStyled = styled.button`
   height: 33px;
   padding: 0;
   outline: 0;
-  border: 14px solid ${props => (props.active ? '#549dd8' : '#e0c3c6')};
-  border-bottom-color: white;
+  border: 14px solid
+    ${props => (props.active ? 'var(--color-blue)' : '#e0c3c6')};
+  border-bottom-color: var(--background-white);
   position: absolute;
   right: 24px;
   top: -8px;

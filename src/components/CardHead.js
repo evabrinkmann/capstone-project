@@ -59,7 +59,7 @@ const StyledHead = styled.section`
     cursor: default;
   }
   h1 {
-    color: #549dd8;
+    color: var(--color-blue);
   }
   h2 {
     text-align: center;
@@ -75,10 +75,10 @@ const StatusStyled = styled.span`
   display: inline-block;
   padding: 0 7px;
   border-radius: 15px;
-  border: 1px solid #e53a1e;
-  background: #e53a1e;
+  border: 1px solid var(--color-red);
+  background: var(--color-red);
   opacity: 0.9;
-  color: #fff;
+  color: var(--background-white);
   cursor: default;
 `
 const DeleteSign = styled.span`

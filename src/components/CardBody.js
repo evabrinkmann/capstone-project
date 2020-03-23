@@ -135,10 +135,10 @@ export default function CardBody({
 }
 
 const StyledBody = styled.section`
-  background: #fff;
+  background: var(--background-white);
 
   hr {
-    border: 0.5px solid #549dd8;
+    border: 0.5px solid var(--color-blue);
   }
 
   a {
@@ -146,7 +146,7 @@ const StyledBody = styled.section`
     text-decoration: none;
 
     &:hover {
-      color: #549dd8;
+      color: var(--color-blue);
     }
   }
 
@@ -167,8 +167,8 @@ const StyledSkills = styled.span`
   padding: 3px 6px;
   margin: 4px;
   border-radius: 15px;
-  border: 1px solid #e53a1e;
-  background: #e53a1e;
+  border: 1px solid var(--color-red);
+  background: var(--color-red);
   opacity: 0.9;
-  color: #fff;
+  color: var(--background-white);
 `
