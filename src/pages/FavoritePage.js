@@ -9,7 +9,7 @@ export default function FavoritePage({ profiles, onBookmarkClick, onDelete }) {
   let { pathname } = useLocation()
 
   return (
-    <>
+    <PageLayout>
       <Header title="Favorites" />
       {filteredProfiles.length > 0 ? (
         <CardList
@@ -21,7 +21,7 @@ export default function FavoritePage({ profiles, onBookmarkClick, onDelete }) {
       ) : (
         <StyledParagraph>Bookmark your favorite profiles</StyledParagraph>
       )}
-    </>
+    </PageLayout>
   )
 }
 const StyledParagraph = styled.p`
@@ -30,4 +30,10 @@ const StyledParagraph = styled.p`
   word-wrap: break-all;
   font-size: 1em;
   text-transform: uppercase;
+`
+const PageLayout = styled.div`
+  display: grid;
+  grid-template-rows: 55px auto;
+  align-content: flex-start;
+  overflow: auto;
 `

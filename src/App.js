@@ -78,7 +78,7 @@ export default function App() {
 
 const AppGrid = styled.div`
   display: grid;
-  grid-template-rows: 55px auto 55px;
+  grid-template-rows: auto 55px;
   position: fixed;
   left: 0;
   right: 0;

@@ -6,7 +6,9 @@ export default function StartPage() {
   return (
     <>
       <StyledContainer>
-        <h1>Welcome to newAlumni!</h1>
+        <h1>
+          Welcome to <br /> newAlumni!
+        </h1>
         <img src={fishgroup} alt="fish" />
       </StyledContainer>
     </>
@@ -14,18 +16,14 @@ export default function StartPage() {
 }
 
 const StyledContainer = styled.div`
-  height: 100vh;
   background: var(--color-blue);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+
   h1 {
-    text-align: center;
-    margin: 220px 100px;
     color: white;
     font-weight: lighter;
-    position: relative;
-  }
-  img {
-    position: absolute;
-    bottom: 300px;
-    left: 175px;
   }
 `
