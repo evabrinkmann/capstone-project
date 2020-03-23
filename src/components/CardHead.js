@@ -2,7 +2,6 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 import { useToggle } from 'react-hooks-lib'
-// import deleteIcon from '../icon/delete-icon.png'
 import deleteIcon from '../icon/trashIcon.png'
 
 CardHead.propTypes = {
@@ -19,19 +18,20 @@ export default function CardHead({
   title,
   handleDelete,
   id,
+  pathname,
 }) {
   const { on, toggle } = useToggle(false)
 
   return (
     <StyledHead onClick={toggle}>
       <StatusStyled>{status}</StatusStyled>
-      {on === false ? (
-        <DeleteSign onClick={() => handleDelete(id)}>
-          <img src={deleteIcon} alt="trashbox" />
-        </DeleteSign>
-      ) : (
-        ''
-      )}
+      {on === false
+        ? pathname === '/profile-pool' && (
+            <DeleteSign onClick={() => handleDelete(id)}>
+              <img src={deleteIcon} alt="trashbox" />
+            </DeleteSign>
+          )
+        : ''}
       <img src={img} alt="portrait" />
       <h1>{name}</h1>
       <h2>{title}</h2>
@@ -47,6 +47,7 @@ const StyledHead = styled.section`
   overflow-wrap: normal;
   position: relative;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
   img {
     position: relative;
@@ -58,7 +59,7 @@ const StyledHead = styled.section`
     cursor: default;
   }
   h1 {
-    color: #549dd8;
+    color: var(--color-blue);
   }
   h2 {
     text-align: center;
@@ -74,10 +75,10 @@ const StatusStyled = styled.span`
   display: inline-block;
   padding: 0 7px;
   border-radius: 15px;
-  border: 1px solid #e53a1e;
-  background: #e53a1e;
+  border: 1px solid var(--color-red);
+  background: var(--color-red);
   opacity: 0.9;
-  color: #fff;
+  color: var(--background-white);
   cursor: default;
 `
 const DeleteSign = styled.span`

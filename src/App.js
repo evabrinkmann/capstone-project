@@ -21,7 +21,6 @@ export default function App() {
   return (
     <Router>
       <AppGrid>
-        <Navigation />
         <Switch>
           <Route exact path="/">
             <StartPage />
@@ -40,9 +39,11 @@ export default function App() {
             <FavoritePage
               profiles={profiles}
               onBookmarkClick={handleBookmarkClick}
+              onDelete={onDelete}
             />
           </Route>
         </Switch>
+        <Navigation />
       </AppGrid>
     </Router>
   )
@@ -77,7 +78,7 @@ export default function App() {
 
 const AppGrid = styled.div`
   display: grid;
-  grid-template-rows: auto 48px;
+  grid-template-rows: auto 55px;
   position: fixed;
   left: 0;
   right: 0;

@@ -35,7 +35,7 @@ const StyledRadioInput = styled.input`
   opacity: 0;
   position: fixed;
   &:checked + label {
-    background: #1abc9c;
+    background: var(--color-green);
   }
 `
 

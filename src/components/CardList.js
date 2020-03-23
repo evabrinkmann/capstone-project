@@ -7,31 +7,29 @@ CardList.propTypes = {
   profiles: PropTypes.array,
 }
 
-export default function CardList({ profiles, onDelete, handleBookmarkClick }) {
+export default function CardList({
+  profiles,
+  onDelete,
+  handleBookmarkClick,
+  pathname,
+}) {
   return (
     <Scroller>
-      <StyledMain>
-        {profiles.map(user => (
-          <Card
-            key={user.id}
-            user={user}
-            {...user}
-            onDelete={onDelete}
-            handleBookmarkClick={handleBookmarkClick}
-          />
-        ))}
-      </StyledMain>
+      {profiles.map(user => (
+        <Card
+          key={user.id}
+          user={user}
+          {...user}
+          onDelete={onDelete}
+          handleBookmarkClick={handleBookmarkClick}
+          pathname={pathname}
+        />
+      ))}
     </Scroller>
   )
 }
 
-const Scroller = styled.div`
+const Scroller = styled.main`
   overflow-y: scroll;
   scroll-behavior: smooth;
-`
-
-const StyledMain = styled.main`
-  display: flex;
-  flex-direction: column;
-  margin: 70px 10px 30px;
 `

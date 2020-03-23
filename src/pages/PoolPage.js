@@ -1,27 +1,28 @@
 import React from 'react'
 import CardList from '../components/CardList'
 import Header from '../components/Header'
-import fishred from '../icon/red-fish.svg'
+import { useLocation } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
 export default function PoolPage({ profiles, onDelete, onBookmarkClick }) {
+  let { pathname } = useLocation()
+
   return (
-    <>
+    <PageLayout>
       <Header title="newAlumni" />
-      <StyledFishRed src={fishred} />
       <CardList
+        pathname={pathname}
         profiles={profiles}
         onDelete={onDelete}
         handleBookmarkClick={onBookmarkClick}
       />
-    </>
+    </PageLayout>
   )
 }
 
-const StyledFishRed = styled.img`
-  position: absolute;
-  right: 45px;
-  top: 14px;
-  z-index: 1;
-  opacity: 0.5;
+const PageLayout = styled.div`
+  display: grid;
+  grid-template-rows: 55px auto;
+  align-content: flex-start;
+  overflow: auto;
 `
