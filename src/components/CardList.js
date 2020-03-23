@@ -12,6 +12,7 @@ export default function CardList({
   onDelete,
   handleBookmarkClick,
   pathname,
+  setProfiles,
 }) {
   return (
     <Scroller>
@@ -23,6 +24,8 @@ export default function CardList({
           onDelete={onDelete}
           handleBookmarkClick={handleBookmarkClick}
           pathname={pathname}
+          setProfiles={setProfiles}
+          profiles={profiles}
         />
       ))}
     </Scroller>

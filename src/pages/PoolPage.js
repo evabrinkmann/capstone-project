@@ -4,7 +4,12 @@ import Header from '../components/Header'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components/macro'
 
-export default function PoolPage({ profiles, onDelete, onBookmarkClick }) {
+export default function PoolPage({
+  profiles,
+  onDelete,
+  onBookmarkClick,
+  setProfiles,
+}) {
   let { pathname } = useLocation()
 
   return (
@@ -15,6 +20,7 @@ export default function PoolPage({ profiles, onDelete, onBookmarkClick }) {
         profiles={profiles}
         onDelete={onDelete}
         handleBookmarkClick={onBookmarkClick}
+        setProfiles={setProfiles}
       />
     </PageLayout>
   )

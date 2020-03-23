@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import { useToggle } from 'react-hooks-lib'
 import deleteIcon from '../icon/trashIcon.png'
 import { storage } from './firebase'
+import { saveProfilesToLocal } from '../utils'
 
 CardHead.propTypes = {
   status: PropTypes.string,
@@ -20,10 +21,22 @@ export default function CardHead({
   handleDelete,
   id,
   pathname,
+  setProfiles,
+  profiles,
 }) {
   const { on, toggle } = useToggle(false)
   const [image, setImage] = useState(null)
-  const [url, setUrl] = useState()
+
+  function updateProfileImage(url) {
+    const index = profiles.findIndex(profile => profile.id === id)
+    const updatedProfile = { ...profiles[index], imgUrl: url }
+    setProfiles([
+      ...profiles.slice(0, index),
+      updatedProfile,
+      ...profiles.slice(index + 1),
+    ])
+    saveProfilesToLocal('profiles', profiles)
+  }
 
   function handleImageChange(event) {
     if (event.target.files[0]) {
@@ -45,11 +58,10 @@ export default function CardHead({
           .child(image.name)
           .getDownloadURL()
           .then(url => {
-            setUrl(url)
+            updateProfileImage(url)
           })
       }
     )
-    // console.log(url, 'test')
   }
 
   return (
