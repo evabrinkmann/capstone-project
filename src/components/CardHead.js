@@ -1,8 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 import { useToggle } from 'react-hooks-lib'
 import deleteIcon from '../icon/trashIcon.png'
+import { storage } from './firebase'
 
 CardHead.propTypes = {
   status: PropTypes.string,
@@ -21,6 +22,35 @@ export default function CardHead({
   pathname,
 }) {
   const { on, toggle } = useToggle(false)
+  const [image, setImage] = useState(null)
+  const [url, setUrl] = useState()
+
+  function handleImageChange(event) {
+    if (event.target.files[0]) {
+      setImage(event.target.files[0])
+    }
+  }
+
+  function handleUpload() {
+    const uploadTask = storage.ref(`user-images/${image.name}`).put(image)
+    uploadTask.on(
+      'state_changed',
+      snapshot => {},
+      error => {
+        console.error(error)
+      },
+      () => {
+        storage
+          .ref('user-images')
+          .child(image.name)
+          .getDownloadURL()
+          .then(url => {
+            setUrl(url)
+          })
+      }
+    )
+    // console.log(url, 'test')
+  }
 
   return (
     <StyledHead onClick={toggle}>
@@ -33,6 +63,8 @@ export default function CardHead({
           )
         : ''}
       <img src={img} alt="portrait" />
+      <input type="file" name="image" onChange={handleImageChange} />
+      <button onClick={handleUpload}>Upload</button>
       <h1>{name}</h1>
       <h2>{title}</h2>
     </StyledHead>
