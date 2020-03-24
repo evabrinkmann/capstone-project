@@ -5,6 +5,7 @@ import { useToggle } from 'react-hooks-lib'
 import deleteIcon from '../icon/trashIcon.png'
 import { storage } from './firebase'
 import { saveProfilesToLocal } from '../utils'
+import editPencil from '../icon/addIcon-40.png'
 
 CardHead.propTypes = {
   status: PropTypes.string,
@@ -25,7 +26,7 @@ export default function CardHead({
   profiles,
 }) {
   const { on, toggle } = useToggle(false)
-  const [image, setImage] = useState(null)
+  // const [image, setImage] = useState(null)
 
   function updateProfileImage(url) {
     const index = profiles.findIndex(profile => profile.id === id)
@@ -38,13 +39,16 @@ export default function CardHead({
     saveProfilesToLocal('profiles', profiles)
   }
 
-  function handleImageChange(event) {
-    if (event.target.files[0]) {
-      setImage(event.target.files[0])
-    }
-  }
+  // function handleImageChange(event) {
+  //   if (event.target.files[0]) {
+  //     setImage(event.target.files[0])
+  //   }
+  // }
 
-  function handleUpload() {
+  function handleUpload(event) {
+    event.persist()
+    const image = event.target.files[0]
+    console.log(image, 'test')
     const uploadTask = storage.ref(`user-images/${image.name}`).put(image)
     uploadTask.on(
       'state_changed',
@@ -69,14 +73,23 @@ export default function CardHead({
       <StatusStyled>{status}</StatusStyled>
       {on === false
         ? pathname === '/profile-pool' && (
-            <DeleteSign onClick={() => handleDelete(id)}>
+            <DeleteIcon onClick={() => handleDelete(id)}>
               <img src={deleteIcon} alt="trashbox" />
-            </DeleteSign>
+            </DeleteIcon>
           )
         : ''}
       <img src={img} alt="portrait" />
-      <input type="file" name="image" onChange={handleImageChange} />
-      <button onClick={handleUpload}>Upload</button>
+      <ImgUploadIcon htmlFor="imageInput" onClick={handleUpload}>
+        <input
+          type="file"
+          name="image"
+          id="imageInput"
+          hidden="hidden"
+          // onChange={handleImageChange}
+        />
+
+        <img src={editPencil} alt="pencilIcon" />
+      </ImgUploadIcon>
       <h1>{name}</h1>
       <h2>{title}</h2>
     </StyledHead>
@@ -125,7 +138,7 @@ const StatusStyled = styled.span`
   color: var(--background-white);
   cursor: default;
 `
-const DeleteSign = styled.span`
+const DeleteIcon = styled.span`
   position: absolute;
   bottom: -15px;
   right: -10px;
@@ -134,6 +147,18 @@ const DeleteSign = styled.span`
     width: 25px;
     height: 25px;
     opacity: 0.7;
+    cursor: pointer;
+  }
+`
+const ImgUploadIcon = styled.label`
+  position: absolute;
+  top: 208px;
+  right: 59px;
+
+  img {
+    width: 35px;
+    height: 35px;
+    border: 3px solid white;
     cursor: pointer;
   }
 `
