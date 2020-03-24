@@ -1,11 +1,11 @@
-import React, { useState } from 'react'
+import React from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 import { useToggle } from 'react-hooks-lib'
 import deleteIcon from '../icon/trashIcon.png'
 import { storage } from './firebase'
 import { saveProfilesToLocal } from '../utils'
-import editPencil from '../icon/addIcon-40.png'
+import uploadIcon from '../icon/addIcon-40.png'
 
 CardHead.propTypes = {
   status: PropTypes.string,
@@ -26,7 +26,6 @@ export default function CardHead({
   profiles,
 }) {
   const { on, toggle } = useToggle(false)
-  // const [image, setImage] = useState(null)
 
   function updateProfileImage(url) {
     const index = profiles.findIndex(profile => profile.id === id)
@@ -39,14 +38,7 @@ export default function CardHead({
     saveProfilesToLocal('profiles', profiles)
   }
 
-  // function handleImageChange(event) {
-  //   if (event.target.files[0]) {
-  //     setImage(event.target.files[0])
-  //   }
-  // }
-
   function handleUpload(event) {
-    event.persist()
     const image = event.target.files[0]
     console.log(image, 'test')
     const uploadTask = storage.ref(`user-images/${image.name}`).put(image)
@@ -73,23 +65,25 @@ export default function CardHead({
       <StatusStyled>{status}</StatusStyled>
       {on === false
         ? pathname === '/profile-pool' && (
-            <DeleteIcon onClick={() => handleDelete(id)}>
+            <DeleteButton onClick={() => handleDelete(id)}>
               <img src={deleteIcon} alt="trashbox" />
-            </DeleteIcon>
+            </DeleteButton>
           )
         : ''}
-      <img src={img} alt="portrait" />
-      <ImgUploadIcon htmlFor="imageInput" onClick={handleUpload}>
-        <input
-          type="file"
-          name="image"
-          id="imageInput"
-          hidden="hidden"
-          // onChange={handleImageChange}
-        />
+      <div className="wrapper">
+        <img src={img} alt="portrait" />
+        <UploadButton htmlFor="imageInput">
+          <input
+            type="file"
+            name="image"
+            id="imageInput"
+            hidden="hidden"
+            onChange={handleUpload}
+          />
 
-        <img src={editPencil} alt="pencilIcon" />
-      </ImgUploadIcon>
+          <img src={uploadIcon} alt="plus-sign" />
+        </UploadButton>
+      </div>
       <h1>{name}</h1>
       <h2>{title}</h2>
     </StyledHead>
@@ -106,8 +100,13 @@ const StyledHead = styled.section`
   cursor: pointer;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
-  img {
+  .wrapper {
+    width: 200px;
+    height: 200px;
     position: relative;
+  }
+
+  img {
     width: 200px;
     height: 200px;
     flex-direction: center;
@@ -138,7 +137,7 @@ const StatusStyled = styled.span`
   color: var(--background-white);
   cursor: default;
 `
-const DeleteIcon = styled.span`
+const DeleteButton = styled.span`
   position: absolute;
   bottom: -15px;
   right: -10px;
@@ -150,15 +149,25 @@ const DeleteIcon = styled.span`
     cursor: pointer;
   }
 `
-const ImgUploadIcon = styled.label`
+const UploadButton = styled.label`
   position: absolute;
-  top: 208px;
-  right: 59px;
+  bottom: 12px;
+  right: 15px;
+  width: 35px;
+  height: 35px;
+  border: 3px solid white;
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
 
   img {
     width: 35px;
     height: 35px;
-    border: 3px solid white;
     cursor: pointer;
+    object-fit: cover;
+    align-self: center;
+    position: relative;
+    right: 3px;
   }
 `
