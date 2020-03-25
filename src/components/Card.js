@@ -28,6 +28,7 @@ export default function Card({
         onBookmarkClick={handleBookmarkClick}
         id={id}
         bookmarkStatus={isBookmarked}
+        pathname={pathname}
       />
       <CardHead
         handleDelete={onDelete}

@@ -1,17 +1,27 @@
 import React from 'react'
 import styled from 'styled-components'
+import Tooltip from '@material-ui/core/Tooltip'
 
-export default function Bookmark({ onBookmarkClick, id, bookmarkStatus }) {
+export default function Bookmark({
+  onBookmarkClick,
+  id,
+  bookmarkStatus,
+  pathname,
+}) {
   function handleBookmarkClick(event) {
     event.stopPropagation()
     onBookmarkClick(id)
   }
 
   return (
-    <BookmarkStyled
-      onClick={event => handleBookmarkClick(event)}
-      active={bookmarkStatus}
-    ></BookmarkStyled>
+    <>
+      <Tooltip title="Add and remove favorite profiles" placement="bottom">
+        <BookmarkStyled
+          onClick={event => handleBookmarkClick(event)}
+          active={bookmarkStatus}
+        ></BookmarkStyled>
+      </Tooltip>
+    </>
   )
 }
 

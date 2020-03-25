@@ -6,6 +6,7 @@ import deleteIcon from '../icon/trashIcon.png'
 import { storage } from './firebase'
 import { saveProfilesToLocal } from '../utils'
 import uploadIcon from '../icon/addIcon-40.png'
+import Tooltip from '@material-ui/core/Tooltip'
 
 CardHead.propTypes = {
   status: PropTypes.string,
@@ -37,7 +38,9 @@ export default function CardHead({
       <StatusStyled>{status}</StatusStyled>
       {on === false && pathname === '/profile-pool' && (
         <DeleteButton onClick={() => handleDelete(id)}>
-          <img src={deleteIcon} alt="trashbox" />
+          <Tooltip title="Delete card" placement="left">
+            <img src={deleteIcon} alt="trashbox" />
+          </Tooltip>
         </DeleteButton>
       )}
       <UploadWrapper>
@@ -51,7 +54,9 @@ export default function CardHead({
               hidden="hidden"
               onChange={handleUpload}
             />
-            <img src={uploadIcon} alt="plus-sign" />
+            <Tooltip title="Edit profile picture" placement="right">
+              <img src={uploadIcon} alt="plus-sign" />
+            </Tooltip>
           </UploadButton>
         )}
       </UploadWrapper>
