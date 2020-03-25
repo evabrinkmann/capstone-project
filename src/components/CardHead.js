@@ -12,6 +12,11 @@ CardHead.propTypes = {
   img: PropTypes.string,
   name: PropTypes.string,
   title: PropTypes.string,
+  handleDelete: PropTypes.func,
+  id: PropTypes.string,
+  pathname: PropTypes.string,
+  setProfiles: PropTypes.func,
+  profiles: PropTypes.array,
 }
 
 export default function CardHead({
@@ -27,6 +32,32 @@ export default function CardHead({
 }) {
   const { on, toggle } = useToggle(false)
 
+  return (
+    <StyledHead onClick={toggle}>
+      <StatusStyled>{status}</StatusStyled>
+      {on === false && pathname === '/profile-pool' && (
+        <DeleteButton onClick={() => handleDelete(id)}>
+          <img src={deleteIcon} alt="trashbox" />
+        </DeleteButton>
+      )}
+      <UploadWrapper>
+        <img src={img} alt="portrait" />
+        <UploadButton htmlFor="imageInput">
+          <input
+            type="file"
+            name="image"
+            id="imageInput"
+            hidden="hidden"
+            onChange={handleUpload}
+          />
+          <img src={uploadIcon} alt="plus-sign" />
+        </UploadButton>
+      </UploadWrapper>
+      <h1>{name}</h1>
+      <h2>{title}</h2>
+    </StyledHead>
+  )
+
   function updateProfileImage(url) {
     const index = profiles.findIndex(profile => profile.id === id)
     const updatedProfile = { ...profiles[index], imgUrl: url }
@@ -40,7 +71,6 @@ export default function CardHead({
 
   function handleUpload(event) {
     const image = event.target.files[0]
-    console.log(image, 'test')
     const uploadTask = storage.ref(`user-images/${image.name}`).put(image)
     uploadTask.on(
       'state_changed',
@@ -59,35 +89,6 @@ export default function CardHead({
       }
     )
   }
-
-  return (
-    <StyledHead onClick={toggle}>
-      <StatusStyled>{status}</StatusStyled>
-      {on === false
-        ? pathname === '/profile-pool' && (
-            <DeleteButton onClick={() => handleDelete(id)}>
-              <img src={deleteIcon} alt="trashbox" />
-            </DeleteButton>
-          )
-        : ''}
-      <div className="wrapper">
-        <img src={img} alt="portrait" />
-        <UploadButton htmlFor="imageInput">
-          <input
-            type="file"
-            name="image"
-            id="imageInput"
-            hidden="hidden"
-            onChange={handleUpload}
-          />
-
-          <img src={uploadIcon} alt="plus-sign" />
-        </UploadButton>
-      </div>
-      <h1>{name}</h1>
-      <h2>{title}</h2>
-    </StyledHead>
-  )
 }
 
 const StyledHead = styled.section`
@@ -99,12 +100,6 @@ const StyledHead = styled.section`
   position: relative;
   cursor: pointer;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
-
-  .wrapper {
-    width: 200px;
-    height: 200px;
-    position: relative;
-  }
 
   img {
     width: 200px;
@@ -149,6 +144,12 @@ const DeleteButton = styled.span`
     cursor: pointer;
   }
 `
+const UploadWrapper = styled.div`
+  width: 200px;
+  height: 200px;
+  position: relative;
+`
+
 const UploadButton = styled.label`
   position: absolute;
   bottom: 12px;

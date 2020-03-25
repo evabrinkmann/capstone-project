@@ -9,8 +9,6 @@ import { useToggle } from 'react-hooks-lib'
 
 Card.propTypes = {
   user: PropTypes.object,
-  setActiveCard: PropTypes.func,
-  isActive: PropTypes.bool,
 }
 
 export default function Card({
