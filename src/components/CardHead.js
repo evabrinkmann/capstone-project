@@ -42,7 +42,7 @@ export default function CardHead({
       )}
       <UploadWrapper>
         <img src={img} alt="portrait" />
-        {on === false && pathname === '/profile-pool' && (
+        {pathname === '/profile-pool' && (
           <UploadButton htmlFor="imageInput">
             <input
               type="file"
