@@ -42,16 +42,18 @@ export default function CardHead({
       )}
       <UploadWrapper>
         <img src={img} alt="portrait" />
-        <UploadButton htmlFor="imageInput">
-          <input
-            type="file"
-            name="image"
-            id="imageInput"
-            hidden="hidden"
-            onChange={handleUpload}
-          />
-          <img src={uploadIcon} alt="plus-sign" />
-        </UploadButton>
+        {on === false && pathname === '/profile-pool' && (
+          <UploadButton htmlFor="imageInput">
+            <input
+              type="file"
+              name="image"
+              id="imageInput"
+              hidden="hidden"
+              onChange={handleUpload}
+            />
+            <img src={uploadIcon} alt="plus-sign" />
+          </UploadButton>
+        )}
       </UploadWrapper>
       <h1>{name}</h1>
       <h2>{title}</h2>
