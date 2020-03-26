@@ -6,6 +6,12 @@ import uploadIcon from '../icon/addIcon-40.png'
 import { storage } from './firebase'
 import { saveProfilesToLocal } from '../utils'
 
+UploadButton.propTypes = {
+  setProfiles: PropTypes.func,
+  profiles: PropTypes.array,
+  id: PropTypes.string,
+}
+
 export default function UploadButton({ setProfiles, profiles, id }) {
   return (
     <UploadButtonStyled htmlFor="imageInput">

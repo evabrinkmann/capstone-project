@@ -4,6 +4,10 @@ import PropTypes from 'prop-types'
 import Tooltip from '@material-ui/core/Tooltip'
 import deleteIcon from '../icon/trashIcon.png'
 
+DeleteButton.propTypes = {
+  handleOnClick: PropTypes.func,
+}
+
 export default function DeleteButton({ handleOnClick }) {
   return (
     <DeleteButtonStyled onClick={handleOnClick}>
