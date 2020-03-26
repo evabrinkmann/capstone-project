@@ -3,6 +3,14 @@ import CardList from '../components/CardList'
 import Header from '../components/Header'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
+
+PoolPage.propTypes = {
+  profiles: PropTypes.array,
+  onDelete: PropTypes.func,
+  onBookmarkClick: PropTypes.func,
+  setProfiles: PropTypes.func,
+}
 
 export default function PoolPage({
   profiles,

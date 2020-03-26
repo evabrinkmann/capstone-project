@@ -5,6 +5,10 @@ import PropTypes from 'prop-types'
 
 CardList.propTypes = {
   profiles: PropTypes.array,
+  onDelete: PropTypes.func,
+  handleBookmarkClick: PropTypes.func,
+  pathname: PropTypes.string,
+  setProfiles: PropTypes.func,
 }
 
 export default function CardList({

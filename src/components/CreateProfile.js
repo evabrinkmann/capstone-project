@@ -6,6 +6,11 @@ import FormProjectSection from './FormProjectSection'
 import FormSkillTags from './FormSkillTags'
 import { v4 } from 'uuid'
 import { useForm } from 'react-hook-form'
+import PropTypes from 'prop-types'
+
+CreateProfile.propTypes = {
+  onAddProfile: PropTypes.func,
+}
 
 export default function CreateProfile({ onAddProfile }) {
   const { register, handleSubmit } = useForm()

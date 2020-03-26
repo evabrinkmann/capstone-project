@@ -1,28 +1,28 @@
 import React from 'react'
 import styled from 'styled-components'
 import Tooltip from '@material-ui/core/Tooltip'
+import PropTypes from 'prop-types'
 
-export default function Bookmark({
-  onBookmarkClick,
-  id,
-  bookmarkStatus,
-  pathname,
-}) {
+Bookmark.propTypes = {
+  onBookmarkClick: PropTypes.func,
+  id: PropTypes.string,
+  bookmarkStatus: PropTypes.bool,
+}
+
+export default function Bookmark({ onBookmarkClick, id, bookmarkStatus }) {
+  return (
+    <Tooltip title="Add and remove favorite profiles" placement="bottom">
+      <BookmarkStyled
+        onClick={event => handleBookmarkClick(event)}
+        active={bookmarkStatus}
+      ></BookmarkStyled>
+    </Tooltip>
+  )
+
   function handleBookmarkClick(event) {
     event.stopPropagation()
     onBookmarkClick(id)
   }
-
-  return (
-    <>
-      <Tooltip title="Add and remove favorite profiles" placement="bottom">
-        <BookmarkStyled
-          onClick={event => handleBookmarkClick(event)}
-          active={bookmarkStatus}
-        ></BookmarkStyled>
-      </Tooltip>
-    </>
-  )
 }
 
 const BookmarkStyled = styled.button`

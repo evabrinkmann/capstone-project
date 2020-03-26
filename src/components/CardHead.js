@@ -52,7 +52,7 @@ export default function CardHead({
               name="image"
               id="imageInput"
               hidden="hidden"
-              onChange={handleUpload}
+              onChange={handleProfileImageUpload}
             />
             <Tooltip title="Edit profile picture" placement="right">
               <img src={uploadIcon} alt="plus-sign" />
@@ -76,7 +76,7 @@ export default function CardHead({
     saveProfilesToLocal('profiles', profiles)
   }
 
-  function handleUpload(event) {
+  function handleProfileImageUpload(event) {
     const image = event.target.files[0]
     const uploadTask = storage.ref(`user-images/${image.name}`).put(image)
     uploadTask.on(

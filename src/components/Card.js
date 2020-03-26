@@ -9,6 +9,13 @@ import { useToggle } from 'react-hooks-lib'
 
 Card.propTypes = {
   user: PropTypes.object,
+  onDelete: PropTypes.func,
+  id: PropTypes.string,
+  handleBookmarkClick: PropTypes.func,
+  isBookmarked: PropTypes.bool,
+  pathname: PropTypes.string,
+  setProfiles: PropTypes.func,
+  profiles: PropTypes.array,
 }
 
 export default function Card({
