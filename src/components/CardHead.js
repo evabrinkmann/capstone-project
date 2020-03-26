@@ -33,12 +33,12 @@ export default function CardHead({
   setProfiles,
   profiles,
 }) {
-  const { isDeleteButtonVisible, toggle } = useToggle(false)
+  const { on, toggle } = useToggle(false)
 
   return (
     <StyledHead onClick={toggle}>
       <StatusStyled>{status}</StatusStyled>
-      {isDeleteButtonVisible === false && pathname === '/profile-pool' && (
+      {on === false && pathname === '/profile-pool' && (
         <DeleteButton handleOnClick={() => handleDelete(id)} />
       )}
       <UploadWrapper>
