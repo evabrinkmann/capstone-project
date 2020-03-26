@@ -30,6 +30,7 @@ export default function App() {
               profiles={profiles}
               onDelete={onDelete}
               onBookmarkClick={handleBookmarkClick}
+              setProfiles={setProfiles}
             />
           </Route>
           <Route path="/create-profile">

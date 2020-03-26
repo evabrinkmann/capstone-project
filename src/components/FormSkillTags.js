@@ -1,5 +1,10 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
+
+FormSkillTags.propTypes = {
+  register: PropTypes.func,
+}
 
 const skills = ['html5', 'css3', 'bootstrap', 'sass', 'javascript', 'react']
 

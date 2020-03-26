@@ -3,6 +3,13 @@ import Header from '../components/Header'
 import CardList from '../components/CardList'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
+
+FavoritePage.propTypes = {
+  profiles: PropTypes.array,
+  onDelete: PropTypes.func,
+  onBookmarkClick: PropTypes.func,
+}
 
 export default function FavoritePage({ profiles, onBookmarkClick, onDelete }) {
   const filteredProfiles = profiles.filter(profile => profile.isBookmarked)

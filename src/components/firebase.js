@@ -1,5 +1,6 @@
 import firebase from 'firebase/app'
 import 'firebase/firestore'
+import 'firebase/firebase-storage'
 
 var firebaseConfig = {
   apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
@@ -16,3 +17,4 @@ firebase.initializeApp(firebaseConfig)
 const db = firebase.firestore()
 
 export const cardsRef = db.collection('users')
+export const storage = firebase.storage()

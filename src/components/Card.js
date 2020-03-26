@@ -9,8 +9,13 @@ import { useToggle } from 'react-hooks-lib'
 
 Card.propTypes = {
   user: PropTypes.object,
-  setActiveCard: PropTypes.func,
-  isActive: PropTypes.bool,
+  onDelete: PropTypes.func,
+  id: PropTypes.string,
+  handleBookmarkClick: PropTypes.func,
+  isBookmarked: PropTypes.bool,
+  pathname: PropTypes.string,
+  setProfiles: PropTypes.func,
+  profiles: PropTypes.array,
 }
 
 export default function Card({
@@ -20,6 +25,8 @@ export default function Card({
   handleBookmarkClick,
   isBookmarked,
   pathname,
+  setProfiles,
+  profiles,
 }) {
   const { on, toggle } = useToggle(false)
   return (
@@ -28,6 +35,7 @@ export default function Card({
         onBookmarkClick={handleBookmarkClick}
         id={id}
         bookmarkStatus={isBookmarked}
+        pathname={pathname}
       />
       <CardHead
         handleDelete={onDelete}
@@ -38,6 +46,8 @@ export default function Card({
         title={user.title}
         id={id}
         pathname={pathname}
+        setProfiles={setProfiles}
+        profiles={profiles}
       />
       {on && (
         <CardBody

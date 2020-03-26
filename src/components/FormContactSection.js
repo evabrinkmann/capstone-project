@@ -1,5 +1,10 @@
 import React from 'react'
 import styled from 'styled-components/macro'
+import PropTypes from 'prop-types'
+
+FormContactSection.propTypes = {
+  register: PropTypes.func,
+}
 
 export default function FormContactSection({ register }) {
   return (

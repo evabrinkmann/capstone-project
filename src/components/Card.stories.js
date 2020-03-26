@@ -8,14 +8,16 @@ export default {
   decorators: [renderCard => <div>{renderCard()}</div>],
 }
 
-export const ProfileCardActive = () => (
-  <div style={{ width: '400px', height: '700px' }}>
-    <Card user={userData[0]} setActiveCard={() => {}} isActive={true} />
-  </div>
-)
+// @TODO add mock state
+let isBookmarkedStatus = false
 
-export const ProfileCardNotActive = () => (
+export const ProfileCard = () => (
   <div style={{ width: '400px', height: '700px' }}>
-    <Card user={userData[1]} setActiveCard={() => {}} isActive={false} />
+    <Card
+      user={userData[0]}
+      pathname="/profile-pool"
+      isBookmarked={isBookmarkedStatus}
+      handleBookmarkClick={() => console.log('Clicked')}
+    />
   </div>
 )

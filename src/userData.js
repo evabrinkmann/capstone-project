@@ -1,6 +1,6 @@
 const userData = [
   {
-    id: 1,
+    id: '1',
     status: 'alumni',
     imgUrl: './img/natalie-square.jpg',
     name: 'Natalie Fuchs',
@@ -17,8 +17,8 @@ const userData = [
     isBookmarked: false,
   },
   {
-    id: 2,
-    status: 'newcomer',
+    id: '2',
+    status: 'alumni',
     imgUrl: './img/kevin.png',
     name: 'Kevin Kuhfeldt',
     title: 'Frontend Developer',
@@ -34,7 +34,7 @@ const userData = [
     isBookmarked: false,
   },
   {
-    id: 3,
+    id: '3',
     status: 'alumni',
     imgUrl: './img/jan.jpg',
     name: 'Jan Grade',
@@ -51,7 +51,7 @@ const userData = [
     isBookmarked: false,
   },
   {
-    id: 4,
+    id: '4',
     status: 'newcomer',
     imgUrl: './img/nicole.jpg',
     name: 'Nicole Frydrych',

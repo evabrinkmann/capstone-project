@@ -2,13 +2,19 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 import { useToggle } from 'react-hooks-lib'
-import deleteIcon from '../icon/trashIcon.png'
+import DeleteButton from './DeleteButton'
+import UploadButton from './UploadButton'
 
 CardHead.propTypes = {
   status: PropTypes.string,
   img: PropTypes.string,
   name: PropTypes.string,
   title: PropTypes.string,
+  handleDelete: PropTypes.func,
+  id: PropTypes.string,
+  pathname: PropTypes.string,
+  setProfiles: PropTypes.func,
+  profiles: PropTypes.array,
 }
 
 export default function CardHead({
@@ -19,20 +25,23 @@ export default function CardHead({
   handleDelete,
   id,
   pathname,
+  setProfiles,
+  profiles,
 }) {
   const { on, toggle } = useToggle(false)
 
   return (
     <StyledHead onClick={toggle}>
       <StatusStyled>{status}</StatusStyled>
-      {on === false
-        ? pathname === '/profile-pool' && (
-            <DeleteSign onClick={() => handleDelete(id)}>
-              <img src={deleteIcon} alt="trashbox" />
-            </DeleteSign>
-          )
-        : ''}
-      <img src={img} alt="portrait" />
+      {on === false && pathname === '/profile-pool' && (
+        <DeleteButton handleOnClick={() => handleDelete(id)} />
+      )}
+      <UploadWrapper>
+        <img src={img} alt="portrait" />
+        {pathname === '/profile-pool' && (
+          <UploadButton setProfiles={setProfiles} profiles={profiles} id={id} />
+        )}
+      </UploadWrapper>
       <h1>{name}</h1>
       <h2>{title}</h2>
     </StyledHead>
@@ -50,7 +59,6 @@ const StyledHead = styled.section`
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
   img {
-    position: relative;
     width: 200px;
     height: 200px;
     flex-direction: center;
@@ -81,15 +89,9 @@ const StatusStyled = styled.span`
   color: var(--background-white);
   cursor: default;
 `
-const DeleteSign = styled.span`
-  position: absolute;
-  bottom: -15px;
-  right: -10px;
 
-  img {
-    width: 25px;
-    height: 25px;
-    opacity: 0.7;
-    cursor: pointer;
-  }
+const UploadWrapper = styled.div`
+  width: 200px;
+  height: 200px;
+  position: relative;
 `
