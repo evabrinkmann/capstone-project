@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './Card'
 import userData from '../userData'
+import { action } from '@storybook/addon-actions'
 
 export default {
   title: 'components/Card',
@@ -8,16 +9,24 @@ export default {
   decorators: [renderCard => <div>{renderCard()}</div>],
 }
 
-// @TODO add mock state
-let isBookmarkedStatus = false
-
 export const ProfileCard = () => (
-  <div style={{ width: '400px', height: '700px' }}>
+  <div style={{ width: '400px', height: '700px', position: 'relative' }}>
     <Card
       user={userData[0]}
       pathname="/profile-pool"
-      isBookmarked={isBookmarkedStatus}
-      handleBookmarkClick={() => console.log('Clicked')}
+      isBookmarked={false}
+      handleBookmarkClick={action('onBookmarkClick')}
+    />
+  </div>
+)
+
+export const BookmarkedProfileCard = () => (
+  <div style={{ width: '400px', height: '700px', position: 'relative' }}>
+    <Card
+      user={userData[0]}
+      pathname="/profile-pool"
+      isBookmarked={true}
+      handleBookmarkClick={action('onBookmarkClick')}
     />
   </div>
 )
