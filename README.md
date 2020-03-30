@@ -41,11 +41,7 @@ Clone git repository
 
 ### `npm install`
 
-In the project directory
-
-### `npm start`
-
-will throw you an error as of a missing sensitive key needed for firebase. To view the app in the browser please click [here](https://evas-project.firebaseapp.com).
+In the project directory `npm start` will throw you an error of a missing key needed for firebase. This key is only visible to the author. To view the app in the browser please click [here](https://evas-project.firebaseapp.com).
 
 ## Acknowledgement
 
