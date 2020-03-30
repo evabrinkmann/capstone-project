@@ -8,10 +8,7 @@ With newAlumni you can create a profile to let others know about your current jo
 
 ## Preview
 
-![profilePage](src/imgsrc/app_profilePool.png)
-![createPage](src/imgsrc/app_createNewProfile.png)
-![newProfile](src/imgsrc/app_newProfile.png)
-![favoritePage](src/imgsrc/app_favorites.png)
+![appScreens](src/imgsrc/app_screens.png)
 
 newAlumni is hosted via firebase.
 
