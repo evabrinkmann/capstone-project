@@ -5,6 +5,7 @@ import Navigation from './Navigation'
 import StartPage from './pages/StartPage'
 import CreatePage from './pages/CreatePage'
 import PoolPage from './pages/PoolPage'
+import EditPage from './pages/EditPage'
 import FavoritePage from './pages/FavoritePage'
 import userData from './userData'
 import { loadProfilesFromLocal, saveProfilesToLocal } from './utils'
@@ -36,6 +37,9 @@ export default function App() {
           <Route path="/create-profile">
             <CreatePage onAddProfile={handleAddProfile} />
           </Route>
+          <Route path="/edit-profile/:id">
+            <EditPage onEditProfile={handleEditProfile} profiles={profiles} />
+          </Route>
           <Route path="/favorite-profile">
             <FavoritePage
               profiles={profiles}
@@ -53,6 +57,16 @@ export default function App() {
     const newProfiles = [profile, ...profiles]
     setProfiles(newProfiles)
     saveProfilesToLocal('profiles', newProfiles)
+  }
+
+  function handleEditProfile(profile) {
+    const index = profiles.findIndex(p => p.id === profile.id)
+    setProfiles([
+      ...profiles.slice(0, index),
+      profile,
+      ...profiles.slice(index + 1),
+    ])
+    console.log('profile', profile)
   }
 
   function onDelete(id) {

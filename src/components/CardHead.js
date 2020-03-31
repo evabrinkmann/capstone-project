@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 import { useToggle } from 'react-hooks-lib'
+import { useHistory } from 'react-router-dom'
 import DeleteButton from './DeleteButton'
 import UploadButton from './UploadButton'
 
@@ -29,6 +30,7 @@ export default function CardHead({
   profiles,
 }) {
   const { on, toggle } = useToggle(false)
+  const history = useHistory()
 
   return (
     <StyledHead onClick={toggle}>
@@ -36,6 +38,7 @@ export default function CardHead({
       {on === false && pathname === '/profile-pool' && (
         <DeleteButton handleOnClick={() => handleDelete(id)} />
       )}
+      <button onClick={() => history.push('/edit-profile/' + id)}>edit</button>
       <UploadWrapper>
         <img src={img} alt="portrait" />
         {pathname === '/profile-pool' && (
