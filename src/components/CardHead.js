@@ -45,7 +45,7 @@ export default function CardHead({
         </StyledEditButton>
       )}
       <UploadWrapper>
-        <img src={img} alt="portrait" />
+        <img className="profile-img__image" src={img} alt="portrait" />
         {pathname === '/profile-pool' && (
           <UploadButton setProfiles={setProfiles} profiles={profiles} id={id} />
         )}
@@ -66,13 +66,14 @@ const StyledHead = styled.section`
   cursor: pointer;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
-  img {
+  .profile-img__image {
     width: 200px;
     height: 200px;
     flex-direction: center;
     border-radius: 50%;
     object-fit: cover;
     cursor: default;
+    box-shadow: 0 5px 14px grey;
   }
   h1 {
     color: var(--color-blue);
@@ -96,6 +97,7 @@ const StatusStyled = styled.span`
   opacity: 0.9;
   color: var(--background-white);
   cursor: default;
+  box-shadow: 1px 4px 2px grey;
 `
 
 const UploadWrapper = styled.div`
