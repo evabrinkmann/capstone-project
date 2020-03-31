@@ -26,7 +26,7 @@ const DeleteButtonStyled = styled.span`
   .delete-btn__image {
     width: 25px;
     height: 25px;
-    opacity: 0.7;
+    opacity: 0.8;
     cursor: pointer;
   }
 `

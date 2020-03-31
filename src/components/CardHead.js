@@ -5,6 +5,7 @@ import { useToggle } from 'react-hooks-lib'
 import { useHistory } from 'react-router-dom'
 import DeleteButton from './DeleteButton'
 import UploadButton from './UploadButton'
+import editIcon from '../icon/edit.png'
 
 CardHead.propTypes = {
   status: PropTypes.string,
@@ -38,7 +39,9 @@ export default function CardHead({
       {on === false && pathname === '/profile-pool' && (
         <DeleteButton handleOnClick={() => handleDelete(id)} />
       )}
-      <button onClick={() => history.push('/edit-profile/' + id)}>edit</button>
+      <StyledEditButton onClick={() => history.push('/edit-profile/' + id)}>
+        <img className="edit-btn__image" src={editIcon} alt="pencil" />
+      </StyledEditButton>
       <UploadWrapper>
         <img src={img} alt="portrait" />
         {pathname === '/profile-pool' && (
@@ -97,4 +100,17 @@ const UploadWrapper = styled.div`
   width: 200px;
   height: 200px;
   position: relative;
+`
+const StyledEditButton = styled.span`
+  position: absolute;
+  bottom: -14px;
+  right: 20px;
+
+  .edit-btn__image {
+    width: 23px;
+    height: 23px;
+    opacity: 0.8;
+    cursor: pointer;
+    border-radius: 0;
+  }
 `
