@@ -66,7 +66,6 @@ export default function App() {
       profile,
       ...profiles.slice(index + 1),
     ])
-    console.log('profile', profile)
   }
 
   function onDelete(id) {

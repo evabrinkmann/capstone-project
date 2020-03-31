@@ -7,6 +7,7 @@ import PropTypes from 'prop-types'
 
 EditPage.propTypes = {
   onEditProfile: PropTypes.func,
+  profiles: PropTypes.array,
 }
 
 export default function EditPage({ onEditProfile, profiles }) {

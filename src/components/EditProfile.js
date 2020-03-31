@@ -4,12 +4,12 @@ import FormHead from './FormHead'
 import FormContactSection from './FormContactSection'
 import FormProjectSection from './FormProjectSection'
 import FormSkillTags from './FormSkillTags'
-import { v4 } from 'uuid'
 import { useForm } from 'react-hook-form'
 import PropTypes from 'prop-types'
 
 EditProfile.propTypes = {
   onEditProfile: PropTypes.func,
+  profile: PropTypes.array,
 }
 
 export default function EditProfile({ onEditProfile, profile }) {
@@ -29,7 +29,6 @@ export default function EditProfile({ onEditProfile, profile }) {
 
   function onSubmit(data) {
     onEditProfile({ ...profile, ...data })
-    console.log('onSubmit', profile.id)
   }
 }
 
