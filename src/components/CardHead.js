@@ -39,9 +39,11 @@ export default function CardHead({
       {on === false && pathname === '/profile-pool' && (
         <DeleteButton handleOnClick={() => handleDelete(id)} />
       )}
-      <StyledEditButton onClick={() => history.push('/edit-profile/' + id)}>
-        <img className="edit-btn__image" src={editIcon} alt="pencil" />
-      </StyledEditButton>
+      {on === false && pathname === '/profile-pool' && (
+        <StyledEditButton onClick={() => history.push('/edit-profile/' + id)}>
+          <img className="edit-btn__image" src={editIcon} alt="pencil" />
+        </StyledEditButton>
+      )}
       <UploadWrapper>
         <img src={img} alt="portrait" />
         {pathname === '/profile-pool' && (
@@ -78,7 +80,7 @@ const StyledHead = styled.section`
   h2 {
     text-align: center;
     font-weight: normal;
-    margin: 10px;
+    margin: 0 10px 30px;
     font-size: 24px;
   }
 `
