@@ -15,12 +15,13 @@ export default function Header({ title }) {
 
 const StyledHeader = styled.header`
   line-height: 2.2;
-  background: var(--color-blue);
-  box-shadow: 0 5px 20px 1px lightgrey;
+  box-shadow: 0 1px 20px 1px whitesmoke;
   text-align: center;
   font-size: 27px;
   color: white;
   font-weight: lighter;
+  background-color: #549dd8;
+  background-image: linear-gradient(315deg, #91ceff 0%, #549dd8 74%);
 `
 const StyledFish = styled.img`
   position: absolute;

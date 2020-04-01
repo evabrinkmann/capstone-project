@@ -135,7 +135,7 @@ export default function CardBody({
 }
 
 const StyledBody = styled.section`
-  background: var(--background-white);
+  background: whitesmoke;
 
   hr {
     border: 0.5px solid var(--color-blue);

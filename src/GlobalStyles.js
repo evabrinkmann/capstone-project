@@ -7,13 +7,15 @@ export default createGlobalStyle`
 
   body {
     margin: 0;
-    background: var(--body-background);
     font-family: sans-serif, Open Sans;
     font-size: 18px;
     line-height: 1.4;
     height: 100vh;
     width: 100vw;
-  }
+    background-color: #2196F3;
+    background-image: linear-gradient(315deg,#c9e7ff -29%,#80c7ff 50%,#c9e7ff 74%);
+}
+  
 
   input {
     font-size: 1em;
