@@ -9,7 +9,7 @@ import PropTypes from 'prop-types'
 
 EditProfile.propTypes = {
   onEditProfile: PropTypes.func,
-  profile: PropTypes.array,
+  profile: PropTypes.object,
 }
 
 export default function EditProfile({ onEditProfile, profile }) {

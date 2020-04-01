@@ -142,8 +142,8 @@ const StyledBody = styled.section`
   }
 
   a {
-    color: black;
-    text-decoration: none;
+    color: var(--color-blue);
+    text-decoration: underline var(--color-blue);
 
     &:hover {
       color: var(--color-blue);
