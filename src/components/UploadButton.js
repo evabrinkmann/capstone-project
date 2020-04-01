@@ -67,7 +67,7 @@ const UploadButtonStyled = styled.label`
   right: 15px;
   width: 35px;
   height: 35px;
-  border: 3px solid whitesmoke;
+  border: 3px solid white;
   border-radius: 50%;
   overflow: hidden;
   text-align: center;

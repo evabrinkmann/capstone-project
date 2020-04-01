@@ -22,7 +22,7 @@ export default function EditProfile({ onEditProfile, profile }) {
         <FormContactSection register={register} />
         <FormProjectSection register={register} />
         <FormSkillTags register={register} />
-        <ButtonStyled>Submit</ButtonStyled>
+        <ButtonStyled>Update profile</ButtonStyled>
       </FormStyled>
     </ScrollContainer>
   )

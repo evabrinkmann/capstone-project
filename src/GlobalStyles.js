@@ -12,8 +12,8 @@ export default createGlobalStyle`
     line-height: 1.4;
     height: 100vh;
     width: 100vw;
-    background-color: #2196F3;
-    background-image: linear-gradient(315deg,#c9e7ff -29%,#80c7ff 50%,#c9e7ff 74%);
+    background-color: #ffffff;
+    background-image: linear-gradient(315deg, #ffffff 0%, #d7e1ec 74%);
 }
   
 
