@@ -39,7 +39,6 @@ export default function Card({
       />
       <CardHead
         handleDelete={onDelete}
-        // key={user.id}
         status={user.status}
         img={user.imgUrl || defaultImageSrc}
         name={user.name}

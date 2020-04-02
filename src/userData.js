@@ -8,7 +8,7 @@ const userData = [
     company: 'Argonauten GmbH',
     location: 'Hamburg, Germany',
     email: 'natalie.fuchs@argonauten.de',
-    capstoneName: 'Stadt, Land, Fuchs App',
+    capstoneName: 'Stadt Land Fuchs App',
     capstoneLink: 'https://github.com/ntlfox/stadt-land-name',
     personalWebsite: 'https://github.com/ntlfox/personal-website',
     github: 'https://github.com/ntlfox',
