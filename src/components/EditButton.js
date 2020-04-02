@@ -1,6 +1,11 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components/macro'
 import editIcon from '../icon/edit.png'
+
+EditButton.propTypes = {
+  handleOnClick: PropTypes.func,
+}
 
 export default function EditButton({ handleOnClick }) {
   return (

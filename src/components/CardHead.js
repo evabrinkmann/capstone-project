@@ -36,11 +36,13 @@ export default function CardHead({
   return (
     <StyledHead onClick={toggle}>
       <StatusStyled>{status}</StatusStyled>
-      {on === false && pathname === '/profile-pool' && (
-        <DeleteButton handleOnClick={() => handleDeleteCard(id)} />
-      )}
-      {on === false && pathname === '/profile-pool' && (
-        <EditButton handleOnClick={() => history.push('/edit-profile/' + id)} />
+      {!on && pathname === '/profile-pool' && (
+        <>
+          <DeleteButton handleOnClick={() => handleDeleteCard(id)} />
+          <EditButton
+            handleOnClick={() => history.push('/edit-profile/' + id)}
+          />
+        </>
       )}
       <UploadWrapper>
         <img className="profile-img__image" src={img} alt="portrait" />
