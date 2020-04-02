@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 CardList.propTypes = {
   profiles: PropTypes.array,
-  onDelete: PropTypes.func,
+  handleDeleteCard: PropTypes.func,
   handleBookmarkClick: PropTypes.func,
   pathname: PropTypes.string,
   setProfiles: PropTypes.func,
@@ -13,7 +13,7 @@ CardList.propTypes = {
 
 export default function CardList({
   profiles,
-  onDelete,
+  handleDeleteCard,
   handleBookmarkClick,
   pathname,
   setProfiles,
@@ -25,7 +25,7 @@ export default function CardList({
           key={user.id}
           user={user}
           {...user}
-          onDelete={onDelete}
+          onDeleteCard={handleDeleteCard}
           handleBookmarkClick={handleBookmarkClick}
           pathname={pathname}
           setProfiles={setProfiles}

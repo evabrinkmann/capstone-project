@@ -1,15 +1,15 @@
-import React from 'react'
-import styled from 'styled-components/macro'
-import CardHead from './CardHead'
-import CardBody from './CardBody'
 import PropTypes from 'prop-types'
-import defaultImageSrc from '../imgsrc/unknownProfileImg.png'
-import Bookmark from './Bookmark'
+import React from 'react'
 import { useToggle } from 'react-hooks-lib'
+import styled from 'styled-components/macro'
+import defaultImageSrc from '../imgsrc/defaultProfileImg.png'
+import Bookmark from './Bookmark'
+import CardBody from './CardBody'
+import CardHead from './CardHead'
 
 Card.propTypes = {
   user: PropTypes.object,
-  onDelete: PropTypes.func,
+  onDeleteCard: PropTypes.func,
   id: PropTypes.string,
   handleBookmarkClick: PropTypes.func,
   isBookmarked: PropTypes.bool,
@@ -20,7 +20,7 @@ Card.propTypes = {
 
 export default function Card({
   user,
-  onDelete,
+  onDeleteCard,
   id,
   handleBookmarkClick,
   isBookmarked,
@@ -38,7 +38,7 @@ export default function Card({
         pathname={pathname}
       />
       <CardHead
-        handleDelete={onDelete}
+        handleDeleteCard={onDeleteCard}
         status={user.status}
         img={user.imgUrl || defaultImageSrc}
         name={user.name}

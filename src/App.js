@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import styled from 'styled-components/macro'
 import Navigation from './Navigation'
-import StartPage from './pages/StartPage'
 import CreatePage from './pages/CreatePage'
-import PoolPage from './pages/PoolPage'
 import EditPage from './pages/EditPage'
 import FavoritePage from './pages/FavoritePage'
+import PoolPage from './pages/PoolPage'
+import StartPage from './pages/StartPage'
 import userData from './userData'
 import { loadProfilesFromLocal, saveProfilesToLocal } from './utils'
 
@@ -29,7 +29,7 @@ export default function App() {
           <Route exact path={'/profile-pool'}>
             <PoolPage
               profiles={profiles}
-              onDelete={onDelete}
+              onDeleteCard={handleDeleteCard}
               onBookmarkClick={handleBookmarkClick}
               setProfiles={setProfiles}
             />
@@ -44,7 +44,7 @@ export default function App() {
             <FavoritePage
               profiles={profiles}
               onBookmarkClick={handleBookmarkClick}
-              onDelete={onDelete}
+              onDeleteCard={handleDeleteCard}
             />
           </Route>
         </Switch>
@@ -68,7 +68,7 @@ export default function App() {
     ])
   }
 
-  function onDelete(id) {
+  function handleDeleteCard(id) {
     const indexCard = profiles.findIndex(profile => profile.id === id)
     setProfiles([
       ...profiles.slice(0, indexCard),

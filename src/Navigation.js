@@ -1,9 +1,9 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import profilegroup from './icon/image_profiles_white.png'
 import addProfile from './icon/add-profile_white.png'
 import bookmarkProfile from './icon/bookmark_white.png'
+import profilegroup from './icon/image_profiles_white.png'
 
 export default function Navigation() {
   return (

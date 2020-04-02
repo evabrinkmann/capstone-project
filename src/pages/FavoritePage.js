@@ -7,11 +7,15 @@ import PropTypes from 'prop-types'
 
 FavoritePage.propTypes = {
   profiles: PropTypes.array,
-  onDelete: PropTypes.func,
+  onDeleteCard: PropTypes.func,
   onBookmarkClick: PropTypes.func,
 }
 
-export default function FavoritePage({ profiles, onBookmarkClick, onDelete }) {
+export default function FavoritePage({
+  profiles,
+  onBookmarkClick,
+  onDeleteCard,
+}) {
   const filteredProfiles = profiles.filter(profile => profile.isBookmarked)
   let { pathname } = useLocation()
 
@@ -22,7 +26,7 @@ export default function FavoritePage({ profiles, onBookmarkClick, onDelete }) {
         <CardList
           pathname={pathname}
           profiles={filteredProfiles}
-          onDelete={onDelete}
+          handleDeleteCard={onDeleteCard}
           handleBookmarkClick={onBookmarkClick}
         />
       ) : (

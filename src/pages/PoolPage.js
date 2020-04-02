@@ -7,14 +7,14 @@ import PropTypes from 'prop-types'
 
 PoolPage.propTypes = {
   profiles: PropTypes.array,
-  onDelete: PropTypes.func,
+  onDeleteCard: PropTypes.func,
   onBookmarkClick: PropTypes.func,
   setProfiles: PropTypes.func,
 }
 
 export default function PoolPage({
   profiles,
-  onDelete,
+  onDeleteCard,
   onBookmarkClick,
   setProfiles,
 }) {
@@ -26,7 +26,7 @@ export default function PoolPage({
       <CardList
         pathname={pathname}
         profiles={profiles}
-        onDelete={onDelete}
+        handleDeleteCard={onDeleteCard}
         handleBookmarkClick={onBookmarkClick}
         setProfiles={setProfiles}
       />

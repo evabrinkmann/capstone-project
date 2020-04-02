@@ -12,7 +12,7 @@ CardHead.propTypes = {
   img: PropTypes.string,
   name: PropTypes.string,
   title: PropTypes.string,
-  handleDelete: PropTypes.func,
+  handleDeleteCard: PropTypes.func,
   id: PropTypes.string,
   pathname: PropTypes.string,
   setProfiles: PropTypes.func,
@@ -24,7 +24,7 @@ export default function CardHead({
   img,
   name,
   title,
-  handleDelete,
+  handleDeleteCard,
   id,
   pathname,
   setProfiles,
@@ -37,7 +37,7 @@ export default function CardHead({
     <StyledHead onClick={toggle}>
       <StatusStyled>{status}</StatusStyled>
       {on === false && pathname === '/profile-pool' && (
-        <DeleteButton handleOnClick={() => handleDelete(id)} />
+        <DeleteButton handleOnClick={() => handleDeleteCard(id)} />
       )}
       {on === false && pathname === '/profile-pool' && (
         <StyledEditButton onClick={() => history.push('/edit-profile/' + id)}>
