@@ -16,7 +16,8 @@ export default function StartPage() {
 }
 
 const StyledContainer = styled.div`
-  background: var(--color-blue);
+  background-color: #549dd8;
+  background-image: linear-gradient(315deg, #1c93f3 0%, #90cdfe 74%);
   display: flex;
   flex-direction: column;
   justify-content: center;
