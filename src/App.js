@@ -5,6 +5,7 @@ import Navigation from './Navigation'
 import StartPage from './pages/StartPage'
 import CreatePage from './pages/CreatePage'
 import PoolPage from './pages/PoolPage'
+import EditPage from './pages/EditPage'
 import FavoritePage from './pages/FavoritePage'
 import userData from './userData'
 import { loadProfilesFromLocal, saveProfilesToLocal } from './utils'
@@ -36,6 +37,9 @@ export default function App() {
           <Route path="/create-profile">
             <CreatePage onAddProfile={handleAddProfile} />
           </Route>
+          <Route path="/edit-profile/:id">
+            <EditPage onEditProfile={handleEditProfile} profiles={profiles} />
+          </Route>
           <Route path="/favorite-profile">
             <FavoritePage
               profiles={profiles}
@@ -53,6 +57,15 @@ export default function App() {
     const newProfiles = [profile, ...profiles]
     setProfiles(newProfiles)
     saveProfilesToLocal('profiles', newProfiles)
+  }
+
+  function handleEditProfile(profile) {
+    const index = profiles.findIndex(p => p.id === profile.id)
+    setProfiles([
+      ...profiles.slice(0, index),
+      profile,
+      ...profiles.slice(index + 1),
+    ])
   }
 
   function onDelete(id) {
@@ -86,6 +99,4 @@ const AppGrid = styled.div`
   top: 0;
   bottom: 0;
   height: 100%;
-  background-color: #b8c6db;
-  background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 74%);
 `

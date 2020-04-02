@@ -37,13 +37,15 @@ const Button = styled(NavLink)`
   flex-grow: 1;
   color: white;
   text-decoration: none;
-  background: grey;
   font-weight: bold;
   border: 1px solid white;
   font-weight: lighter;
+  background-color: #7f7f7f;
+  background-image: linear-gradient(315deg, #b9b9b9 0%, #7f7f7f 74%);
 
   &.active {
-    background: #549dd8;
+    background-color: #549dd8;
+    background-image: linear-gradient(315deg, #91ceff 0%, #549dd8 74%);
   }
 `
 const StyledProfileGroup = styled.img`

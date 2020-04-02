@@ -135,15 +135,15 @@ export default function CardBody({
 }
 
 const StyledBody = styled.section`
-  background: var(--background-white);
+  background: white;
 
   hr {
     border: 0.5px solid var(--color-blue);
   }
 
   a {
-    color: black;
-    text-decoration: none;
+    color: var(--color-blue);
+    text-decoration: underline var(--color-blue);
 
     &:hover {
       color: var(--color-blue);

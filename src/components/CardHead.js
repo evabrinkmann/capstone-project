@@ -2,8 +2,10 @@ import React from 'react'
 import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
 import { useToggle } from 'react-hooks-lib'
+import { useHistory } from 'react-router-dom'
 import DeleteButton from './DeleteButton'
 import UploadButton from './UploadButton'
+import editIcon from '../icon/edit.png'
 
 CardHead.propTypes = {
   status: PropTypes.string,
@@ -29,6 +31,7 @@ export default function CardHead({
   profiles,
 }) {
   const { on, toggle } = useToggle(false)
+  const history = useHistory()
 
   return (
     <StyledHead onClick={toggle}>
@@ -36,8 +39,13 @@ export default function CardHead({
       {on === false && pathname === '/profile-pool' && (
         <DeleteButton handleOnClick={() => handleDelete(id)} />
       )}
+      {on === false && pathname === '/profile-pool' && (
+        <StyledEditButton onClick={() => history.push('/edit-profile/' + id)}>
+          <img className="edit-btn__image" src={editIcon} alt="pencil" />
+        </StyledEditButton>
+      )}
       <UploadWrapper>
-        <img src={img} alt="portrait" />
+        <img className="profile-img__image" src={img} alt="portrait" />
         {pathname === '/profile-pool' && (
           <UploadButton setProfiles={setProfiles} profiles={profiles} id={id} />
         )}
@@ -58,13 +66,14 @@ const StyledHead = styled.section`
   cursor: pointer;
   -webkit-tap-highlight-color: rgba(255, 255, 255, 0);
 
-  img {
+  .profile-img__image {
     width: 200px;
     height: 200px;
     flex-direction: center;
     border-radius: 50%;
     object-fit: cover;
     cursor: default;
+    box-shadow: 0 5px 14px grey;
   }
   h1 {
     color: var(--color-blue);
@@ -72,7 +81,7 @@ const StyledHead = styled.section`
   h2 {
     text-align: center;
     font-weight: normal;
-    margin: 10px;
+    margin: 0 10px 30px;
     font-size: 24px;
   }
 `
@@ -88,10 +97,24 @@ const StatusStyled = styled.span`
   opacity: 0.9;
   color: var(--background-white);
   cursor: default;
+  box-shadow: 1px 4px 2px grey;
 `
 
 const UploadWrapper = styled.div`
   width: 200px;
   height: 200px;
   position: relative;
+`
+const StyledEditButton = styled.span`
+  position: absolute;
+  bottom: -14px;
+  right: 20px;
+
+  .edit-btn__image {
+    width: 23px;
+    height: 23px;
+    opacity: 0.8;
+    cursor: pointer;
+    border-radius: 0;
+  }
 `
