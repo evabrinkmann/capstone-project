@@ -1,5 +1,7 @@
 # newAlumni
 
+Hi dear visitor!
+
 I developed **newAlumni** as my final project during the web developement bootcamp at [neuefische](https://www.neuefische.de/) in spring 2020.
 
 The idea of newAlumni is to connect newcomer of the web development bootcamp with former bootcamp students.
@@ -45,4 +47,4 @@ In the project directory `npm start` will throw you an error of a missing key ne
 
 ## Acknowledgement
 
-Many many thanks to the entire neuefische team and to all of my classmates! Thank you for all your help & support! 💖
+Many many thanks to the entire neuefische team and to all of my classmates! Thank you for all your help & support! I'm very grateful to have met you all 💖
