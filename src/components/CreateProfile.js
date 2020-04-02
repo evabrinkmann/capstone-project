@@ -1,12 +1,12 @@
+import PropTypes from 'prop-types'
 import React from 'react'
+import { useForm } from 'react-hook-form'
 import styled from 'styled-components/macro'
-import FormHead from './FormHead'
+import { v4 } from 'uuid'
 import FormContactSection from './FormContactSection'
+import FormHead from './FormHead'
 import FormProjectSection from './FormProjectSection'
 import FormSkillTags from './FormSkillTags'
-import { v4 } from 'uuid'
-import { useForm } from 'react-hook-form'
-import PropTypes from 'prop-types'
 
 CreateProfile.propTypes = {
   onAddProfile: PropTypes.func,

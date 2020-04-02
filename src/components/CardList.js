@@ -1,7 +1,7 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components/macro'
 import Card from './Card'
-import PropTypes from 'prop-types'
 
 CardList.propTypes = {
   profiles: PropTypes.array,

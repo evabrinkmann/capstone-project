@@ -1,9 +1,9 @@
+import PropTypes from 'prop-types'
 import React from 'react'
-import Header from '../components/Header'
-import CardList from '../components/CardList'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import PropTypes from 'prop-types'
+import CardList from '../components/CardList'
+import Header from '../components/Header'
 
 FavoritePage.propTypes = {
   profiles: PropTypes.array,

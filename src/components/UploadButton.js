@@ -1,10 +1,10 @@
+import Tooltip from '@material-ui/core/Tooltip'
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components/macro'
-import PropTypes from 'prop-types'
-import Tooltip from '@material-ui/core/Tooltip'
 import uploadIcon from '../icon/addIcon-40.png'
-import { storage } from './firebase'
 import { saveProfilesToLocal } from '../utils'
+import { storage } from './firebase'
 
 UploadButton.propTypes = {
   setProfiles: PropTypes.func,

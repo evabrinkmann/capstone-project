@@ -1,7 +1,7 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components/macro'
 import FormRadioButton from './FormRadioButton'
-import PropTypes from 'prop-types'
 
 FormHead.propTypes = {
   register: PropTypes.func,

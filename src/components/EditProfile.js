@@ -1,11 +1,11 @@
+import PropTypes from 'prop-types'
 import React from 'react'
+import { useForm } from 'react-hook-form'
 import styled from 'styled-components/macro'
-import FormHead from './FormHead'
 import FormContactSection from './FormContactSection'
+import FormHead from './FormHead'
 import FormProjectSection from './FormProjectSection'
 import FormSkillTags from './FormSkillTags'
-import { useForm } from 'react-hook-form'
-import PropTypes from 'prop-types'
 
 EditProfile.propTypes = {
   onEditProfile: PropTypes.func,

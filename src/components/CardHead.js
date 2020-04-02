@@ -1,11 +1,11 @@
-import React from 'react'
-import styled from 'styled-components/macro'
 import PropTypes from 'prop-types'
+import React from 'react'
 import { useToggle } from 'react-hooks-lib'
 import { useHistory } from 'react-router-dom'
+import styled from 'styled-components/macro'
+import editIcon from '../icon/edit.png'
 import DeleteButton from './DeleteButton'
 import UploadButton from './UploadButton'
-import editIcon from '../icon/edit.png'
 
 CardHead.propTypes = {
   status: PropTypes.string,

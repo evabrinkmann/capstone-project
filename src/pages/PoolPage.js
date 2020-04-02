@@ -1,9 +1,9 @@
+import PropTypes from 'prop-types'
 import React from 'react'
-import CardList from '../components/CardList'
-import Header from '../components/Header'
 import { useLocation } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import PropTypes from 'prop-types'
+import CardList from '../components/CardList'
+import Header from '../components/Header'
 
 PoolPage.propTypes = {
   profiles: PropTypes.array,

@@ -1,7 +1,7 @@
+import Tooltip from '@material-ui/core/Tooltip'
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components/macro'
-import PropTypes from 'prop-types'
-import Tooltip from '@material-ui/core/Tooltip'
 import deleteIcon from '../icon/trashIcon.png'
 
 DeleteButton.propTypes = {

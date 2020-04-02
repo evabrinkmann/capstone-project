@@ -1,13 +1,13 @@
+import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components/macro'
-import companyIcon from '../icon/monitor.svg'
-import locationIcon from '../icon/location.svg'
-import emailIcon from '../icon/letter.svg'
-import capstoneIcon from '../icon/cube.svg'
-import personalWebsiteIcon from '../icon/world.svg'
-import githubIcon from '../icon/github.svg'
 import codepenIcon from '../icon/codepen.svg'
-import PropTypes from 'prop-types'
+import capstoneIcon from '../icon/cube.svg'
+import githubIcon from '../icon/github.svg'
+import emailIcon from '../icon/letter.svg'
+import locationIcon from '../icon/location.svg'
+import companyIcon from '../icon/monitor.svg'
+import personalWebsiteIcon from '../icon/world.svg'
 
 CardBody.propTypes = {
   company: PropTypes.string,

@@ -1,7 +1,7 @@
-import React from 'react'
-import styled from 'styled-components'
 import Tooltip from '@material-ui/core/Tooltip'
 import PropTypes from 'prop-types'
+import React from 'react'
+import styled from 'styled-components'
 
 Bookmark.propTypes = {
   onBookmarkClick: PropTypes.func,
