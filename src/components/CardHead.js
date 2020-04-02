@@ -3,8 +3,8 @@ import React from 'react'
 import { useToggle } from 'react-hooks-lib'
 import { useHistory } from 'react-router-dom'
 import styled from 'styled-components/macro'
-import editIcon from '../icon/edit.png'
 import DeleteButton from './DeleteButton'
+import EditButton from './EditButton'
 import UploadButton from './UploadButton'
 
 CardHead.propTypes = {
@@ -40,9 +40,7 @@ export default function CardHead({
         <DeleteButton handleOnClick={() => handleDeleteCard(id)} />
       )}
       {on === false && pathname === '/profile-pool' && (
-        <StyledEditButton onClick={() => history.push('/edit-profile/' + id)}>
-          <img className="edit-btn__image" src={editIcon} alt="pencil" />
-        </StyledEditButton>
+        <EditButton handleOnClick={() => history.push('/edit-profile/' + id)} />
       )}
       <UploadWrapper>
         <img className="profile-img__image" src={img} alt="portrait" />
@@ -104,17 +102,4 @@ const UploadWrapper = styled.div`
   width: 200px;
   height: 200px;
   position: relative;
-`
-const StyledEditButton = styled.span`
-  position: absolute;
-  bottom: -14px;
-  right: 20px;
-
-  .edit-btn__image {
-    width: 23px;
-    height: 23px;
-    opacity: 0.8;
-    cursor: pointer;
-    border-radius: 0;
-  }
 `
